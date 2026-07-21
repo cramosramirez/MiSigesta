@@ -1,0 +1,295 @@
+.EncabezadoSecciones
+{
+    font-size: 12px;
+    font-weight: bold;
+    color: #0000CC;
+    font-family: verdana;
+    text-decoration: none;
+}
+
+.EncabezadoSeccionesEdicion
+{
+    font-size: 12px;
+    font-weight: bold;
+    color: #800000;
+    font-family: verdana;
+    text-decoration: none;
+}
+
+.DDLClass
+{
+	border: 1px solid #C0C0C0;    
+    background-color: #D9EBFD;
+    color: #000000;
+    font-size: 11px;  
+}
+.DDLClass12
+{
+	border: 1px solid #C0C0C0;    
+    background-color: #D9EBFD;
+    color: #000000;
+    font-size: 12px;  
+}
+
+.DDLClassDisabled
+{
+	border: 0px solid #C0C0C0;        
+    color: #000000;
+    font-size: 11px;  
+}
+
+.DDLClassNegrita
+{
+	border: 1px solid #C0C0C0;    
+    background-color: #D9EBFD;
+    color: #000000;
+    font-size: 11px;  
+    font-weight:  bold; 
+}
+
+.DDLClassNormal
+{
+	border: 1px solid #C0C0C0;        
+    color: #000000;
+    font-size: 11px;  
+}
+
+.Normal
+{   
+	font-weight: normal;
+	font-size: 11px;  
+	color: #000000;
+}
+
+.NormalGrid
+{   
+	font-weight: normal;
+	font-size: 12px;  
+	color: #000000;
+}
+
+.NormalUPPER
+{
+    font-size: 11px; 
+	font-weight: normal;	
+	text-transform: uppercase;	
+}
+
+.NormalItalic
+{
+    font-weight: normal;
+    font-style:italic;
+    line-height: 16px;   
+    font-size: 11px;  
+}
+
+.BoldItalic
+{
+    font-size: 11px;
+    font-weight: bold;
+    font-style:italic;
+    line-height: 16px;    
+}
+
+.NormalTextBox
+{
+    font-size: 11px;
+	font-weight: normal;
+}
+.NormalTextBoxDerecha
+{
+    font-size: 11px;
+	font-weight: normal;
+	text-align: right;  
+}
+
+.NormalTextBoxMayus
+{
+    font-size: 11px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.NormalRed
+{
+    font-size: 11px;
+	font-weight: bold;	
+	color: red;	
+	background-color: transparent;
+}
+
+.NormalRedBold
+{
+    font-size: 12px;
+	font-weight: bold;	
+	font-weight: bold;
+	color: red;	
+	background-color: transparent;
+}
+
+.NormalBold
+{
+    font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+}
+
+
+.MensajeInformativo
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: darkblue;
+	font-family: "Arial", sans-serif;
+	background-color: transparent;
+}
+
+.MensajeError
+{
+	font-weight: bold;
+	font-size: 11px;
+	color: Red;
+	font-family: "Arial", sans-serif;
+	background-color: transparent;
+}
+
+
+.TextoNormalDerecha
+{
+    border: 1px solid #C0C0C0;
+    text-align: right;
+    background-color: #D9EBFD;
+    color: #000000;  
+    font-size: 11px;  
+}
+
+.TextoNormalDerecha
+{
+    border: 1px solid #C0C0C0;
+    text-align: right;
+    background-color: #D9EBFD;
+    color: #000000;  
+    font-size: 12px;  
+}
+
+.TextoNormalDerechaNegrita
+{
+    border: 1px solid #C0C0C0;
+    text-align: right;
+    background-color: #D9EBFD;
+    color: #000000;  
+    font-weight: bold; 
+    font-size: 11px;  
+}
+
+.TextoDerecha
+{
+    border: 1px solid #C0C0C0;
+    text-align: right;    
+    color: #000000;   
+    font-size: 11px; 
+}
+
+.TextoIzquierda
+{
+    border: 1px solid #C0C0C0;
+    text-align: left;    
+    color: #000000;   
+    font-size: 11px; 
+}
+
+.TextoDerechaNegrita
+{
+    border: 1px solid #C0C0C0;
+    text-align: right; 
+    font-weight: bold;   
+    color: #000000;   
+    font-size: 11px; 
+}
+
+.TextoIzquierdaNegrita
+{
+    border: 1px solid #C0C0C0;
+    text-align: left; 
+    font-weight: bold;   
+    color: #000000;   
+    font-size: 11px; 
+}
+
+.TextoNormalIzquierda
+{
+    border: 1px solid #C0C0C0;
+    text-align: left;
+    background-color: #D9EBFD;
+    color: #000000;  
+    font-size: 11px;  
+}
+
+.TextoNormalIzquierdaMayus
+{
+    border: 1px solid #C0C0C0;
+    text-align: left;
+    background-color: #D9EBFD;
+    color: #000000;  
+    font-size: 11px;  
+    text-transform:uppercase;  
+}
+.TextoNormalIzquierdaMayus12
+{
+    border: 1px solid #C0C0C0;
+    text-align: left;
+    background-color: #D9EBFD;
+    font-weight: bold;
+    color: #000000;  
+    font-size: 12px;  
+    text-transform:uppercase;  
+}
+.div_footer
+{
+    
+	text-align:center;	
+	color: Gray;
+	font-size: 10px;   
+}
+
+.TextoNormalCentrado
+{
+    border: 1px solid #C0C0C0;
+	TEXT-ALIGN:center;
+	background-color:#D9EBFD; 
+	COLOR:#000000;	
+	font-size: 11px;
+}
+
+.TextoNormalIzquierdaDisabled
+{
+	TEXT-DECORATION:none;
+	TEXT-ALIGN:left;
+	background-color:#fff9e6; 
+	COLOR:#000000;
+	font-size: 11px;  
+}
+
+.TextoNormalDerechaDisabled
+{
+	TEXT-ALIGN:right;
+	background-color:#fff9e6; 
+	COLOR:#000000;
+	font-size: 11px;  
+}
+.MensajeError
+{
+	font-weight: bold;
+	font-size: 12px;
+	color: Red;
+	font-family: "Arial", sans-serif;
+	background-color: transparent;
+}
+
+.watermarked {	
+	border:1px solid #BEBEBE;
+	background-color:#D9EBFD;
+	color:gray;
+	font-size: 11px;  
+	font-family: "Verdana";
+}	

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_SISTAGRI" targetNamespace="http://tempuri.org/DS_SISTAGRI.xsd" xmlns:mstns="http://tempuri.org/DS_SISTAGRI.xsd" xmlns="http://tempuri.org/DS_SISTAGRI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="cn" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cn (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SISPACAL.DL.My.MySettings.GlobalReference.Default.cn" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FICHA_TECNICA_LOTETableAdapter" GeneratorDataComponentClassName="FICHA_TECNICA_LOTETableAdapter" Name="FICHA_TECNICA_LOTE" UserDataComponentName="FICHA_TECNICA_LOTETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	L.ID_MAESTRO, 
+	(SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = L.CODI_DEPTO) AS DEPARTAMENTO, 
+	(SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = L.CODI_DEPTO AND M.CODI_MUNI = L.CODI_MUNI) AS MUNICIPIO, 
+	(SELECT N.NOMBRE_CANTON FROM CANTON N WHERE N.CODI_DEPTO = L.CODI_DEPTO AND N.CODI_MUNI = L.CODI_MUNI AND N.CODI_CANTON = L.CODI_CANTON) AS CANTON,
+	L.ZONA, L.SUB_ZONA, dbo.QuitarFormatoCODIPROVEEDOR(L.CODIPROVEEDOR) AS CODIPROVEEDOR, 
+	L.CORRELATIVO, L.NOMBRE_LOTE,
+	(SELECT ISNULL(RTRIM(P.NOMBRES),'') + ' ' + ISNULL(RTRIM(P.APELLIDOS),'') FROM PROVEEDOR P WHERE P.CODIPROVEEDOR = L.CODIPROVEEDOR) AS PRODUCTOR,
+	(SELECT T.NO_CONTRATO FROM CONTRATO T WHERE T.CODICONTRATO = L.CODICONTRATO) AS NO_CONTRATO,
+	--CASE
+	--WHEN (SELECT COUNT(1) FROM CONTRATO_ZAFRAS CZ, ZAFRA Z WHERE CZ.CODICONTRATO = L.CODICONTRATO AND CZ.ID_ZAFRA = Z.ID_ZAFRA AND Z.ACTIVA = 1 ) &gt; 0 THEN 'SI'
+	--ELSE '' 
+	--END AS VIGENTE,
+	CASE WHEN L.VIGENTE = 1 THEN 'SI' ELSE '' END AS VIGENTE,
+	(SELECT Z.NOMBRE_ZAFRA FROM ZAFRA Z WHERE Z.ID_ZAFRA = L.ID_ZAFRA_INICIO) AS ZAFRA_INICIO,
+	(SELECT Z.NOMBRE_ZAFRA FROM ZAFRA Z WHERE Z.ID_ZAFRA = L.ID_ZAFRA_FIN) AS ZAFRA_FIN,
+	AREA_TOTAL, AREA_CULTIVA, TC_MZ, LBS_TC, 
+	(SELECT T.NOMBRE_HACIENDA FROM AG_HACIENDA T WHERE T.ID_HACIENDA = L.ID_HACIENDA) AS HACIENDA,
+	CASE WHEN L.ID_TIPO_DERECHO = 1 THEN 'SI' ELSE '' END AS LOTE_PROPIO,
+	CASE WHEN L.ID_TIPO_DERECHO = 1 THEN 'SI' ELSE '' END AS LOTE_ARRENDADO,
+	L.VIGENCIA_ARREND, (SELECT T.NOM_VARIEDAD FROM VARIEDAD T WHERE T.CODIVARIEDA = L.CODIVARIEDA) AS VARIEDAD,
+	L.CICLO, (SELECT T.NOMBRE_TIPO_SIEMBRA FROM AG_TIPO_SIEMBRA T WHERE T.ID_TIPO_SIEMBRA = L.ID_TIPO_SIEMBRA) AS TIPO_SIEMBRA,
+	(SELECT T.NOMBRE_EPOCA_SIEMBRA FROM AG_EPOCA_SIEMBRA T WHERE T.ID_EPOCA_SIEMBRA = L.ID_EPOCA_SIEMBRA) AS EPOCA_SIEMBRA,
+	CASE WHEN L.ES_SIEMBRA_MANUAL = 1 THEN 'SI' ELSE 'NO' END AS SIEMBRA_MANUAL,
+	CASE WHEN L.ES_SIEMBRA_MECANIZADA = 1 THEN 'SI' ELSE 'NO' END AS SIEMBRA_MECANI,
+	(SELECT T.NOMBRE_ORIGEN FROM AG_ORIGEN_CANA_SEMILLA T WHERE T.ID_ORIGEN_CANA = L.ID_ORIGEN_CANA) AS ORIGEN_CANA,
+	L.PORC_DESPOBLACION, L.FECULT_RESIEMBRA, L.TOTAL_MZS, 
+	(SELECT T.NOMBRE_TIPO_SUELO FROM TIPO_SUELO T WHERE T.COD_TIPO_SUELO = L.COD_TIPO_SUELO) AS TIPO_SUELO, 
+	CASE WHEN L.PRODUC_TIPO_SUELO = 'A' THEN 'ALTA' WHEN L.PRODUC_TIPO_SUELO = 'M' THEN 'MEDIA' WHEN L.PRODUC_TIPO_SUELO = 'B' THEN 'BAJA' ELSE  '' END PRODUC_TIPO_SUELO,
+	L.MSNM, L.FECULT_SIEMBRA, L.FEPROX_SIEMBRA, L.FECULT_CORTE, L.FECPROX_CORTE,
+	CASE WHEN L.RIESGO_PIEDRA = 1 THEN 'SI' ELSE 'NO' END AS RIESGO_PIEDRA,
+	CASE WHEN L.ACCESO_PROPIO = 1 THEN 'SI' ELSE 'NO' END AS ACCESO_PROPIO, 
+	CASE WHEN L.REPARA_HABILITA = 1 THEN 'SI' ELSE 'NO' END AS REPARA_HABILITA, 
+	L.COSECHA_MANUAL_MZ, CASE WHEN L.FRENTE_ROZA_PROPIO = 1 THEN 'PROPIO' ELSE '' END AS FRENTE_ROZA,
+	L.COSECHA_MECANI_MZ, L.COSECHA_QUEMA_MZ, L.COSECHA_VERDE_MZ, 
+	L.CAT_CANA_LARGA, L.TARIFA_ROZA_MANUAL_TC, L.TARIFA_ALZA_TC, L.TARIFA_TRANSP_LARGA_TC, L.CAT_CANA_MECA, L.TARIFA_COSECHADORA,
+	L.TARIFA_TRANSP_MECA_TC, L.DISTANCIA_KMS, L.PAVIMENTADA_KMS,
+	CASE WHEN L.ES_TIERRA_BALAS = 1 THEN 'SI' ELSE 'NO' END AS TIERRA_BALASTRE, 
+	(SELECT A.NOMBRE_AGRONOMO FROM AGRONOMO A WHERE A.CODIAGRON = L.CODIAGRON) AS TECNICO,
+	(SELECT T.NOMBRE_ZAFRA FROM ZAFRA T WHERE T.ID_ZAFRA = C.ID_ZAFRA) AS C_ZAFRA,
+	C.CONTRA_AREA, C.CONTRA_TC, C.CONTRA_TC_MZ, C.CONTRA_LBS_TC,
+	C.EJEC_AREA, C.EJEC_TC, C.EJEC_TC_MZ, C.EJEC_LBS_TC, C.SEMILLA_TC,
+L.OBSERVACIONES
+FROM AG_LOTE L, AG_LOTE_CONTRATOS C
+WHERE L.ID_MAESTRO = C.ID_MAESTRO
+AND L.CODIPROVEEDOR = 'XXXXX'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_MAESTRO" DataSetColumn="ID_MAESTRO" />
+              <Mapping SourceColumn="DEPARTAMENTO" DataSetColumn="DEPARTAMENTO" />
+              <Mapping SourceColumn="MUNICIPIO" DataSetColumn="MUNICIPIO" />
+              <Mapping SourceColumn="CANTON" DataSetColumn="CANTON" />
+              <Mapping SourceColumn="ZONA" DataSetColumn="ZONA" />
+              <Mapping SourceColumn="SUB_ZONA" DataSetColumn="SUB_ZONA" />
+              <Mapping SourceColumn="CODIPROVEEDOR" DataSetColumn="CODIPROVEEDOR" />
+              <Mapping SourceColumn="CORRELATIVO" DataSetColumn="CORRELATIVO" />
+              <Mapping SourceColumn="NOMBRE_LOTE" DataSetColumn="NOMBRE_LOTE" />
+              <Mapping SourceColumn="NO_CONTRATO" DataSetColumn="NO_CONTRATO" />
+              <Mapping SourceColumn="VIGENTE" DataSetColumn="VIGENTE" />
+              <Mapping SourceColumn="ZAFRA_INICIO" DataSetColumn="ZAFRA_INICIO" />
+              <Mapping SourceColumn="ZAFRA_FIN" DataSetColumn="ZAFRA_FIN" />
+              <Mapping SourceColumn="AREA_TOTAL" DataSetColumn="AREA_TOTAL" />
+              <Mapping SourceColumn="AREA_CULTIVA" DataSetColumn="AREA_CULTIVA" />
+              <Mapping SourceColumn="TC_MZ" DataSetColumn="TC_MZ" />
+              <Mapping SourceColumn="LBS_TC" DataSetColumn="LBS_TC" />
+              <Mapping SourceColumn="HACIENDA" DataSetColumn="HACIENDA" />
+              <Mapping SourceColumn="VIGENCIA_ARREND" DataSetColumn="VIGENCIA_ARREND" />
+              <Mapping SourceColumn="VARIEDAD" DataSetColumn="VARIEDAD" />
+              <Mapping SourceColumn="CICLO" DataSetColumn="CICLO" />
+              <Mapping SourceColumn="TIPO_SIEMBRA" DataSetColumn="TIPO_SIEMBRA" />
+              <Mapping SourceColumn="EPOCA_SIEMBRA" DataSetColumn="EPOCA_SIEMBRA" />
+              <Mapping SourceColumn="SIEMBRA_MANUAL" DataSetColumn="SIEMBRA_MANUAL" />
+              <Mapping SourceColumn="SIEMBRA_MECANI" DataSetColumn="SIEMBRA_MECANI" />
+              <Mapping SourceColumn="ORIGEN_CANA" DataSetColumn="ORIGEN_CANA" />
+              <Mapping SourceColumn="PORC_DESPOBLACION" DataSetColumn="PORC_DESPOBLACION" />
+              <Mapping SourceColumn="FECULT_RESIEMBRA" DataSetColumn="FECULT_RESIEMBRA" />
+              <Mapping SourceColumn="TOTAL_MZS" DataSetColumn="TOTAL_MZS" />
+              <Mapping SourceColumn="TIPO_SUELO" DataSetColumn="TIPO_SUELO" />
+              <Mapping SourceColumn="PRODUC_TIPO_SUELO" DataSetColumn="PRODUC_TIPO_SUELO" />
+              <Mapping SourceColumn="MSNM" DataSetColumn="MSNM" />
+              <Mapping SourceColumn="FECULT_SIEMBRA" DataSetColumn="FECULT_SIEMBRA" />
+              <Mapping SourceColumn="FEPROX_SIEMBRA" DataSetColumn="FEPROX_SIEMBRA" />
+              <Mapping SourceColumn="FECULT_CORTE" DataSetColumn="FECULT_CORTE" />
+              <Mapping SourceColumn="FECPROX_CORTE" DataSetColumn="FECPROX_CORTE" />
+              <Mapping SourceColumn="RIESGO_PIEDRA" DataSetColumn="RIESGO_PIEDRA" />
+              <Mapping SourceColumn="ACCESO_PROPIO" DataSetColumn="ACCESO_PROPIO" />
+              <Mapping SourceColumn="REPARA_HABILITA" DataSetColumn="REPARA_HABILITA" />
+              <Mapping SourceColumn="COSECHA_MANUAL_MZ" DataSetColumn="COSECHA_MANUAL_MZ" />
+              <Mapping SourceColumn="FRENTE_ROZA" DataSetColumn="FRENTE_ROZA" />
+              <Mapping SourceColumn="COSECHA_MECANI_MZ" DataSetColumn="COSECHA_MECANI_MZ" />
+              <Mapping SourceColumn="COSECHA_QUEMA_MZ" DataSetColumn="COSECHA_QUEMA_MZ" />
+              <Mapping SourceColumn="COSECHA_VERDE_MZ" DataSetColumn="COSECHA_VERDE_MZ" />
+              <Mapping SourceColumn="CAT_CANA_LARGA" DataSetColumn="CAT_CANA_LARGA" />
+              <Mapping SourceColumn="TARIFA_ROZA_MANUAL_TC" DataSetColumn="TARIFA_ROZA_MANUAL_TC" />
+              <Mapping SourceColumn="TARIFA_ALZA_TC" DataSetColumn="TARIFA_ALZA_TC" />
+              <Mapping SourceColumn="TARIFA_TRANSP_LARGA_TC" DataSetColumn="TARIFA_TRANSP_LARGA_TC" />
+              <Mapping SourceColumn="CAT_CANA_MECA" DataSetColumn="CAT_CANA_MECA" />
+              <Mapping SourceColumn="TARIFA_COSECHADORA" DataSetColumn="TARIFA_COSECHADORA" />
+              <Mapping SourceColumn="TARIFA_TRANSP_MECA_TC" DataSetColumn="TARIFA_TRANSP_MECA_TC" />
+              <Mapping SourceColumn="DISTANCIA_KMS" DataSetColumn="DISTANCIA_KMS" />
+              <Mapping SourceColumn="PAVIMENTADA_KMS" DataSetColumn="PAVIMENTADA_KMS" />
+              <Mapping SourceColumn="TIERRA_BALASTRE" DataSetColumn="TIERRA_BALASTRE" />
+              <Mapping SourceColumn="TECNICO" DataSetColumn="TECNICO" />
+              <Mapping SourceColumn="C_ZAFRA" DataSetColumn="C_ZAFRA" />
+              <Mapping SourceColumn="CONTRA_AREA" DataSetColumn="CONTRA_AREA" />
+              <Mapping SourceColumn="CONTRA_TC" DataSetColumn="CONTRA_TC" />
+              <Mapping SourceColumn="CONTRA_TC_MZ" DataSetColumn="CONTRA_TC_MZ" />
+              <Mapping SourceColumn="CONTRA_LBS_TC" DataSetColumn="CONTRA_LBS_TC" />
+              <Mapping SourceColumn="EJEC_AREA" DataSetColumn="EJEC_AREA" />
+              <Mapping SourceColumn="EJEC_TC" DataSetColumn="EJEC_TC" />
+              <Mapping SourceColumn="EJEC_TC_MZ" DataSetColumn="EJEC_TC_MZ" />
+              <Mapping SourceColumn="EJEC_LBS_TC" DataSetColumn="EJEC_LBS_TC" />
+              <Mapping SourceColumn="SEMILLA_TC" DataSetColumn="SEMILLA_TC" />
+              <Mapping SourceColumn="PRODUCTOR" DataSetColumn="PRODUCTOR" />
+              <Mapping SourceColumn="LOTE_PROPIO" DataSetColumn="LOTE_PROPIO" />
+              <Mapping SourceColumn="LOTE_ARRENDADO" DataSetColumn="LOTE_ARRENDADO" />
+              <Mapping SourceColumn="OBSERVACIONES" DataSetColumn="OBSERVACIONES" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectName="DESAINJIBOA.dbo.RPT_FICHA_TECNICA_LOTE" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPorProveedor" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPorProveedor" GeneratorSourceName="FillPorProveedor" GetMethodModifier="Public" GetMethodName="GetPorProveedor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPorProveedor" UserSourceName="FillPorProveedor">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.RPT_FICHA_TECNICA_LOTE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@CODIPROVEEDOR" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_SISTAGRI" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_SISTAGRI" msprop:Generator_UserDSName="DS_SISTAGRI">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FICHA_TECNICA_LOTE" msprop:Generator_TableClassName="FICHA_TECNICA_LOTEDataTable" msprop:Generator_TableVarName="tableFICHA_TECNICA_LOTE" msprop:Generator_TablePropName="FICHA_TECNICA_LOTE" msprop:Generator_RowDeletingName="FICHA_TECNICA_LOTERowDeleting" msprop:Generator_RowChangingName="FICHA_TECNICA_LOTERowChanging" msprop:Generator_RowEvHandlerName="FICHA_TECNICA_LOTERowChangeEventHandler" msprop:Generator_RowDeletedName="FICHA_TECNICA_LOTERowDeleted" msprop:Generator_UserTableName="FICHA_TECNICA_LOTE" msprop:Generator_RowChangedName="FICHA_TECNICA_LOTERowChanged" msprop:Generator_RowEvArgName="FICHA_TECNICA_LOTERowChangeEvent" msprop:Generator_RowClassName="FICHA_TECNICA_LOTERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_MAESTRO" msprop:Generator_ColumnVarNameInTable="columnID_MAESTRO" msprop:Generator_ColumnPropNameInRow="ID_MAESTRO" msprop:Generator_ColumnPropNameInTable="ID_MAESTROColumn" msprop:Generator_UserColumnName="ID_MAESTRO" type="xs:int" />
+              <xs:element name="DEPARTAMENTO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDEPARTAMENTO" msprop:Generator_ColumnPropNameInRow="DEPARTAMENTO" msprop:Generator_ColumnPropNameInTable="DEPARTAMENTOColumn" msprop:Generator_UserColumnName="DEPARTAMENTO" type="xs:string" minOccurs="0" />
+              <xs:element name="MUNICIPIO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMUNICIPIO" msprop:Generator_ColumnPropNameInRow="MUNICIPIO" msprop:Generator_ColumnPropNameInTable="MUNICIPIOColumn" msprop:Generator_UserColumnName="MUNICIPIO" type="xs:string" minOccurs="0" />
+              <xs:element name="CANTON" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCANTON" msprop:Generator_ColumnPropNameInRow="CANTON" msprop:Generator_ColumnPropNameInTable="CANTONColumn" msprop:Generator_UserColumnName="CANTON" type="xs:string" minOccurs="0" />
+              <xs:element name="ZONA" msprop:Generator_ColumnVarNameInTable="columnZONA" msprop:Generator_ColumnPropNameInRow="ZONA" msprop:Generator_ColumnPropNameInTable="ZONAColumn" msprop:Generator_UserColumnName="ZONA" type="xs:string" minOccurs="0" />
+              <xs:element name="SUB_ZONA" msprop:Generator_ColumnVarNameInTable="columnSUB_ZONA" msprop:Generator_ColumnPropNameInRow="SUB_ZONA" msprop:Generator_ColumnPropNameInTable="SUB_ZONAColumn" msprop:Generator_UserColumnName="SUB_ZONA" type="xs:string" minOccurs="0" />
+              <xs:element name="CODIPROVEEDOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODIPROVEEDOR" msprop:Generator_ColumnPropNameInRow="CODIPROVEEDOR" msprop:Generator_ColumnPropNameInTable="CODIPROVEEDORColumn" msprop:Generator_UserColumnName="CODIPROVEEDOR" type="xs:string" minOccurs="0" />
+              <xs:element name="CORRELATIVO" msprop:Generator_ColumnVarNameInTable="columnCORRELATIVO" msprop:Generator_ColumnPropNameInRow="CORRELATIVO" msprop:Generator_ColumnPropNameInTable="CORRELATIVOColumn" msprop:Generator_UserColumnName="CORRELATIVO" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBRE_LOTE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_LOTE" msprop:Generator_ColumnPropNameInRow="NOMBRE_LOTE" msprop:Generator_ColumnPropNameInTable="NOMBRE_LOTEColumn" msprop:Generator_UserColumnName="NOMBRE_LOTE" type="xs:string" minOccurs="0" />
+              <xs:element name="NO_CONTRATO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNO_CONTRATO" msprop:Generator_ColumnPropNameInRow="NO_CONTRATO" msprop:Generator_ColumnPropNameInTable="NO_CONTRATOColumn" msprop:Generator_UserColumnName="NO_CONTRATO" type="xs:int" minOccurs="0" />
+              <xs:element name="VIGENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVIGENTE" msprop:Generator_ColumnPropNameInRow="VIGENTE" msprop:Generator_ColumnPropNameInTable="VIGENTEColumn" msprop:Generator_UserColumnName="VIGENTE" type="xs:string" minOccurs="0" />
+              <xs:element name="ZAFRA_INICIO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnZAFRA_INICIO" msprop:Generator_ColumnPropNameInRow="ZAFRA_INICIO" msprop:Generator_ColumnPropNameInTable="ZAFRA_INICIOColumn" msprop:Generator_UserColumnName="ZAFRA_INICIO" type="xs:string" minOccurs="0" />
+              <xs:element name="ZAFRA_FIN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnZAFRA_FIN" msprop:Generator_ColumnPropNameInRow="ZAFRA_FIN" msprop:Generator_ColumnPropNameInTable="ZAFRA_FINColumn" msprop:Generator_UserColumnName="ZAFRA_FIN" type="xs:string" minOccurs="0" />
+              <xs:element name="AREA_TOTAL" msprop:Generator_ColumnVarNameInTable="columnAREA_TOTAL" msprop:Generator_ColumnPropNameInRow="AREA_TOTAL" msprop:Generator_ColumnPropNameInTable="AREA_TOTALColumn" msprop:Generator_UserColumnName="AREA_TOTAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AREA_CULTIVA" msprop:Generator_ColumnVarNameInTable="columnAREA_CULTIVA" msprop:Generator_ColumnPropNameInRow="AREA_CULTIVA" msprop:Generator_ColumnPropNameInTable="AREA_CULTIVAColumn" msprop:Generator_UserColumnName="AREA_CULTIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TC_MZ" msprop:Generator_ColumnVarNameInTable="columnTC_MZ" msprop:Generator_ColumnPropNameInRow="TC_MZ" msprop:Generator_ColumnPropNameInTable="TC_MZColumn" msprop:Generator_UserColumnName="TC_MZ" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LBS_TC" msprop:Generator_ColumnVarNameInTable="columnLBS_TC" msprop:Generator_ColumnPropNameInRow="LBS_TC" msprop:Generator_ColumnPropNameInTable="LBS_TCColumn" msprop:Generator_UserColumnName="LBS_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HACIENDA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHACIENDA" msprop:Generator_ColumnPropNameInRow="HACIENDA" msprop:Generator_ColumnPropNameInTable="HACIENDAColumn" msprop:Generator_UserColumnName="HACIENDA" type="xs:string" minOccurs="0" />
+              <xs:element name="VIGENCIA_ARREND" msprop:Generator_ColumnVarNameInTable="columnVIGENCIA_ARREND" msprop:Generator_ColumnPropNameInRow="VIGENCIA_ARREND" msprop:Generator_ColumnPropNameInTable="VIGENCIA_ARRENDColumn" msprop:Generator_UserColumnName="VIGENCIA_ARREND" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VARIEDAD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVARIEDAD" msprop:Generator_ColumnPropNameInRow="VARIEDAD" msprop:Generator_ColumnPropNameInTable="VARIEDADColumn" msprop:Generator_UserColumnName="VARIEDAD" type="xs:string" minOccurs="0" />
+              <xs:element name="CICLO" msprop:Generator_ColumnVarNameInTable="columnCICLO" msprop:Generator_ColumnPropNameInRow="CICLO" msprop:Generator_ColumnPropNameInTable="CICLOColumn" msprop:Generator_UserColumnName="CICLO" type="xs:int" minOccurs="0" />
+              <xs:element name="TIPO_SIEMBRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO_SIEMBRA" msprop:Generator_ColumnPropNameInRow="TIPO_SIEMBRA" msprop:Generator_ColumnPropNameInTable="TIPO_SIEMBRAColumn" msprop:Generator_UserColumnName="TIPO_SIEMBRA" type="xs:string" minOccurs="0" />
+              <xs:element name="EPOCA_SIEMBRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEPOCA_SIEMBRA" msprop:Generator_ColumnPropNameInRow="EPOCA_SIEMBRA" msprop:Generator_ColumnPropNameInTable="EPOCA_SIEMBRAColumn" msprop:Generator_UserColumnName="EPOCA_SIEMBRA" type="xs:string" minOccurs="0" />
+              <xs:element name="SIEMBRA_MANUAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSIEMBRA_MANUAL" msprop:Generator_ColumnPropNameInRow="SIEMBRA_MANUAL" msprop:Generator_ColumnPropNameInTable="SIEMBRA_MANUALColumn" msprop:Generator_UserColumnName="SIEMBRA_MANUAL" type="xs:string" minOccurs="0" />
+              <xs:element name="SIEMBRA_MECANI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSIEMBRA_MECANI" msprop:Generator_ColumnPropNameInRow="SIEMBRA_MECANI" msprop:Generator_ColumnPropNameInTable="SIEMBRA_MECANIColumn" msprop:Generator_UserColumnName="SIEMBRA_MECANI" type="xs:string" minOccurs="0" />
+              <xs:element name="ORIGEN_CANA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnORIGEN_CANA" msprop:Generator_ColumnPropNameInRow="ORIGEN_CANA" msprop:Generator_ColumnPropNameInTable="ORIGEN_CANAColumn" msprop:Generator_UserColumnName="ORIGEN_CANA" type="xs:string" minOccurs="0" />
+              <xs:element name="PORC_DESPOBLACION" msprop:Generator_ColumnVarNameInTable="columnPORC_DESPOBLACION" msprop:Generator_ColumnPropNameInRow="PORC_DESPOBLACION" msprop:Generator_ColumnPropNameInTable="PORC_DESPOBLACIONColumn" msprop:Generator_UserColumnName="PORC_DESPOBLACION" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FECULT_RESIEMBRA" msprop:Generator_ColumnVarNameInTable="columnFECULT_RESIEMBRA" msprop:Generator_ColumnPropNameInRow="FECULT_RESIEMBRA" msprop:Generator_ColumnPropNameInTable="FECULT_RESIEMBRAColumn" msprop:Generator_UserColumnName="FECULT_RESIEMBRA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TOTAL_MZS" msprop:Generator_ColumnVarNameInTable="columnTOTAL_MZS" msprop:Generator_ColumnPropNameInRow="TOTAL_MZS" msprop:Generator_ColumnPropNameInTable="TOTAL_MZSColumn" msprop:Generator_UserColumnName="TOTAL_MZS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TIPO_SUELO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO_SUELO" msprop:Generator_ColumnPropNameInRow="TIPO_SUELO" msprop:Generator_ColumnPropNameInTable="TIPO_SUELOColumn" msprop:Generator_UserColumnName="TIPO_SUELO" type="xs:string" minOccurs="0" />
+              <xs:element name="PRODUC_TIPO_SUELO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPRODUC_TIPO_SUELO" msprop:Generator_ColumnPropNameInRow="PRODUC_TIPO_SUELO" msprop:Generator_ColumnPropNameInTable="PRODUC_TIPO_SUELOColumn" msprop:Generator_UserColumnName="PRODUC_TIPO_SUELO" type="xs:string" minOccurs="0" />
+              <xs:element name="MSNM" msprop:Generator_ColumnVarNameInTable="columnMSNM" msprop:Generator_ColumnPropNameInRow="MSNM" msprop:Generator_ColumnPropNameInTable="MSNMColumn" msprop:Generator_UserColumnName="MSNM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FECULT_SIEMBRA" msprop:Generator_ColumnVarNameInTable="columnFECULT_SIEMBRA" msprop:Generator_ColumnPropNameInRow="FECULT_SIEMBRA" msprop:Generator_ColumnPropNameInTable="FECULT_SIEMBRAColumn" msprop:Generator_UserColumnName="FECULT_SIEMBRA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FEPROX_SIEMBRA" msprop:Generator_ColumnVarNameInTable="columnFEPROX_SIEMBRA" msprop:Generator_ColumnPropNameInRow="FEPROX_SIEMBRA" msprop:Generator_ColumnPropNameInTable="FEPROX_SIEMBRAColumn" msprop:Generator_UserColumnName="FEPROX_SIEMBRA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FECULT_CORTE" msprop:Generator_ColumnVarNameInTable="columnFECULT_CORTE" msprop:Generator_ColumnPropNameInRow="FECULT_CORTE" msprop:Generator_ColumnPropNameInTable="FECULT_CORTEColumn" msprop:Generator_UserColumnName="FECULT_CORTE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FECPROX_CORTE" msprop:Generator_ColumnVarNameInTable="columnFECPROX_CORTE" msprop:Generator_ColumnPropNameInRow="FECPROX_CORTE" msprop:Generator_ColumnPropNameInTable="FECPROX_CORTEColumn" msprop:Generator_UserColumnName="FECPROX_CORTE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RIESGO_PIEDRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRIESGO_PIEDRA" msprop:Generator_ColumnPropNameInRow="RIESGO_PIEDRA" msprop:Generator_ColumnPropNameInTable="RIESGO_PIEDRAColumn" msprop:Generator_UserColumnName="RIESGO_PIEDRA" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCESO_PROPIO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnACCESO_PROPIO" msprop:Generator_ColumnPropNameInRow="ACCESO_PROPIO" msprop:Generator_ColumnPropNameInTable="ACCESO_PROPIOColumn" msprop:Generator_UserColumnName="ACCESO_PROPIO" type="xs:string" minOccurs="0" />
+              <xs:element name="REPARA_HABILITA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnREPARA_HABILITA" msprop:Generator_ColumnPropNameInRow="REPARA_HABILITA" msprop:Generator_ColumnPropNameInTable="REPARA_HABILITAColumn" msprop:Generator_UserColumnName="REPARA_HABILITA" type="xs:string" minOccurs="0" />
+              <xs:element name="COSECHA_MANUAL_MZ" msprop:Generator_ColumnVarNameInTable="columnCOSECHA_MANUAL_MZ" msprop:Generator_ColumnPropNameInRow="COSECHA_MANUAL_MZ" msprop:Generator_ColumnPropNameInTable="COSECHA_MANUAL_MZColumn" msprop:Generator_UserColumnName="COSECHA_MANUAL_MZ" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FRENTE_ROZA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFRENTE_ROZA" msprop:Generator_ColumnPropNameInRow="FRENTE_ROZA" msprop:Generator_ColumnPropNameInTable="FRENTE_ROZAColumn" msprop:Generator_UserColumnName="FRENTE_ROZA" type="xs:string" minOccurs="0" />
+              <xs:element name="COSECHA_MECANI_MZ" msprop:Generator_ColumnVarNameInTable="columnCOSECHA_MECANI_MZ" msprop:Generator_ColumnPropNameInRow="COSECHA_MECANI_MZ" msprop:Generator_ColumnPropNameInTable="COSECHA_MECANI_MZColumn" msprop:Generator_UserColumnName="COSECHA_MECANI_MZ" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COSECHA_QUEMA_MZ" msprop:Generator_ColumnVarNameInTable="columnCOSECHA_QUEMA_MZ" msprop:Generator_ColumnPropNameInRow="COSECHA_QUEMA_MZ" msprop:Generator_ColumnPropNameInTable="COSECHA_QUEMA_MZColumn" msprop:Generator_UserColumnName="COSECHA_QUEMA_MZ" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COSECHA_VERDE_MZ" msprop:Generator_ColumnVarNameInTable="columnCOSECHA_VERDE_MZ" msprop:Generator_ColumnPropNameInRow="COSECHA_VERDE_MZ" msprop:Generator_ColumnPropNameInTable="COSECHA_VERDE_MZColumn" msprop:Generator_UserColumnName="COSECHA_VERDE_MZ" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CAT_CANA_LARGA" msprop:Generator_ColumnVarNameInTable="columnCAT_CANA_LARGA" msprop:Generator_ColumnPropNameInRow="CAT_CANA_LARGA" msprop:Generator_ColumnPropNameInTable="CAT_CANA_LARGAColumn" msprop:Generator_UserColumnName="CAT_CANA_LARGA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TARIFA_ROZA_MANUAL_TC" msprop:Generator_ColumnVarNameInTable="columnTARIFA_ROZA_MANUAL_TC" msprop:Generator_ColumnPropNameInRow="TARIFA_ROZA_MANUAL_TC" msprop:Generator_ColumnPropNameInTable="TARIFA_ROZA_MANUAL_TCColumn" msprop:Generator_UserColumnName="TARIFA_ROZA_MANUAL_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TARIFA_ALZA_TC" msprop:Generator_ColumnVarNameInTable="columnTARIFA_ALZA_TC" msprop:Generator_ColumnPropNameInRow="TARIFA_ALZA_TC" msprop:Generator_ColumnPropNameInTable="TARIFA_ALZA_TCColumn" msprop:Generator_UserColumnName="TARIFA_ALZA_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TARIFA_TRANSP_LARGA_TC" msprop:Generator_ColumnVarNameInTable="columnTARIFA_TRANSP_LARGA_TC" msprop:Generator_ColumnPropNameInRow="TARIFA_TRANSP_LARGA_TC" msprop:Generator_ColumnPropNameInTable="TARIFA_TRANSP_LARGA_TCColumn" msprop:Generator_UserColumnName="TARIFA_TRANSP_LARGA_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CAT_CANA_MECA" msprop:Generator_ColumnVarNameInTable="columnCAT_CANA_MECA" msprop:Generator_ColumnPropNameInRow="CAT_CANA_MECA" msprop:Generator_ColumnPropNameInTable="CAT_CANA_MECAColumn" msprop:Generator_UserColumnName="CAT_CANA_MECA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TARIFA_COSECHADORA" msprop:Generator_ColumnVarNameInTable="columnTARIFA_COSECHADORA" msprop:Generator_ColumnPropNameInRow="TARIFA_COSECHADORA" msprop:Generator_ColumnPropNameInTable="TARIFA_COSECHADORAColumn" msprop:Generator_UserColumnName="TARIFA_COSECHADORA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TARIFA_TRANSP_MECA_TC" msprop:Generator_ColumnVarNameInTable="columnTARIFA_TRANSP_MECA_TC" msprop:Generator_ColumnPropNameInRow="TARIFA_TRANSP_MECA_TC" msprop:Generator_ColumnPropNameInTable="TARIFA_TRANSP_MECA_TCColumn" msprop:Generator_UserColumnName="TARIFA_TRANSP_MECA_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DISTANCIA_KMS" msprop:Generator_ColumnVarNameInTable="columnDISTANCIA_KMS" msprop:Generator_ColumnPropNameInRow="DISTANCIA_KMS" msprop:Generator_ColumnPropNameInTable="DISTANCIA_KMSColumn" msprop:Generator_UserColumnName="DISTANCIA_KMS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PAVIMENTADA_KMS" msprop:Generator_ColumnVarNameInTable="columnPAVIMENTADA_KMS" msprop:Generator_ColumnPropNameInRow="PAVIMENTADA_KMS" msprop:Generator_ColumnPropNameInTable="PAVIMENTADA_KMSColumn" msprop:Generator_UserColumnName="PAVIMENTADA_KMS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TIERRA_BALASTRE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIERRA_BALASTRE" msprop:Generator_ColumnPropNameInRow="TIERRA_BALASTRE" msprop:Generator_ColumnPropNameInTable="TIERRA_BALASTREColumn" msprop:Generator_UserColumnName="TIERRA_BALASTRE" type="xs:string" minOccurs="0" />
+              <xs:element name="TECNICO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTECNICO" msprop:Generator_ColumnPropNameInRow="TECNICO" msprop:Generator_ColumnPropNameInTable="TECNICOColumn" msprop:Generator_UserColumnName="TECNICO" type="xs:string" minOccurs="0" />
+              <xs:element name="C_ZAFRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnC_ZAFRA" msprop:Generator_ColumnPropNameInRow="C_ZAFRA" msprop:Generator_ColumnPropNameInTable="C_ZAFRAColumn" msprop:Generator_UserColumnName="C_ZAFRA" type="xs:string" minOccurs="0" />
+              <xs:element name="CONTRA_AREA" msprop:Generator_ColumnVarNameInTable="columnCONTRA_AREA" msprop:Generator_ColumnPropNameInRow="CONTRA_AREA" msprop:Generator_ColumnPropNameInTable="CONTRA_AREAColumn" msprop:Generator_UserColumnName="CONTRA_AREA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CONTRA_TC" msprop:Generator_ColumnVarNameInTable="columnCONTRA_TC" msprop:Generator_ColumnPropNameInRow="CONTRA_TC" msprop:Generator_ColumnPropNameInTable="CONTRA_TCColumn" msprop:Generator_UserColumnName="CONTRA_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CONTRA_TC_MZ" msprop:Generator_ColumnVarNameInTable="columnCONTRA_TC_MZ" msprop:Generator_ColumnPropNameInRow="CONTRA_TC_MZ" msprop:Generator_ColumnPropNameInTable="CONTRA_TC_MZColumn" msprop:Generator_UserColumnName="CONTRA_TC_MZ" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CONTRA_LBS_TC" msprop:Generator_ColumnVarNameInTable="columnCONTRA_LBS_TC" msprop:Generator_ColumnPropNameInRow="CONTRA_LBS_TC" msprop:Generator_ColumnPropNameInTable="CONTRA_LBS_TCColumn" msprop:Generator_UserColumnName="CONTRA_LBS_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EJEC_AREA" msprop:Generator_ColumnVarNameInTable="columnEJEC_AREA" msprop:Generator_ColumnPropNameInRow="EJEC_AREA" msprop:Generator_ColumnPropNameInTable="EJEC_AREAColumn" msprop:Generator_UserColumnName="EJEC_AREA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EJEC_TC" msprop:Generator_ColumnVarNameInTable="columnEJEC_TC" msprop:Generator_ColumnPropNameInRow="EJEC_TC" msprop:Generator_ColumnPropNameInTable="EJEC_TCColumn" msprop:Generator_UserColumnName="EJEC_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EJEC_TC_MZ" msprop:Generator_ColumnVarNameInTable="columnEJEC_TC_MZ" msprop:Generator_ColumnPropNameInRow="EJEC_TC_MZ" msprop:Generator_ColumnPropNameInTable="EJEC_TC_MZColumn" msprop:Generator_UserColumnName="EJEC_TC_MZ" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EJEC_LBS_TC" msprop:Generator_ColumnVarNameInTable="columnEJEC_LBS_TC" msprop:Generator_ColumnPropNameInRow="EJEC_LBS_TC" msprop:Generator_ColumnPropNameInTable="EJEC_LBS_TCColumn" msprop:Generator_UserColumnName="EJEC_LBS_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SEMILLA_TC" msprop:Generator_ColumnVarNameInTable="columnSEMILLA_TC" msprop:Generator_ColumnPropNameInRow="SEMILLA_TC" msprop:Generator_ColumnPropNameInTable="SEMILLA_TCColumn" msprop:Generator_UserColumnName="SEMILLA_TC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PRODUCTOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPRODUCTOR" msprop:Generator_ColumnPropNameInRow="PRODUCTOR" msprop:Generator_ColumnPropNameInTable="PRODUCTORColumn" msprop:Generator_UserColumnName="PRODUCTOR" type="xs:string" minOccurs="0" />
+              <xs:element name="LOTE_PROPIO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLOTE_PROPIO" msprop:Generator_ColumnPropNameInRow="LOTE_PROPIO" msprop:Generator_ColumnPropNameInTable="LOTE_PROPIOColumn" msprop:Generator_UserColumnName="LOTE_PROPIO" type="xs:string" minOccurs="0" />
+              <xs:element name="LOTE_ARRENDADO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLOTE_ARRENDADO" msprop:Generator_ColumnPropNameInRow="LOTE_ARRENDADO" msprop:Generator_ColumnPropNameInTable="LOTE_ARRENDADOColumn" msprop:Generator_UserColumnName="LOTE_ARRENDADO" type="xs:string" minOccurs="0" />
+              <xs:element name="OBSERVACIONES" msprop:Generator_ColumnVarNameInTable="columnOBSERVACIONES" msprop:Generator_ColumnPropNameInRow="OBSERVACIONES" msprop:Generator_ColumnPropNameInTable="OBSERVACIONESColumn" msprop:Generator_UserColumnName="OBSERVACIONES" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

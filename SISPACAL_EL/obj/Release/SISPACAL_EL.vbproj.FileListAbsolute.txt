@@ -1,0 +1,8 @@
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\bin\Release\SISPACAL_EL.dll
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\bin\Release\SISPACAL_EL.pdb
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\bin\Release\SISPACAL_EL.xml
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\obj\Release\SISPACAL_EL.vbproj.CoreCompileInputs.cache
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\obj\Release\SISPACAL_EL.dll
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\obj\Release\SISPACAL_EL.xml
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\obj\Release\SISPACAL_EL.pdb
+C:\Sistemas\SIGESTA-1\SISPACAL_EL\obj\Release\SISPACAL_EL.vbproj.AssemblyReference.cache

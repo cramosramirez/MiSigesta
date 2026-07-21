@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCF1CEF8-83B8-4010-9405-A3EA043B8E9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SISPACAL.BL</RootNamespace>
+    <AssemblyName>SISPACAL_BL</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SISPACAL_BL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SISPACAL_BL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.ExceptionManagement, Version=2.0.0.0, Culture=neutral, PublicKeyToken=090ce9b8f6fec061">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.ApplicationBlocks.ExceptionManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="SISPACAL.DL" />
+    <Import Include="SISPACAL.EL" />
+    <Import Include="Microsoft.ApplicationBlocks.ExceptionManagement" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bodega\cBODEGA.vb" />
+    <Compile Include="Bodega\cDOCUMENTO_ENTRADA_DETA.vb" />
+    <Compile Include="Bodega\cDOCUMENTO_ENTRADA_ENCA.Partial.vb" />
+    <Compile Include="Bodega\cDOCUMENTO_ENTRADA_ENCA.vb" />
+    <Compile Include="Bodega\cDOCUMENTO_SALIDA_DETA.vb" />
+    <Compile Include="Bodega\cDOCUMENTO_SALIDA_ENCA.Partial.vb" />
+    <Compile Include="Bodega\cDOCUMENTO_SALIDA_ENCA.vb" />
+    <Compile Include="Bodega\cKARDEX.Partial.vb" />
+    <Compile Include="Bodega\cKARDEX.vb" />
+    <Compile Include="Bodega\cSALBODE_DETA.Partial.vb" />
+    <Compile Include="Bodega\cSALBODE_DETA.vb" />
+    <Compile Include="Bodega\cSALBODE_ENCA.Partial.vb" />
+    <Compile Include="Bodega\cSALBODE_ENCA.vb" />
+    <Compile Include="Bodega\cTIPO_COMPROB.Partial.vb" />
+    <Compile Include="Bodega\cTIPO_COMPROB.vb" />
+    <Compile Include="Bodega\cTIPO_MOVTO.Partial.vb" />
+    <Compile Include="Bodega\cTIPO_MOVTO.vb" />
+    <Compile Include="Bodega\cUNIDAD_ORG.vb" />
+    <Compile Include="cACUKARDE.vb" />
+    <Compile Include="cAGRONOMO.Partial.vb" />
+    <Compile Include="cAGRONOMO.vb" />
+    <Compile Include="cAJUSTE_POL.vb" />
+    <Compile Include="cANALISIS.Partial.vb" />
+    <Compile Include="cANALISIS.vb" />
+    <Compile Include="cANALISIS_PRECOSECHA.Partial.vb" />
+    <Compile Include="cANALISIS_PRECOSECHA.vb" />
+    <Compile Include="cANTICIPO_CANA.Partial.vb" />
+    <Compile Include="cANTICIPO_CANA.vb" />
+    <Compile Include="cAPLICACION_DESCTO.vb" />
+    <Compile Include="cBANCOS.Partial.vb" />
+    <Compile Include="cBANCOS.vb" />
+    <Compile Include="cBASCULA.Partial.vb" />
+    <Compile Include="cBASCULA.vb" />
+    <Compile Include="cBASE_PROVEEDORES_MH.Partial.vb" />
+    <Compile Include="cBASE_PROVEEDORES_MH.vb" />
+    <Compile Include="cBITACORA_USUARIO.vb" />
+    <Compile Include="cBRIX_SACAROSA.vb" />
+    <Compile Include="cCANTON.Partial.vb" />
+    <Compile Include="cCANTON.vb" />
+    <Compile Include="cCARGADOR.Partial.vb" />
+    <Compile Include="cCARGADOR.vb" />
+    <Compile Include="cCARGADORA.Partial.vb" />
+    <Compile Include="cCARGADORA.vb" />
+    <Compile Include="cCARGADORA_ASIGNADA.Partial.vb" />
+    <Compile Include="cCARGADORA_ASIGNADA.vb" />
+    <Compile Include="cCATEGORIA_PROD.vb" />
+    <Compile Include="cCATORCENA_ZAFRA.Partial.vb" />
+    <Compile Include="cCATORCENA_ZAFRA.vb" />
+    <Compile Include="cCENSO.Partial.vb" />
+    <Compile Include="cCENSO.vb" />
+    <Compile Include="cCENSO_LOTES.Partial.vb" />
+    <Compile Include="cCENSO_LOTES.vb" />
+    <Compile Include="cCHEQUERA_PLANILLA.vb" />
+    <Compile Include="cCHEQUE_PARTIDA.vb" />
+    <Compile Include="cCHEQUE_PLANILLA.Partial.vb" />
+    <Compile Include="cCHEQUE_PLANILLA.vb" />
+    <Compile Include="cCICLO.vb" />
+    <Compile Include="cCICLO_PERIODO.Partial.vb" />
+    <Compile Include="cCICLO_PERIODO.vb" />
+    <Compile Include="cCOMPORTAMIENTO_CANA.vb" />
+    <Compile Include="cCOMPROB_ENCA.Partial.vb" />
+    <Compile Include="cCOMPROB_ENCA.vb" />
+    <Compile Include="cCONDICION_SIEMBRA.vb" />
+    <Compile Include="cCONTRATO.Partial.vb" />
+    <Compile Include="cCONTRATO.vb" />
+    <Compile Include="cCONTRATO_LG.Partial.vb" />
+    <Compile Include="cCONTRATO_LG.vb" />
+    <Compile Include="cCONTRATO_TRANS.Partial.vb" />
+    <Compile Include="cCONTRATO_TRANS.vb" />
+    <Compile Include="cCONTRATO_TRANS_VEHI.Partial.vb" />
+    <Compile Include="cCONTRATO_TRANS_VEHI.vb" />
+    <Compile Include="cCONTRATO_ZAFRAS.Partial.vb" />
+    <Compile Include="cCONTRATO_ZAFRAS.vb" />
+    <Compile Include="cCONTRATO_ZAFRAS_LG.vb" />
+    <Compile Include="cCREAR_ARCHIVO_LOG.vb" />
+    <Compile Include="cCREFISCAL_PROVEEDOR.Partial.vb" />
+    <Compile Include="cCREFISCAL_PROVEEDOR.vb" />
+    <Compile Include="cCUENTA_BANCARIA.Partial.vb" />
+    <Compile Include="cCUENTA_BANCARIA.vb" />
+    <Compile Include="cCUENTA_PROVEEDOR.Partial.vb" />
+    <Compile Include="cCUENTA_PROVEEDOR.vb" />
+    <Compile Include="cDATOS_LABORATORIO.vb" />
+    <Compile Include="cDEPARTAMENTO.Partial.vb" />
+    <Compile Include="cDEPARTAMENTO.vb" />
+    <Compile Include="cDESCUENTOS_PLANILLA.Partial.vb" />
+    <Compile Include="cDESCUENTOS_PLANILLA.vb" />
+    <Compile Include="cDESCUENTOS_PLANILLA_OC.vb" />
+    <Compile Include="cDIA_ZAFRA.Partial.vb" />
+    <Compile Include="cDIA_ZAFRA.vb" />
+    <Compile Include="cDISTRIBUCION_DESCTO.vb" />
+    <Compile Include="cENVIO.Partial.vb" />
+    <Compile Include="cENVIO.vb" />
+    <Compile Include="cENVIO_COSECHA_BANDA.vb" />
+    <Compile Include="cENVIO_FACT.vb" />
+    <Compile Include="cENVIO_MONI_QQ.Partial.vb" />
+    <Compile Include="cENVIO_MONI_QQ.vb" />
+    <Compile Include="cENVIO_ROZA_PS.vb" />
+    <Compile Include="cENVIO_SEDIMENTO.vb" />
+    <Compile Include="cEQUIPO_MEDICION.Partial.vb" />
+    <Compile Include="cEQUIPO_MEDICION.vb" />
+    <Compile Include="cESTICANA.Partial.vb" />
+    <Compile Include="cESTICANA.vb" />
+    <Compile Include="cESTICANA_XLS_DETA.vb" />
+    <Compile Include="cESTICANA_XLS_ENCA.vb" />
+    <Compile Include="cFechaHora.vb" />
+    <Compile Include="cFILTRO_CANTON.Partial.vb" />
+    <Compile Include="cFILTRO_CANTON.vb" />
+    <Compile Include="cFILTRO_ORDEN_ROZA.Partial.vb" />
+    <Compile Include="cFILTRO_ORDEN_ROZA.vb" />
+    <Compile Include="cGRUPO_DESCUENTOS.vb" />
+    <Compile Include="cIntermedia.Partial.vb" />
+    <Compile Include="cIntermedia.vb" />
+    <Compile Include="cLECTURA_POR_PERFIL.vb" />
+    <Compile Include="cLOTES.Partial.vb" />
+    <Compile Include="cLOTES.vb" />
+    <Compile Include="cLOTES_COSECHA.Partial.vb" />
+    <Compile Include="cLOTES_COSECHA.vb" />
+    <Compile Include="cLOTES_COSECHA_GESTION.Partial.vb" />
+    <Compile Include="cLOTES_COSECHA_GESTION.vb" />
+    <Compile Include="cLOTES_LG.Partial.vb" />
+    <Compile Include="cLOTES_LG.vb" />
+    <Compile Include="cLOTES_TRASPASO.vb" />
+    <Compile Include="cLOTE_CARGADORA.vb" />
+    <Compile Include="cMAESTRO_LOTES.Partial.vb" />
+    <Compile Include="cMAESTRO_LOTES.vb" />
+    <Compile Include="cMapa.vb" />
+    <Compile Include="cMONITOR_CAL.Partial.vb" />
+    <Compile Include="cMONITOR_CAL.vb" />
+    <Compile Include="cMOTIVO_VARIACION.vb" />
+    <Compile Include="cMOTORISTA.Partial.vb" />
+    <Compile Include="cMOTORISTA.vb" />
+    <Compile Include="cMOTORISTA_VEHICULO.Partial.vb" />
+    <Compile Include="cMOTORISTA_VEHICULO.vb" />
+    <Compile Include="cMUNICIPIO.Partial.vb" />
+    <Compile Include="cMUNICIPIO.vb" />
+    <Compile Include="cNIVEL_HUMEDAD.vb" />
+    <Compile Include="cNOTACARGO_PARTIDA.vb" />
+    <Compile Include="cNOTACARGO_PLANILLA.vb" />
+    <Compile Include="cNumero_a_Letras.vb" />
+    <Compile Include="controladorBase.vb" />
+    <Compile Include="cOPCION.Partial.vb" />
+    <Compile Include="cOPCION_PERFIL.Partial.vb" />
+    <Compile Include="cORDEN_COMBUSTIBLE.Partial.vb" />
+    <Compile Include="cORDEN_COMBUSTIBLE.vb" />
+    <Compile Include="cORDEN_COMBUSTIBLE_AUTORIZACION.vb" />
+    <Compile Include="cORDEN_COMBUSTIBLE_FAC_ANUL.vb" />
+    <Compile Include="cORDEN_COMBUSTIBLE_NUMERACION.vb" />
+    <Compile Include="cORDEN_COMBUSTIBLE_PROD.Partial.vb" />
+    <Compile Include="cORDEN_COMBUSTIBLE_PROD.vb" />
+    <Compile Include="cORDEN_ROZA_DETA.vb" />
+    <Compile Include="cORDEN_ROZA_ENCA.Partial.vb" />
+    <Compile Include="cORDEN_ROZA_ENCA.vb" />
+    <Compile Include="cPAGO_CTA_BANCO.Partial.vb" />
+    <Compile Include="cPAGO_CTA_BANCO.vb" />
+    <Compile Include="cPARAM_PRECOSECHA.vb" />
+    <Compile Include="cPERFIL.Partial.vb" />
+    <Compile Include="cPERSONAL_FCAT.Partial.vb" />
+    <Compile Include="cPERSONAL_FCAT.vb" />
+    <Compile Include="cPLANILLA.Partial.vb" />
+    <Compile Include="cPLANILLA.vb" />
+    <Compile Include="cPLANILLA_BASE.Partial.vb" />
+    <Compile Include="cPLANILLA_BASE.vb" />
+    <Compile Include="cPLAN_CATORCENA.vb" />
+    <Compile Include="cPLAN_ENTREGA_CANA.Partial.vb" />
+    <Compile Include="cPLAN_ENTREGA_CANA.vb" />
+    <Compile Include="cPLAN_SEMANAL.vb" />
+    <Compile Include="cProceso.vb" />
+    <Compile Include="cPRODUCTO.Partial.vb" />
+    <Compile Include="cPRODUCTO.vb" />
+    <Compile Include="cPRODUCTO_COMBUSTIBLE.Partial.vb" />
+    <Compile Include="cPRODUCTO_COMBUSTIBLE.vb" />
+    <Compile Include="cPRODUCTO_TIPO_TRANS.Partial.vb" />
+    <Compile Include="cPRODUCTO_TIPO_TRANS.vb" />
+    <Compile Include="cPROVEEDOR.Partial.vb" />
+    <Compile Include="cPROVEEDOR.vb" />
+    <Compile Include="cPROVEEDOR_AGRICOLA.Partial.vb" />
+    <Compile Include="cPROVEEDOR_AGRICOLA.vb" />
+    <Compile Include="cPROVEEDOR_CARGA.Partial.vb" />
+    <Compile Include="cPROVEEDOR_CARGA.vb" />
+    <Compile Include="cPROVEEDOR_CODIGOREL.vb" />
+    <Compile Include="cPROVEEDOR_COMBUSTIBLE.vb" />
+    <Compile Include="cPROVEEDOR_QUERQUEO.Partial.vb" />
+    <Compile Include="cPROVEEDOR_QUERQUEO.vb" />
+    <Compile Include="cPROVEEDOR_ROZA.Partial.vb" />
+    <Compile Include="cPROVEEDOR_ROZA.vb" />
+    <Compile Include="cRANGO_COMPENSACION.vb" />
+    <Compile Include="cRECIBO_CANA_ANULADO.Partial.vb" />
+    <Compile Include="cRECIBO_CANA_ANULADO.vb" />
+    <Compile Include="cRECIBO_CANA_NUMERACION.Partial.vb" />
+    <Compile Include="cRECIBO_CANA_NUMERACION.vb" />
+    <Compile Include="cSOLIC_AGRICOLA.Partial.vb" />
+    <Compile Include="cSOLIC_AGRICOLA.vb" />
+    <Compile Include="cSOLIC_AGRICOLA_ESTADO.vb" />
+    <Compile Include="cSOLIC_AGRICOLA_LOTE.Partial.vb" />
+    <Compile Include="cSOLIC_AGRICOLA_LOTE.vb" />
+    <Compile Include="cSOLIC_AGRICOLA_PRODUCTO.Partial.vb" />
+    <Compile Include="cSOLIC_AGRICOLA_PRODUCTO.vb" />
+    <Compile Include="cSOLIC_AGRICOLA_VUELO.Partial.vb" />
+    <Compile Include="cSOLIC_AGRICOLA_VUELO.vb" />
+    <Compile Include="cSOLIC_ANTICIPO.Partial.vb" />
+    <Compile Include="cSOLIC_ANTICIPO.vb" />
+    <Compile Include="cSOLIC_ANTICIPO_CONTRATOS.Partial.vb" />
+    <Compile Include="cSOLIC_ANTICIPO_CONTRATOS.vb" />
+    <Compile Include="cSOLIC_ANTICIPO_ZAFRA.Partial.vb" />
+    <Compile Include="cSOLIC_ANTICIPO_ZAFRA.vb" />
+    <Compile Include="cSOLIC_APLICACION_LOTE.Partial.vb" />
+    <Compile Include="cSOLIC_APLICACION_LOTE.vb" />
+    <Compile Include="cSOLIC_APLICACION_PRODUCTO.Partial.vb" />
+    <Compile Include="cSOLIC_APLICACION_PRODUCTO.vb" />
+    <Compile Include="cSOLIC_APLICACION_VUELO.Partial.vb" />
+    <Compile Include="cSOLIC_APLICACION_VUELO.vb" />
+    <Compile Include="cSOLIC_APLICA_LOTE.Partial.vb" />
+    <Compile Include="cSOLIC_APLICA_LOTE.vb" />
+    <Compile Include="cSOLIC_APLICA_VUELO.vb" />
+    <Compile Include="cSUB_ZONAS.Partial.vb" />
+    <Compile Include="cSUB_ZONAS.vb" />
+    <Compile Include="cSUPERVISOR.vb" />
+    <Compile Include="cTARIFA.vb" />
+    <Compile Include="cTARIFA_ROZA.vb" />
+    <Compile Include="cTARIFA_VUELO.vb" />
+    <Compile Include="cTIPOS_GENERALES.Partial.vb" />
+    <Compile Include="cTIPOS_GENERALES.vb" />
+    <Compile Include="cTIPO_CANA.vb" />
+    <Compile Include="cTIPO_CARGADORA.vb" />
+    <Compile Include="cTIPO_DESCUENTO.Partial.vb" />
+    <Compile Include="cTIPO_DESCUENTO.vb" />
+    <Compile Include="cTIPO_LECTURA.vb" />
+    <Compile Include="cTIPO_PERSONA.vb" />
+    <Compile Include="cTIPO_PLANILLA.vb" />
+    <Compile Include="cTIPO_PLANILLA_DESCTO.Partial.vb" />
+    <Compile Include="cTIPO_PLANILLA_DESCTO.vb" />
+    <Compile Include="cTIPO_PROVEEDOR.Partial.vb" />
+    <Compile Include="cTIPO_PROVEEDOR.vb" />
+    <Compile Include="cTIPO_SUELO.vb" />
+    <Compile Include="cTIPO_TEXTURA.vb" />
+    <Compile Include="cTIPO_TRANSPORTE.vb" />
+    <Compile Include="cTRANSPORTE.Partial.vb" />
+    <Compile Include="cTRANSPORTE.vb" />
+    <Compile Include="cTRANSPORTISTA.Partial.vb" />
+    <Compile Include="cTRANSPORTISTA.vb" />
+    <Compile Include="cUBICACION.vb" />
+    <Compile Include="cUNIDAD_MEDIDA.vb" />
+    <Compile Include="cUSUARIO.Partial.vb" />
+    <Compile Include="cUSUARIO.vb" />
+    <Compile Include="cPERFIL.vb" />
+    <Compile Include="cOPCION_PERFIL.vb" />
+    <Compile Include="cOPCION.vb" />
+    <Compile Include="cUtilidades.vb" />
+    <Compile Include="cVARIEDAD.Partial.vb" />
+    <Compile Include="cVARIEDAD.vb" />
+    <Compile Include="cZAFGAS.vb" />
+    <Compile Include="cZAFRA.Partial.vb" />
+    <Compile Include="cZAFRA.vb" />
+    <Compile Include="cZONAS.Partial.vb" />
+    <Compile Include="cZONAS.vb" />
+    <Compile Include="cZONA_CARGADORA.Partial.vb" />
+    <Compile Include="cZONA_CARGADORA.vb" />
+    <Compile Include="Financiero\cCCF_DETA.vb" />
+    <Compile Include="Financiero\cCCF_DETA_SALBODE.Partial.vb" />
+    <Compile Include="Financiero\cCCF_DETA_SALBODE.vb" />
+    <Compile Include="Financiero\cCCF_ENCA.Partial.vb" />
+    <Compile Include="Financiero\cCCF_ENCA.vb" />
+    <Compile Include="Financiero\cCOMPROB_NUMERACION.vb" />
+    <Compile Include="Financiero\cCONTRATO_CTAS.vb" />
+    <Compile Include="Financiero\cCONTRATO_CTAS_MOVTOS.vb" />
+    <Compile Include="Financiero\cCONTRATO_CTAS_PROVI.Partial.vb" />
+    <Compile Include="Financiero\cCONTRATO_CTAS_PROVI.vb" />
+    <Compile Include="Financiero\cCONTRATO_FINAN.Partial.vb" />
+    <Compile Include="Financiero\cCONTRATO_FINAN.vb" />
+    <Compile Include="Financiero\cCREDITO_ENCA.Partial.vb" />
+    <Compile Include="Financiero\cCREDITO_ENCA.vb" />
+    <Compile Include="Financiero\cCREDITO_MOV.Partial.vb" />
+    <Compile Include="Financiero\cCREDITO_MOV.vb" />
+    <Compile Include="Financiero\cCUENTA_FINAN.Partial.vb" />
+    <Compile Include="Financiero\cCUENTA_FINAN.vb" />
+    <Compile Include="Financiero\cFACTURA_SERVICIOS_DETA.vb" />
+    <Compile Include="Financiero\cFACTURA_SERVICIOS_ENCA.vb" />
+    <Compile Include="Financiero\cMEMBRE_GREMIAL.Partial.vb" />
+    <Compile Include="Financiero\cMEMBRE_GREMIAL.vb" />
+    <Compile Include="Financiero\cORDEN_COMPRA_AGRI.Partial.vb" />
+    <Compile Include="Financiero\cORDEN_COMPRA_AGRI.vb" />
+    <Compile Include="Financiero\cORDEN_DETA_AGRI.Partial.vb" />
+    <Compile Include="Financiero\cORDEN_DETA_AGRI.vb" />
+    <Compile Include="Financiero\cPLANILLA_COMPROB.Partial.vb" />
+    <Compile Include="Financiero\cPLANILLA_COMPROB.vb" />
+    <Compile Include="Financiero\cPLANTILLA_PRODU_COLU.Partial.vb" />
+    <Compile Include="Financiero\cPLANTILLA_PRODU_COLU.vb" />
+    <Compile Include="Financiero\cPLANTILLA_PRODU_DATOS.Partial.vb" />
+    <Compile Include="Financiero\cPLANTILLA_PRODU_DATOS.vb" />
+    <Compile Include="Financiero\cPLANTILLA_TRANS_COLU.Partial.vb" />
+    <Compile Include="Financiero\cPLANTILLA_TRANS_COLU.vb" />
+    <Compile Include="Financiero\cPLANTILLA_TRANS_DATOS.Partial.vb" />
+    <Compile Include="Financiero\cPLANTILLA_TRANS_DATOS.vb" />
+    <Compile Include="Financiero\cPRE_ANALISIS_DETA.Partial.vb" />
+    <Compile Include="Financiero\cPRE_ANALISIS_DETA.vb" />
+    <Compile Include="Financiero\cPRE_ANALISIS_ENCA.Partial.vb" />
+    <Compile Include="Financiero\cPRE_ANALISIS_ENCA.vb" />
+    <Compile Include="Financiero\cREMESA_DETA_PRODU.vb" />
+    <Compile Include="Financiero\cREMESA_ENCA_PRODU.vb" />
+    <Compile Include="Financiero\cSOLIC_ANTICIPO_LIQFINAN.vb" />
+    <Compile Include="Financiero\cSOLIC_ANTICIPO_LOTE.Partial.vb" />
+    <Compile Include="Financiero\cSOLIC_ANTICIPO_LOTE.vb" />
+    <Compile Include="Financiero\cSOLIC_OIP_LOTE.Partial.vb" />
+    <Compile Include="Financiero\cSOLIC_OIP_LOTE.vb" />
+    <Compile Include="Financiero\cSOLIC_OPI.Partial.vb" />
+    <Compile Include="Financiero\cSOLIC_OPI.vb" />
+    <Compile Include="Financiero\cSOLIC_OPI_CONTRATOS.Partial.vb" />
+    <Compile Include="Financiero\cSOLIC_OPI_CONTRATOS.vb" />
+    <Compile Include="Frentes\cCCF_DETA_FRENTE.vb" />
+    <Compile Include="Frentes\cCCF_ENCA_FRENTE.vb" />
+    <Compile Include="Frentes\cCREDITO_ENCA_FRENTE.vb" />
+    <Compile Include="Frentes\cCREDITO_MOV_FRENTE.vb" />
+    <Compile Include="Frentes\cSOLIC_ANTICIPO_FRENTE.vb" />
+    <Compile Include="Frentes\cSOLIC_ANTICIPO_FRENTE_ZAFRA.vb" />
+    <Compile Include="Frentes\cSOLIC_DETA_FRENTE.vb" />
+    <Compile Include="Frentes\cSOLIC_ENCA_FRENTE.vb" />
+    <Compile Include="LabFab\cLABFAB_ANALISIS.Partial.vb" />
+    <Compile Include="LabFab\cLABFAB_ANALISIS.vb" />
+    <Compile Include="LabFab\cLABFAB_ANALISISXDIA.vb" />
+    <Compile Include="LabFab\cLABFAB_CATEGORIA.vb" />
+    <Compile Include="LabFab\cLABFAB_DIAZAFRA.vb" />
+    <Compile Include="LabFab\cLABFAB_ETAPA.Partial.vb" />
+    <Compile Include="LabFab\cLABFAB_ETAPA.vb" />
+    <Compile Include="LabFab\cLABFAB_INFORME.vb" />
+    <Compile Include="LabFab\cLABFAB_INFOVAR.vb" />
+    <Compile Include="LabFab\cLABFAB_INFOVARSXDIA.vb" />
+    <Compile Include="LabFab\cLABFAB_MUESTRA.Partial.vb" />
+    <Compile Include="LabFab\cLABFAB_MUESTRA.vb" />
+    <Compile Include="LabFab\cLABFAB_TIPOVAR.vb" />
+    <Compile Include="LabFab\cLABFAB_VAR.vb" />
+    <Compile Include="LabFab\cLABFAB_VARSXANALISIS.vb" />
+    <Compile Include="Proforma\cCAPACIDAD_TIPO_TRANS.Partial.vb" />
+    <Compile Include="Proforma\cCAPACIDAD_TIPO_TRANS.vb" />
+    <Compile Include="Proforma\cCONTROL_ENTREGA_LOTE.vb" />
+    <Compile Include="Proforma\cCONTROL_QUEMA.Partial.vb" />
+    <Compile Include="Proforma\cCONTROL_QUEMA.vb" />
+    <Compile Include="Proforma\cCONTROL_QUEMA_SALDO.Partial.vb" />
+    <Compile Include="Proforma\cCONTROL_QUEMA_SALDO.vb" />
+    <Compile Include="Proforma\cCONTROL_ROZA.Partial.vb" />
+    <Compile Include="Proforma\cCONTROL_ROZA.vb" />
+    <Compile Include="Proforma\cCONTROL_ROZA_SALDO.Partial.vb" />
+    <Compile Include="Proforma\cCONTROL_ROZA_SALDO.vb" />
+    <Compile Include="Proforma\cPLAN_COSECHA.Partial.vb" />
+    <Compile Include="Proforma\cPLAN_COSECHA.vb" />
+    <Compile Include="Proforma\cPLAN_COSECHA_DIARIO.Partial.vb" />
+    <Compile Include="Proforma\cPLAN_COSECHA_DIARIO.vb" />
+    <Compile Include="Proforma\cPROFORMA.Partial.vb" />
+    <Compile Include="Proforma\cPROFORMA.vb" />
+    <Compile Include="Proforma\cSOLIC_QUEMANOPROG.Partial.vb" />
+    <Compile Include="Proforma\cSOLIC_QUEMANOPROG.vb" />
+    <Compile Include="ProyFinan\cPROYFIN_ING.Partial.vb" />
+    <Compile Include="ProyFinan\cPROYFIN_ING.vb" />
+    <Compile Include="ProyFinan\cPROYFIN_ING_LOTE.vb" />
+    <Compile Include="Requisicion\cPERIODOREQ.Partial.vb" />
+    <Compile Include="Requisicion\cPERIODOREQ.vb" />
+    <Compile Include="Requisicion\cREQDETA.vb" />
+    <Compile Include="Requisicion\cREQENCA.Partial.vb" />
+    <Compile Include="Requisicion\cREQENCA.vb" />
+    <Compile Include="Requisicion\cREQETAPA.vb" />
+    <Compile Include="Requisicion\cSECCION.Partial.vb" />
+    <Compile Include="Requisicion\cSECCION.vb" />
+    <Compile Include="Requisicion\cSOLICITANTE.vb" />
+    <Compile Include="Requisicion\cSOLIC_ANTICIPO.Partial.vb" />
+    <Compile Include="SubLotes\cESTRATO.vb" />
+    <Compile Include="SubLotes\cRIESGO_PIEDRA.vb" />
+    <Compile Include="SubLotes\cSUBLOTES.vb" />
+    <Compile Include="SubLotes\cTIPOSUELO.vb" />
+    <Compile Include="SubLotes\cTIPO_SIEMBRA.vb" />
+    <Compile Include="SubLotes\cTIPO_TRANS_VMT.vb" />
+    <Compile Include="SubLotes\cTOPOGRAFIA.vb" />
+    <Compile Include="SubLotes\cUSO_MADURANTE.vb" />
+    <Compile Include="Transporte\cCCF_DETA_TRANS.vb" />
+    <Compile Include="Transporte\cCCF_ENCA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\cCCF_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\cCREDITO_ENCA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\cCREDITO_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\cCREDITO_MOV_TRANS.Partial.vb" />
+    <Compile Include="Transporte\cCREDITO_MOV_TRANS.vb" />
+    <Compile Include="Transporte\cESTADO_SOLIC.vb" />
+    <Compile Include="Transporte\cPRE_ANALISIS_DETA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\cPRE_ANALISIS_DETA_TRANS.vb" />
+    <Compile Include="Transporte\cPRE_ANALISIS_DOCTO_TRANS.vb" />
+    <Compile Include="Transporte\cPRE_ANALISIS_ENCA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\cPRE_ANALISIS_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\cREMESA_DETA_TRANS.vb" />
+    <Compile Include="Transporte\cREMESA_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\cSOLIC_ENCA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\cSOLIC_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\cSOLIC_OIP_TRANS.Partial.vb" />
+    <Compile Include="Transporte\cSOLIC_OIP_TRANS.vb" />
+    <Compile Include="Transporte\cSOLIC_PROD_TRANS.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SISPACAL_DL\SISPACAL_DL.vbproj">
+      <Project>{42A91AA2-475A-4BBA-8A0A-B7F4CB17796F}</Project>
+      <Name>SISPACAL_DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SISPACAL_EL\SISPACAL_EL.vbproj">
+      <Project>{810B5DF9-6F33-43C4-9ED8-29C0786BE11E}</Project>
+      <Name>SISPACAL_EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LabFab\cLABFAB_ANALISISXDIA.Partial.vb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

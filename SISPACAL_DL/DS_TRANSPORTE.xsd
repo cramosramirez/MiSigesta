@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_TRANSPORTE" targetNamespace="http://tempuri.org/DS_TRANSPORTE.xsd" xmlns:mstns="http://tempuri.org/DS_TRANSPORTE.xsd" xmlns="http://tempuri.org/DS_TRANSPORTE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="cn" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cn (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SISPACAL.DL.My.MySettings.GlobalReference.Default.cn" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CONTRATO_TRANSTableAdapter" GeneratorDataComponentClassName="CONTRATO_TRANSTableAdapter" Name="CONTRATO_TRANS" UserDataComponentName="CONTRATO_TRANSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	E.ID_CONTRA_TRANS, 
+	E.CODTRANSPORT AS CODIGO, 
+	E.NO_CONTRATO,
+	dbo.ObtenerEdad((SELECT REPREJIBOA_FECNAC FROM PARAMETROS),E.FECHA_CONTRA) AS EDAD_REPRESENTANTE,	
+	(SELECT dbo.formatearDUI(REPREJIBOA_DUI) FROM PARAMETROS) AS DUI_REPRESENTANTE,
+	RTRIM(T.NOMBRES) + ' ' + RTRIM(T.APELLIDOS) AS NOMBRE_TITULAR,
+	dbo.ObtenerEdad(E.FECHA_CONTRA,E.FECHA_CONTRA) AS EDAD_TITULAR,
+	dbo.formatearDUI(T.DUI) AS DUI_TITULAR, 
+	dbo.formatearNIT(T.NIT) AS NIT_TITULAR,
+	E.FECINI, 
+	E.FECFIN,	
+	(SELECT TT.NOMBRE FROM TIPO_TRANSPORTE TT WHERE TT.ID_TIPOTRANS = R.ID_TIPOTRANS) AS CLASE,
+	D.CAPACIDAD, D.PLACA, D.REMOLQUE, D.MARCA, D.ANIO,
+	E.LUGAR_CORTE, E.FECHA_CONTRA,
+	(SELECT  REPREJIBOA_DOMICILIO FROM PARAMETROS) AS DOMICILIO_REPRESENTANTE,
+	(SELECT  REPREJIBOA_NOMBRE FROM PARAMETROS) AS NOMBRE_REPRESENTANTE,
+	T.DIRECCION AS DIRECCION_TOTULAR,
+	(SELECT dbo.formatearNIT(REPREJIBOA_NIT) FROM PARAMETROS) AS NIT_REPRESENTANTE,
+	dbo.NombreMes(MONTH(E.FECHA_CONTRA)) AS NOMBRE_MES_CONTRATO,
+	'XXXXXXXXXXXXXXXX' AS DIA_LETRA_CONTRATO,
+	'XXXXXXXXXXXXXXXX' AS ANO_LETRA_CONTRATO,
+	'XXXXXXXXXXXXXXXX' AS NIT_TITULAR_LETRAS,
+	'XXXXXXXXXXXXXXXX' AS DUI_TITULAR_LETRAS,
+	'XXXXXXXXXXXXXXXX' AS HORA_LETRA_CONTRATO,
+	'XXXXXXXXXXXXXXXX' AS PROFESION,
+	'XXXXXXXXXXXXXXXX' AS LITERAL,
+	54454 AS CORRELATIVO,
+                 'XXXXXXXXXX' AS ZAFRA_LETRAS,
+    'XXXXXXXXXXXXXXX' AS FECHA_EMISION_LETRAS
+FROM CONTRATO_TRANS E, CONTRATO_TRANS_VEHI D, TRANSPORTISTA T, TRANSPORTE R
+WHERE E.ID_CONTRA_TRANS = D.ID_CONTRA_TRANS
+AND E.CODTRANSPORT = T.CODTRANSPORT
+AND D.ID_TRANSPORTE = R.ID_TRANSPORTE
+AND E.ID_CONTRA_TRANS = -1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_CONTRA_TRANS" DataSetColumn="ID_CONTRA_TRANS" />
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
+              <Mapping SourceColumn="NO_CONTRATO" DataSetColumn="NO_CONTRATO" />
+              <Mapping SourceColumn="EDAD_REPRESENTANTE" DataSetColumn="EDAD_REPRESENTANTE" />
+              <Mapping SourceColumn="DUI_REPRESENTANTE" DataSetColumn="DUI_REPRESENTANTE" />
+              <Mapping SourceColumn="NOMBRE_TITULAR" DataSetColumn="NOMBRE_TITULAR" />
+              <Mapping SourceColumn="EDAD_TITULAR" DataSetColumn="EDAD_TITULAR" />
+              <Mapping SourceColumn="DUI_TITULAR" DataSetColumn="DUI_TITULAR" />
+              <Mapping SourceColumn="NIT_TITULAR" DataSetColumn="NIT_TITULAR" />
+              <Mapping SourceColumn="FECINI" DataSetColumn="FECINI" />
+              <Mapping SourceColumn="CLASE" DataSetColumn="CLASE" />
+              <Mapping SourceColumn="CAPACIDAD" DataSetColumn="CAPACIDAD" />
+              <Mapping SourceColumn="PLACA" DataSetColumn="PLACA" />
+              <Mapping SourceColumn="REMOLQUE" DataSetColumn="REMOLQUE" />
+              <Mapping SourceColumn="MARCA" DataSetColumn="MARCA" />
+              <Mapping SourceColumn="ANIO" DataSetColumn="ANIO" />
+              <Mapping SourceColumn="LUGAR_CORTE" DataSetColumn="LUGAR_CORTE" />
+              <Mapping SourceColumn="FECHA_CONTRA" DataSetColumn="FECHA_CONTRA" />
+              <Mapping SourceColumn="DOMICILIO_REPRESENTANTE" DataSetColumn="DOMICILIO_REPRESENTANTE" />
+              <Mapping SourceColumn="NOMBRE_REPRESENTANTE" DataSetColumn="NOMBRE_REPRESENTANTE" />
+              <Mapping SourceColumn="NIT_REPRESENTANTE" DataSetColumn="NIT_REPRESENTANTE" />
+              <Mapping SourceColumn="NOMBRE_MES_CONTRATO" DataSetColumn="NOMBRE_MES_CONTRATO" />
+              <Mapping SourceColumn="FECFIN" DataSetColumn="FECFIN" />
+              <Mapping SourceColumn="DIRECCION_TOTULAR" DataSetColumn="DIRECCION_TOTULAR" />
+              <Mapping SourceColumn="DIA_LETRA_CONTRATO" DataSetColumn="DIA_LETRA_CONTRATO" />
+              <Mapping SourceColumn="ANO_LETRA_CONTRATO" DataSetColumn="ANO_LETRA_CONTRATO" />
+              <Mapping SourceColumn="NIT_TITULAR_LETRAS" DataSetColumn="NIT_TITULAR_LETRAS" />
+              <Mapping SourceColumn="DUI_TITULAR_LETRAS" DataSetColumn="DUI_TITULAR_LETRAS" />
+              <Mapping SourceColumn="HORA_LETRA_CONTRATO" DataSetColumn="HORA_LETRA_CONTRATO" />
+              <Mapping SourceColumn="PROFESION" DataSetColumn="PROFESION" />
+              <Mapping SourceColumn="LITERAL" DataSetColumn="LITERAL" />
+              <Mapping SourceColumn="CORRELATIVO" DataSetColumn="CORRELATIVO" />
+              <Mapping SourceColumn="ZAFRA_LETRAS" DataSetColumn="ZAFRA_LETRAS" />
+              <Mapping SourceColumn="FECHA_EMISION_LETRAS" DataSetColumn="FECHA_EMISION_LETRAS" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectName="INJIBOA2.dbo.CONTRATO_LEGAL_TRANS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPorCodTransportista" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPorCodTransportista" GeneratorSourceName="FillPorCodTransportista" GetMethodModifier="Public" GetMethodName="GetPorCodTransportista" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPorCodTransportista" UserSourceName="FillPorCodTransportista">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.CONTRATO_LEGAL_TRANS</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CONTRA_TRANS" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="REPO_ESTADO_CTAPRODUTableAdapter" GeneratorDataComponentClassName="REPO_ESTADO_CTAPRODUTableAdapter" Name="REPO_ESTADO_CTAPRODU" UserDataComponentName="REPO_ESTADO_CTAPRODUTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	5 AS ID_ZAFRA, '2017/2018' AS ZAFRA, 'SERVICIO DE MAQUINARIA AGRICOLA' AS DESCRIP_FINAN,
+	'GILBERTO DE JESUS RODRIGUEZ MARROQUIN' AS PRODUCTOR, '14889' AS CODIPROVEE, 123.12 AS SALDO_INI,
+	120.23 AS CORTE_1, 120.23 AS CORTE_2, 120.23 AS CORTE_3, 120.23 AS CORTE_4, 120.23 AS CORTE_5,
+	120.23 AS CORTE_6, 120.23 AS CORTE_7, 120.23 AS CORTE_8, 120.23 AS CORTE_9, 120.23 AS CORTE_10,
+	120.23 AS INT_1, 120.23 AS INT_2, 120.23 AS INT_3, 120.23 AS INT_4, 120.23 AS INT_5,
+	120.23 AS INT_6, 120.23 AS INT_7, 120.23 AS INT_8, 120.23 AS INT_9, 120.23 AS INT_10,
+	3221.23 AS SALDO_FIN
+WHERE 1 = -1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_ZAFRA" DataSetColumn="ID_ZAFRA" />
+              <Mapping SourceColumn="ZAFRA" DataSetColumn="ZAFRA" />
+              <Mapping SourceColumn="DESCRIP_FINAN" DataSetColumn="DESCRIP_FINAN" />
+              <Mapping SourceColumn="PRODUCTOR" DataSetColumn="PRODUCTOR" />
+              <Mapping SourceColumn="CODIPROVEE" DataSetColumn="CODIPROVEE" />
+              <Mapping SourceColumn="SALDO_INI" DataSetColumn="SALDO_INI" />
+              <Mapping SourceColumn="CORTE_1" DataSetColumn="CORTE_1" />
+              <Mapping SourceColumn="CORTE_2" DataSetColumn="CORTE_2" />
+              <Mapping SourceColumn="CORTE_3" DataSetColumn="CORTE_3" />
+              <Mapping SourceColumn="CORTE_4" DataSetColumn="CORTE_4" />
+              <Mapping SourceColumn="CORTE_5" DataSetColumn="CORTE_5" />
+              <Mapping SourceColumn="CORTE_6" DataSetColumn="CORTE_6" />
+              <Mapping SourceColumn="CORTE_7" DataSetColumn="CORTE_7" />
+              <Mapping SourceColumn="CORTE_8" DataSetColumn="CORTE_8" />
+              <Mapping SourceColumn="CORTE_9" DataSetColumn="CORTE_9" />
+              <Mapping SourceColumn="CORTE_10" DataSetColumn="CORTE_10" />
+              <Mapping SourceColumn="SALDO_FIN" DataSetColumn="SALDO_FIN" />
+              <Mapping SourceColumn="INT_1" DataSetColumn="INT_1" />
+              <Mapping SourceColumn="INT_2" DataSetColumn="INT_2" />
+              <Mapping SourceColumn="INT_3" DataSetColumn="INT_3" />
+              <Mapping SourceColumn="INT_4" DataSetColumn="INT_4" />
+              <Mapping SourceColumn="INT_5" DataSetColumn="INT_5" />
+              <Mapping SourceColumn="INT_6" DataSetColumn="INT_6" />
+              <Mapping SourceColumn="INT_7" DataSetColumn="INT_7" />
+              <Mapping SourceColumn="INT_8" DataSetColumn="INT_8" />
+              <Mapping SourceColumn="INT_9" DataSetColumn="INT_9" />
+              <Mapping SourceColumn="INT_10" DataSetColumn="INT_10" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectName="INJIBOA2.dbo.REPORTE_ESTADO_CTA_PRODUCTOR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPorCriterios" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPorCriterios" GeneratorSourceName="FillPorCriterios" GetMethodModifier="Public" GetMethodName="GetPorCriterios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPorCriterios" UserSourceName="FillPorCriterios">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.REPORTE_ESTADO_CTA_PRODUCTOR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_ZAFRA" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@CODIPROVEEDOR" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CUENTA_FINAN" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="REPO_ESTADO_CTATRANSPORTTableAdapter" GeneratorDataComponentClassName="REPO_ESTADO_CTATRANSPORTTableAdapter" Name="REPO_ESTADO_CTATRANSPORT" UserDataComponentName="REPO_ESTADO_CTATRANSPORTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	5 AS ID_ZAFRA, '2017/2018' AS ZAFRA, 'SERVICIO DE MAQUINARIA AGRICOLA' AS DESCRIP_FINAN,
+	'GILBERTO DE JESUS RODRIGUEZ MARROQUIN' AS TRANSPORTISTA, 14889 AS CODTRANSPORT, 123.12 AS SALDO_INI,
+	120.23 AS CORTE_1, 120.23 AS CORTE_2, 120.23 AS CORTE_3, 120.23 AS CORTE_4, 120.23 AS CORTE_5,
+	120.23 AS CORTE_6, 120.23 AS CORTE_7, 120.23 AS CORTE_8, 120.23 AS CORTE_9, 120.23 AS CORTE_10,
+	3221.23 AS SALDO_FIN
+WHERE 1 = -1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_ZAFRA" DataSetColumn="ID_ZAFRA" />
+              <Mapping SourceColumn="ZAFRA" DataSetColumn="ZAFRA" />
+              <Mapping SourceColumn="DESCRIP_FINAN" DataSetColumn="DESCRIP_FINAN" />
+              <Mapping SourceColumn="TRANSPORTISTA" DataSetColumn="TRANSPORTISTA" />
+              <Mapping SourceColumn="CODTRANSPORT" DataSetColumn="CODTRANSPORT" />
+              <Mapping SourceColumn="SALDO_INI" DataSetColumn="SALDO_INI" />
+              <Mapping SourceColumn="CORTE_1" DataSetColumn="CORTE_1" />
+              <Mapping SourceColumn="CORTE_2" DataSetColumn="CORTE_2" />
+              <Mapping SourceColumn="CORTE_3" DataSetColumn="CORTE_3" />
+              <Mapping SourceColumn="CORTE_4" DataSetColumn="CORTE_4" />
+              <Mapping SourceColumn="CORTE_5" DataSetColumn="CORTE_5" />
+              <Mapping SourceColumn="CORTE_6" DataSetColumn="CORTE_6" />
+              <Mapping SourceColumn="CORTE_7" DataSetColumn="CORTE_7" />
+              <Mapping SourceColumn="CORTE_8" DataSetColumn="CORTE_8" />
+              <Mapping SourceColumn="CORTE_9" DataSetColumn="CORTE_9" />
+              <Mapping SourceColumn="CORTE_10" DataSetColumn="CORTE_10" />
+              <Mapping SourceColumn="SALDO_FIN" DataSetColumn="SALDO_FIN" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectName="INJIBOA2.dbo.REPORTE_ESTADO_CTA_TRANSPORTISTA" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPorCriterios" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPorCriterios" GeneratorSourceName="FillPorCriterios" GetMethodModifier="Public" GetMethodName="GetPorCriterios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPorCriterios" UserSourceName="FillPorCriterios">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.REPORTE_ESTADO_CTA_TRANSPORTISTA</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_ZAFRA" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CODTRANSPORT" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CUENTA_FINAN" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="REPO_ESTADO_PROVEE_DE_PRODUCTORTableAdapter" GeneratorDataComponentClassName="REPO_ESTADO_PROVEE_DE_PRODUCTORTableAdapter" Name="REPO_ESTADO_PROVEE_DE_PRODUCTOR" UserDataComponentName="REPO_ESTADO_PROVEE_DE_PRODUCTORTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	'XXXXX' AS PROVEEDOR_AGRICOLA, 'XXXXX' AS DESCRIP_FINAN, 21212 AS ORDEN,
+	10023.23 AS SALDO_INICIAL, 
+	10023.23 AS CORTE1, 10023.23 AS CORTE2, 10023.23 AS CORTE3, 10023.23 AS CORTE4, 
+	10023.23 AS CORTE5, 10023.23 AS CORTE6, 10023.23 AS CORTE7, 10023.23 AS CORTE8, 10023.23 AS CORTE9, 10023.23 AS CORTE10,
+	10023.23 AS ABONO,
+	10023.23 AS SALDO_FINAL, 10000 AS CODIPROVEEDOR, 'XXXXX' AS PRODUCTOR
+where 1=-1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PROVEEDOR_AGRICOLA" DataSetColumn="PROVEEDOR_AGRICOLA" />
+              <Mapping SourceColumn="DESCRIP_FINAN" DataSetColumn="DESCRIP_FINAN" />
+              <Mapping SourceColumn="ORDEN" DataSetColumn="ORDEN" />
+              <Mapping SourceColumn="SALDO_INICIAL" DataSetColumn="SALDO_INICIAL" />
+              <Mapping SourceColumn="CORTE1" DataSetColumn="CORTE1" />
+              <Mapping SourceColumn="CORTE2" DataSetColumn="CORTE2" />
+              <Mapping SourceColumn="CORTE3" DataSetColumn="CORTE3" />
+              <Mapping SourceColumn="CORTE4" DataSetColumn="CORTE4" />
+              <Mapping SourceColumn="CORTE5" DataSetColumn="CORTE5" />
+              <Mapping SourceColumn="CORTE6" DataSetColumn="CORTE6" />
+              <Mapping SourceColumn="CORTE7" DataSetColumn="CORTE7" />
+              <Mapping SourceColumn="CORTE8" DataSetColumn="CORTE8" />
+              <Mapping SourceColumn="CORTE9" DataSetColumn="CORTE9" />
+              <Mapping SourceColumn="CORTE10" DataSetColumn="CORTE10" />
+              <Mapping SourceColumn="ABONO" DataSetColumn="ABONO" />
+              <Mapping SourceColumn="SALDO_FINAL" DataSetColumn="SALDO_FINAL" />
+              <Mapping SourceColumn="PRODUCTOR" DataSetColumn="PRODUCTOR" />
+              <Mapping SourceColumn="CODIPROVEEDOR" DataSetColumn="CODIPROVEEDOR" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectName="INJIBOA.dbo.REPORTE_ESTADO_CTA_PROVEE_DE_PRODUCTOR" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPorCriterios" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPorCriterios" GeneratorSourceName="FillPorCriterios" GetMethodModifier="Public" GetMethodName="GetPorCriterios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPorCriterios" UserSourceName="FillPorCriterios">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.REPORTE_ESTADO_CTA_PROVEE_DE_PRODUCTOR</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_ZAFRA" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CUENTA_FINAN" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_PROVEE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CODIBANCO" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ES_DETALLE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ES_OCULTAR_SIN_SALDO" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTATableAdapter" GeneratorDataComponentClassName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTATableAdapter" Name="REPO_ESTADO_PROVEE_DE_TRANSPORTISTA" UserDataComponentName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	'XXXXX' AS PROVEEDOR_AGRICOLA, 'XXXXX' AS DESCRIP_FINAN, 21212 AS ORDEN,
+	10023.23 AS SALDO_INICIAL, 
+	10023.23 AS CORTE1, 10023.23 AS CORTE2, 10023.23 AS CORTE3, 10023.23 AS CORTE4, 
+	10023.23 AS CORTE5, 10023.23 AS CORTE6, 10023.23 AS CORTE7, 10023.23 AS CORTE8, 10023.23 AS CORTE9, 10023.23 AS CORTE10,
+	10023.23 AS ABONO,
+	10023.23 AS SALDO_FINAL
+WHERE 1 = -1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PROVEEDOR_AGRICOLA" DataSetColumn="PROVEEDOR_AGRICOLA" />
+              <Mapping SourceColumn="DESCRIP_FINAN" DataSetColumn="DESCRIP_FINAN" />
+              <Mapping SourceColumn="ORDEN" DataSetColumn="ORDEN" />
+              <Mapping SourceColumn="SALDO_INICIAL" DataSetColumn="SALDO_INICIAL" />
+              <Mapping SourceColumn="CORTE1" DataSetColumn="CORTE1" />
+              <Mapping SourceColumn="CORTE2" DataSetColumn="CORTE2" />
+              <Mapping SourceColumn="CORTE3" DataSetColumn="CORTE3" />
+              <Mapping SourceColumn="CORTE4" DataSetColumn="CORTE4" />
+              <Mapping SourceColumn="CORTE5" DataSetColumn="CORTE5" />
+              <Mapping SourceColumn="CORTE6" DataSetColumn="CORTE6" />
+              <Mapping SourceColumn="CORTE7" DataSetColumn="CORTE7" />
+              <Mapping SourceColumn="CORTE8" DataSetColumn="CORTE8" />
+              <Mapping SourceColumn="CORTE9" DataSetColumn="CORTE9" />
+              <Mapping SourceColumn="CORTE10" DataSetColumn="CORTE10" />
+              <Mapping SourceColumn="ABONO" DataSetColumn="ABONO" />
+              <Mapping SourceColumn="SALDO_FINAL" DataSetColumn="SALDO_FINAL" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectName="INJIBOA2.dbo.REPORTE_ESTADO_CTA_PROVEE_DE_TRANSPORTISTA" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPorCriterios" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPorCriterios" GeneratorSourceName="FillPorCriterios" GetMethodModifier="Public" GetMethodName="GetPorCriterios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPorCriterios" UserSourceName="FillPorCriterios">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.REPORTE_ESTADO_CTA_PROVEE_DE_TRANSPORTISTA</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_ZAFRA" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CUENTA_FINAN" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_PROVEE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CODIBANCO" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="REPO_ESTADO_CTAFRENTETableAdapter" GeneratorDataComponentClassName="REPO_ESTADO_CTAFRENTETableAdapter" Name="REPO_ESTADO_CTAFRENTE" UserDataComponentName="REPO_ESTADO_CTAFRENTETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	5 AS ID_ZAFRA, 'SERVICIO DE MAQUINARIA AGRICOLA' AS DESCRIP_FINAN,
+	'GILBERTO DE JESUS RODRIGUEZ MARROQUIN' AS FRENTE, '14889' AS COD_FRENTE, 
+	'2017/2018' AS ZAFRA,
+	123.12 AS SALDO_INI,
+	120.23 AS CORTE_1, 120.23 AS CORTE_2, 120.23 AS CORTE_3, 120.23 AS CORTE_4, 120.23 AS CORTE_5,
+	120.23 AS CORTE_6, 120.23 AS CORTE_7, 120.23 AS CORTE_8, 120.23 AS CORTE_9, 120.23 AS CORTE_10,
+	120.23 AS INT_1, 120.23 AS INT_2, 120.23 AS INT_3, 120.23 AS INT_4, 120.23 AS INT_5,
+	120.23 AS INT_6, 120.23 AS INT_7, 120.23 AS INT_8, 120.23 AS INT_9, 120.23 AS INT_10,
+	3221.23 AS SALDO_FIN
+WHERE 1 = -1
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_ZAFRA" DataSetColumn="ID_ZAFRA" />
+              <Mapping SourceColumn="DESCRIP_FINAN" DataSetColumn="DESCRIP_FINAN" />
+              <Mapping SourceColumn="FRENTE" DataSetColumn="FRENTE" />
+              <Mapping SourceColumn="COD_FRENTE" DataSetColumn="COD_FRENTE" />
+              <Mapping SourceColumn="ZAFRA" DataSetColumn="ZAFRA" />
+              <Mapping SourceColumn="SALDO_INI" DataSetColumn="SALDO_INI" />
+              <Mapping SourceColumn="CORTE_1" DataSetColumn="CORTE_1" />
+              <Mapping SourceColumn="CORTE_2" DataSetColumn="CORTE_2" />
+              <Mapping SourceColumn="CORTE_3" DataSetColumn="CORTE_3" />
+              <Mapping SourceColumn="CORTE_4" DataSetColumn="CORTE_4" />
+              <Mapping SourceColumn="CORTE_5" DataSetColumn="CORTE_5" />
+              <Mapping SourceColumn="CORTE_6" DataSetColumn="CORTE_6" />
+              <Mapping SourceColumn="CORTE_7" DataSetColumn="CORTE_7" />
+              <Mapping SourceColumn="CORTE_8" DataSetColumn="CORTE_8" />
+              <Mapping SourceColumn="CORTE_9" DataSetColumn="CORTE_9" />
+              <Mapping SourceColumn="CORTE_10" DataSetColumn="CORTE_10" />
+              <Mapping SourceColumn="INT_1" DataSetColumn="INT_1" />
+              <Mapping SourceColumn="INT_2" DataSetColumn="INT_2" />
+              <Mapping SourceColumn="INT_3" DataSetColumn="INT_3" />
+              <Mapping SourceColumn="INT_4" DataSetColumn="INT_4" />
+              <Mapping SourceColumn="INT_5" DataSetColumn="INT_5" />
+              <Mapping SourceColumn="INT_6" DataSetColumn="INT_6" />
+              <Mapping SourceColumn="INT_7" DataSetColumn="INT_7" />
+              <Mapping SourceColumn="INT_8" DataSetColumn="INT_8" />
+              <Mapping SourceColumn="INT_9" DataSetColumn="INT_9" />
+              <Mapping SourceColumn="INT_10" DataSetColumn="INT_10" />
+              <Mapping SourceColumn="SALDO_FIN" DataSetColumn="SALDO_FIN" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cn (MySettings)" DbObjectName="INJIBOA.dbo.REPORTE_ESTADO_CTA_FRENTE" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillPorCriterios" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPorCriterios" GeneratorSourceName="FillPorCriterios" GetMethodModifier="Public" GetMethodName="GetPorCriterios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPorCriterios" UserSourceName="FillPorCriterios">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.REPORTE_ESTADO_CTA_FRENTE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_ZAFRA" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TIPO_PROVEEDOR" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_FRENTE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_CUENTA_FINAN" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_TRANSPORTE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_TRANSPORTE" msprop:Generator_UserDSName="DS_TRANSPORTE">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CONTRATO_TRANS" msprop:Generator_TableClassName="CONTRATO_TRANSDataTable" msprop:Generator_TableVarName="tableCONTRATO_TRANS" msprop:Generator_RowChangedName="CONTRATO_TRANSRowChanged" msprop:Generator_TablePropName="CONTRATO_TRANS" msprop:Generator_RowDeletingName="CONTRATO_TRANSRowDeleting" msprop:Generator_RowChangingName="CONTRATO_TRANSRowChanging" msprop:Generator_RowEvHandlerName="CONTRATO_TRANSRowChangeEventHandler" msprop:Generator_RowDeletedName="CONTRATO_TRANSRowDeleted" msprop:Generator_RowClassName="CONTRATO_TRANSRow" msprop:Generator_UserTableName="CONTRATO_TRANS" msprop:Generator_RowEvArgName="CONTRATO_TRANSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_CONTRA_TRANS" msprop:Generator_ColumnVarNameInTable="columnID_CONTRA_TRANS" msprop:Generator_ColumnPropNameInRow="ID_CONTRA_TRANS" msprop:Generator_ColumnPropNameInTable="ID_CONTRA_TRANSColumn" msprop:Generator_UserColumnName="ID_CONTRA_TRANS" type="xs:int" />
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" type="xs:int" minOccurs="0" />
+              <xs:element name="NO_CONTRATO" msprop:Generator_ColumnVarNameInTable="columnNO_CONTRATO" msprop:Generator_ColumnPropNameInRow="NO_CONTRATO" msprop:Generator_ColumnPropNameInTable="NO_CONTRATOColumn" msprop:Generator_UserColumnName="NO_CONTRATO" type="xs:int" minOccurs="0" />
+              <xs:element name="EDAD_REPRESENTANTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEDAD_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="EDAD_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="EDAD_REPRESENTANTEColumn" msprop:Generator_UserColumnName="EDAD_REPRESENTANTE" type="xs:int" minOccurs="0" />
+              <xs:element name="DUI_REPRESENTANTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDUI_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="DUI_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="DUI_REPRESENTANTEColumn" msprop:Generator_UserColumnName="DUI_REPRESENTANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBRE_TITULAR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_TITULAR" msprop:Generator_ColumnPropNameInRow="NOMBRE_TITULAR" msprop:Generator_ColumnPropNameInTable="NOMBRE_TITULARColumn" msprop:Generator_UserColumnName="NOMBRE_TITULAR" type="xs:string" minOccurs="0" />
+              <xs:element name="EDAD_TITULAR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEDAD_TITULAR" msprop:Generator_ColumnPropNameInRow="EDAD_TITULAR" msprop:Generator_ColumnPropNameInTable="EDAD_TITULARColumn" msprop:Generator_UserColumnName="EDAD_TITULAR" type="xs:int" minOccurs="0" />
+              <xs:element name="DUI_TITULAR" msprop:Generator_ColumnVarNameInTable="columnDUI_TITULAR" msprop:Generator_ColumnPropNameInRow="DUI_TITULAR" msprop:Generator_ColumnPropNameInTable="DUI_TITULARColumn" msprop:Generator_UserColumnName="DUI_TITULAR" type="xs:string" minOccurs="0" />
+              <xs:element name="NIT_TITULAR" msprop:Generator_ColumnVarNameInTable="columnNIT_TITULAR" msprop:Generator_ColumnPropNameInRow="NIT_TITULAR" msprop:Generator_ColumnPropNameInTable="NIT_TITULARColumn" msprop:Generator_UserColumnName="NIT_TITULAR" type="xs:string" minOccurs="0" />
+              <xs:element name="FECINI" msprop:Generator_ColumnVarNameInTable="columnFECINI" msprop:Generator_ColumnPropNameInRow="FECINI" msprop:Generator_ColumnPropNameInTable="FECINIColumn" msprop:Generator_UserColumnName="FECINI" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CLASE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCLASE" msprop:Generator_ColumnPropNameInRow="CLASE" msprop:Generator_ColumnPropNameInTable="CLASEColumn" msprop:Generator_UserColumnName="CLASE" type="xs:string" minOccurs="0" />
+              <xs:element name="CAPACIDAD" msprop:Generator_ColumnVarNameInTable="columnCAPACIDAD" msprop:Generator_ColumnPropNameInRow="CAPACIDAD" msprop:Generator_ColumnPropNameInTable="CAPACIDADColumn" msprop:Generator_UserColumnName="CAPACIDAD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PLACA" msprop:Generator_ColumnVarNameInTable="columnPLACA" msprop:Generator_ColumnPropNameInRow="PLACA" msprop:Generator_ColumnPropNameInTable="PLACAColumn" msprop:Generator_UserColumnName="PLACA" type="xs:string" minOccurs="0" />
+              <xs:element name="REMOLQUE" msprop:Generator_ColumnVarNameInTable="columnREMOLQUE" msprop:Generator_ColumnPropNameInRow="REMOLQUE" msprop:Generator_ColumnPropNameInTable="REMOLQUEColumn" msprop:Generator_UserColumnName="REMOLQUE" type="xs:string" minOccurs="0" />
+              <xs:element name="MARCA" msprop:Generator_ColumnVarNameInTable="columnMARCA" msprop:Generator_ColumnPropNameInRow="MARCA" msprop:Generator_ColumnPropNameInTable="MARCAColumn" msprop:Generator_UserColumnName="MARCA" type="xs:string" minOccurs="0" />
+              <xs:element name="ANIO" msprop:Generator_ColumnVarNameInTable="columnANIO" msprop:Generator_ColumnPropNameInRow="ANIO" msprop:Generator_ColumnPropNameInTable="ANIOColumn" msprop:Generator_UserColumnName="ANIO" type="xs:string" minOccurs="0" />
+              <xs:element name="LUGAR_CORTE" msprop:Generator_ColumnVarNameInTable="columnLUGAR_CORTE" msprop:Generator_ColumnPropNameInRow="LUGAR_CORTE" msprop:Generator_ColumnPropNameInTable="LUGAR_CORTEColumn" msprop:Generator_UserColumnName="LUGAR_CORTE" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA_CONTRA" msprop:Generator_ColumnVarNameInTable="columnFECHA_CONTRA" msprop:Generator_ColumnPropNameInRow="FECHA_CONTRA" msprop:Generator_ColumnPropNameInTable="FECHA_CONTRAColumn" msprop:Generator_UserColumnName="FECHA_CONTRA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DOMICILIO_REPRESENTANTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDOMICILIO_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="DOMICILIO_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="DOMICILIO_REPRESENTANTEColumn" msprop:Generator_UserColumnName="DOMICILIO_REPRESENTANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBRE_REPRESENTANTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="NOMBRE_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="NOMBRE_REPRESENTANTEColumn" msprop:Generator_UserColumnName="NOMBRE_REPRESENTANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="NIT_REPRESENTANTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNIT_REPRESENTANTE" msprop:Generator_ColumnPropNameInRow="NIT_REPRESENTANTE" msprop:Generator_ColumnPropNameInTable="NIT_REPRESENTANTEColumn" msprop:Generator_UserColumnName="NIT_REPRESENTANTE" type="xs:string" minOccurs="0" />
+              <xs:element name="NOMBRE_MES_CONTRATO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_MES_CONTRATO" msprop:Generator_ColumnPropNameInRow="NOMBRE_MES_CONTRATO" msprop:Generator_ColumnPropNameInTable="NOMBRE_MES_CONTRATOColumn" msprop:Generator_UserColumnName="NOMBRE_MES_CONTRATO" type="xs:string" minOccurs="0" />
+              <xs:element name="FECFIN" msprop:Generator_ColumnVarNameInTable="columnFECFIN" msprop:Generator_ColumnPropNameInRow="FECFIN" msprop:Generator_ColumnPropNameInTable="FECFINColumn" msprop:Generator_UserColumnName="FECFIN" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DIRECCION_TOTULAR" msprop:Generator_ColumnVarNameInTable="columnDIRECCION_TOTULAR" msprop:Generator_ColumnPropNameInRow="DIRECCION_TOTULAR" msprop:Generator_ColumnPropNameInTable="DIRECCION_TOTULARColumn" msprop:Generator_UserColumnName="DIRECCION_TOTULAR" type="xs:string" minOccurs="0" />
+              <xs:element name="DIA_LETRA_CONTRATO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDIA_LETRA_CONTRATO" msprop:Generator_ColumnPropNameInRow="DIA_LETRA_CONTRATO" msprop:Generator_ColumnPropNameInTable="DIA_LETRA_CONTRATOColumn" msprop:Generator_UserColumnName="DIA_LETRA_CONTRATO" type="xs:string" minOccurs="0" />
+              <xs:element name="ANO_LETRA_CONTRATO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnANO_LETRA_CONTRATO" msprop:Generator_ColumnPropNameInRow="ANO_LETRA_CONTRATO" msprop:Generator_ColumnPropNameInTable="ANO_LETRA_CONTRATOColumn" msprop:Generator_UserColumnName="ANO_LETRA_CONTRATO" type="xs:string" minOccurs="0" />
+              <xs:element name="NIT_TITULAR_LETRAS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNIT_TITULAR_LETRAS" msprop:Generator_ColumnPropNameInRow="NIT_TITULAR_LETRAS" msprop:Generator_ColumnPropNameInTable="NIT_TITULAR_LETRASColumn" msprop:Generator_UserColumnName="NIT_TITULAR_LETRAS" type="xs:string" minOccurs="0" />
+              <xs:element name="DUI_TITULAR_LETRAS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDUI_TITULAR_LETRAS" msprop:Generator_ColumnPropNameInRow="DUI_TITULAR_LETRAS" msprop:Generator_ColumnPropNameInTable="DUI_TITULAR_LETRASColumn" msprop:Generator_UserColumnName="DUI_TITULAR_LETRAS" type="xs:string" minOccurs="0" />
+              <xs:element name="HORA_LETRA_CONTRATO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHORA_LETRA_CONTRATO" msprop:Generator_ColumnPropNameInRow="HORA_LETRA_CONTRATO" msprop:Generator_ColumnPropNameInTable="HORA_LETRA_CONTRATOColumn" msprop:Generator_UserColumnName="HORA_LETRA_CONTRATO" type="xs:string" minOccurs="0" />
+              <xs:element name="PROFESION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPROFESION" msprop:Generator_ColumnPropNameInRow="PROFESION" msprop:Generator_ColumnPropNameInTable="PROFESIONColumn" msprop:Generator_UserColumnName="PROFESION" type="xs:string" minOccurs="0" />
+              <xs:element name="LITERAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLITERAL" msprop:Generator_ColumnPropNameInRow="LITERAL" msprop:Generator_ColumnPropNameInTable="LITERALColumn" msprop:Generator_UserColumnName="LITERAL" type="xs:string" minOccurs="0" />
+              <xs:element name="CORRELATIVO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORRELATIVO" msprop:Generator_ColumnPropNameInRow="CORRELATIVO" msprop:Generator_ColumnPropNameInTable="CORRELATIVOColumn" msprop:Generator_UserColumnName="CORRELATIVO" type="xs:int" minOccurs="0" />
+              <xs:element name="ZAFRA_LETRAS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnZAFRA_LETRAS" msprop:Generator_ColumnPropNameInRow="ZAFRA_LETRAS" msprop:Generator_ColumnPropNameInTable="ZAFRA_LETRASColumn" msprop:Generator_UserColumnName="ZAFRA_LETRAS" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHA_EMISION_LETRAS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFECHA_EMISION_LETRAS" msprop:Generator_ColumnPropNameInRow="FECHA_EMISION_LETRAS" msprop:Generator_ColumnPropNameInTable="FECHA_EMISION_LETRASColumn" msprop:Generator_UserColumnName="FECHA_EMISION_LETRAS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="REPO_ESTADO_CTAPRODU" msprop:Generator_TableClassName="REPO_ESTADO_CTAPRODUDataTable" msprop:Generator_TableVarName="tableREPO_ESTADO_CTAPRODU" msprop:Generator_RowChangedName="REPO_ESTADO_CTAPRODURowChanged" msprop:Generator_TablePropName="REPO_ESTADO_CTAPRODU" msprop:Generator_RowDeletingName="REPO_ESTADO_CTAPRODURowDeleting" msprop:Generator_RowChangingName="REPO_ESTADO_CTAPRODURowChanging" msprop:Generator_RowEvHandlerName="REPO_ESTADO_CTAPRODURowChangeEventHandler" msprop:Generator_RowDeletedName="REPO_ESTADO_CTAPRODURowDeleted" msprop:Generator_RowClassName="REPO_ESTADO_CTAPRODURow" msprop:Generator_UserTableName="REPO_ESTADO_CTAPRODU" msprop:Generator_RowEvArgName="REPO_ESTADO_CTAPRODURowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_ZAFRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID_ZAFRA" msprop:Generator_ColumnPropNameInRow="ID_ZAFRA" msprop:Generator_ColumnPropNameInTable="ID_ZAFRAColumn" msprop:Generator_UserColumnName="ID_ZAFRA" type="xs:int" minOccurs="0" />
+              <xs:element name="ZAFRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnZAFRA" msprop:Generator_ColumnPropNameInRow="ZAFRA" msprop:Generator_ColumnPropNameInTable="ZAFRAColumn" msprop:Generator_UserColumnName="ZAFRA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRIP_FINAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDESCRIP_FINAN" msprop:Generator_ColumnPropNameInRow="DESCRIP_FINAN" msprop:Generator_ColumnPropNameInTable="DESCRIP_FINANColumn" msprop:Generator_UserColumnName="DESCRIP_FINAN" type="xs:string" minOccurs="0" />
+              <xs:element name="PRODUCTOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPRODUCTOR" msprop:Generator_ColumnPropNameInRow="PRODUCTOR" msprop:Generator_ColumnPropNameInTable="PRODUCTORColumn" msprop:Generator_UserColumnName="PRODUCTOR" type="xs:string" minOccurs="0" />
+              <xs:element name="CODIPROVEE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODIPROVEE" msprop:Generator_ColumnPropNameInRow="CODIPROVEE" msprop:Generator_ColumnPropNameInTable="CODIPROVEEColumn" msprop:Generator_UserColumnName="CODIPROVEE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SALDO_INI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_INI" msprop:Generator_ColumnPropNameInRow="SALDO_INI" msprop:Generator_ColumnPropNameInTable="SALDO_INIColumn" msprop:Generator_UserColumnName="SALDO_INI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_1" msprop:Generator_ColumnPropNameInRow="CORTE_1" msprop:Generator_ColumnPropNameInTable="CORTE_1Column" msprop:Generator_UserColumnName="CORTE_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_2" msprop:Generator_ColumnPropNameInRow="CORTE_2" msprop:Generator_ColumnPropNameInTable="CORTE_2Column" msprop:Generator_UserColumnName="CORTE_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_3" msprop:Generator_ColumnPropNameInRow="CORTE_3" msprop:Generator_ColumnPropNameInTable="CORTE_3Column" msprop:Generator_UserColumnName="CORTE_3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_4" msprop:Generator_ColumnPropNameInRow="CORTE_4" msprop:Generator_ColumnPropNameInTable="CORTE_4Column" msprop:Generator_UserColumnName="CORTE_4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_5" msprop:Generator_ColumnPropNameInRow="CORTE_5" msprop:Generator_ColumnPropNameInTable="CORTE_5Column" msprop:Generator_UserColumnName="CORTE_5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_6" msprop:Generator_ColumnPropNameInRow="CORTE_6" msprop:Generator_ColumnPropNameInTable="CORTE_6Column" msprop:Generator_UserColumnName="CORTE_6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_7" msprop:Generator_ColumnPropNameInRow="CORTE_7" msprop:Generator_ColumnPropNameInTable="CORTE_7Column" msprop:Generator_UserColumnName="CORTE_7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_8" msprop:Generator_ColumnPropNameInRow="CORTE_8" msprop:Generator_ColumnPropNameInTable="CORTE_8Column" msprop:Generator_UserColumnName="CORTE_8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_9" msprop:Generator_ColumnPropNameInRow="CORTE_9" msprop:Generator_ColumnPropNameInTable="CORTE_9Column" msprop:Generator_UserColumnName="CORTE_9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_10" msprop:Generator_ColumnPropNameInRow="CORTE_10" msprop:Generator_ColumnPropNameInTable="CORTE_10Column" msprop:Generator_UserColumnName="CORTE_10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SALDO_FIN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_FIN" msprop:Generator_ColumnPropNameInRow="SALDO_FIN" msprop:Generator_ColumnPropNameInTable="SALDO_FINColumn" msprop:Generator_UserColumnName="SALDO_FIN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_1" msprop:Generator_ColumnPropNameInRow="INT_1" msprop:Generator_ColumnPropNameInTable="INT_1Column" msprop:Generator_UserColumnName="INT_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_2" msprop:Generator_ColumnPropNameInRow="INT_2" msprop:Generator_ColumnPropNameInTable="INT_2Column" msprop:Generator_UserColumnName="INT_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_3" msprop:Generator_ColumnPropNameInRow="INT_3" msprop:Generator_ColumnPropNameInTable="INT_3Column" msprop:Generator_UserColumnName="INT_3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_4" msprop:Generator_ColumnPropNameInRow="INT_4" msprop:Generator_ColumnPropNameInTable="INT_4Column" msprop:Generator_UserColumnName="INT_4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_5" msprop:Generator_ColumnPropNameInRow="INT_5" msprop:Generator_ColumnPropNameInTable="INT_5Column" msprop:Generator_UserColumnName="INT_5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_6" msprop:Generator_ColumnPropNameInRow="INT_6" msprop:Generator_ColumnPropNameInTable="INT_6Column" msprop:Generator_UserColumnName="INT_6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_7" msprop:Generator_ColumnPropNameInRow="INT_7" msprop:Generator_ColumnPropNameInTable="INT_7Column" msprop:Generator_UserColumnName="INT_7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_8" msprop:Generator_ColumnPropNameInRow="INT_8" msprop:Generator_ColumnPropNameInTable="INT_8Column" msprop:Generator_UserColumnName="INT_8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_9" msprop:Generator_ColumnPropNameInRow="INT_9" msprop:Generator_ColumnPropNameInTable="INT_9Column" msprop:Generator_UserColumnName="INT_9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_10" msprop:Generator_ColumnPropNameInRow="INT_10" msprop:Generator_ColumnPropNameInTable="INT_10Column" msprop:Generator_UserColumnName="INT_10" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="REPO_ESTADO_CTATRANSPORT" msprop:Generator_TableClassName="REPO_ESTADO_CTATRANSPORTDataTable" msprop:Generator_TableVarName="tableREPO_ESTADO_CTATRANSPORT" msprop:Generator_TablePropName="REPO_ESTADO_CTATRANSPORT" msprop:Generator_RowDeletingName="REPO_ESTADO_CTATRANSPORTRowDeleting" msprop:Generator_RowChangingName="REPO_ESTADO_CTATRANSPORTRowChanging" msprop:Generator_RowEvHandlerName="REPO_ESTADO_CTATRANSPORTRowChangeEventHandler" msprop:Generator_RowDeletedName="REPO_ESTADO_CTATRANSPORTRowDeleted" msprop:Generator_UserTableName="REPO_ESTADO_CTATRANSPORT" msprop:Generator_RowChangedName="REPO_ESTADO_CTATRANSPORTRowChanged" msprop:Generator_RowEvArgName="REPO_ESTADO_CTATRANSPORTRowChangeEvent" msprop:Generator_RowClassName="REPO_ESTADO_CTATRANSPORTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_ZAFRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID_ZAFRA" msprop:Generator_ColumnPropNameInRow="ID_ZAFRA" msprop:Generator_ColumnPropNameInTable="ID_ZAFRAColumn" msprop:Generator_UserColumnName="ID_ZAFRA" type="xs:int" minOccurs="0" />
+              <xs:element name="ZAFRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnZAFRA" msprop:Generator_ColumnPropNameInRow="ZAFRA" msprop:Generator_ColumnPropNameInTable="ZAFRAColumn" msprop:Generator_UserColumnName="ZAFRA" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIP_FINAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDESCRIP_FINAN" msprop:Generator_ColumnPropNameInRow="DESCRIP_FINAN" msprop:Generator_ColumnPropNameInTable="DESCRIP_FINANColumn" msprop:Generator_UserColumnName="DESCRIP_FINAN" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANSPORTISTA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRANSPORTISTA" msprop:Generator_ColumnPropNameInRow="TRANSPORTISTA" msprop:Generator_ColumnPropNameInTable="TRANSPORTISTAColumn" msprop:Generator_UserColumnName="TRANSPORTISTA" type="xs:string" minOccurs="0" />
+              <xs:element name="CODTRANSPORT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODTRANSPORT" msprop:Generator_ColumnPropNameInRow="CODTRANSPORT" msprop:Generator_ColumnPropNameInTable="CODTRANSPORTColumn" msprop:Generator_UserColumnName="CODTRANSPORT" type="xs:int" minOccurs="0" />
+              <xs:element name="SALDO_INI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_INI" msprop:Generator_ColumnPropNameInRow="SALDO_INI" msprop:Generator_ColumnPropNameInTable="SALDO_INIColumn" msprop:Generator_UserColumnName="SALDO_INI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_1" msprop:Generator_ColumnPropNameInRow="CORTE_1" msprop:Generator_ColumnPropNameInTable="CORTE_1Column" msprop:Generator_UserColumnName="CORTE_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_2" msprop:Generator_ColumnPropNameInRow="CORTE_2" msprop:Generator_ColumnPropNameInTable="CORTE_2Column" msprop:Generator_UserColumnName="CORTE_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_3" msprop:Generator_ColumnPropNameInRow="CORTE_3" msprop:Generator_ColumnPropNameInTable="CORTE_3Column" msprop:Generator_UserColumnName="CORTE_3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_4" msprop:Generator_ColumnPropNameInRow="CORTE_4" msprop:Generator_ColumnPropNameInTable="CORTE_4Column" msprop:Generator_UserColumnName="CORTE_4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_5" msprop:Generator_ColumnPropNameInRow="CORTE_5" msprop:Generator_ColumnPropNameInTable="CORTE_5Column" msprop:Generator_UserColumnName="CORTE_5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_6" msprop:Generator_ColumnPropNameInRow="CORTE_6" msprop:Generator_ColumnPropNameInTable="CORTE_6Column" msprop:Generator_UserColumnName="CORTE_6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_7" msprop:Generator_ColumnPropNameInRow="CORTE_7" msprop:Generator_ColumnPropNameInTable="CORTE_7Column" msprop:Generator_UserColumnName="CORTE_7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_8" msprop:Generator_ColumnPropNameInRow="CORTE_8" msprop:Generator_ColumnPropNameInTable="CORTE_8Column" msprop:Generator_UserColumnName="CORTE_8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_9" msprop:Generator_ColumnPropNameInRow="CORTE_9" msprop:Generator_ColumnPropNameInTable="CORTE_9Column" msprop:Generator_UserColumnName="CORTE_9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_10" msprop:Generator_ColumnPropNameInRow="CORTE_10" msprop:Generator_ColumnPropNameInTable="CORTE_10Column" msprop:Generator_UserColumnName="CORTE_10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SALDO_FIN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_FIN" msprop:Generator_ColumnPropNameInRow="SALDO_FIN" msprop:Generator_ColumnPropNameInTable="SALDO_FINColumn" msprop:Generator_UserColumnName="SALDO_FIN" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="REPO_ESTADO_PROVEE_DE_PRODUCTOR" msprop:Generator_TableClassName="REPO_ESTADO_PROVEE_DE_PRODUCTORDataTable" msprop:Generator_TableVarName="tableREPO_ESTADO_PROVEE_DE_PRODUCTOR" msprop:Generator_RowChangedName="REPO_ESTADO_PROVEE_DE_PRODUCTORRowChanged" msprop:Generator_TablePropName="REPO_ESTADO_PROVEE_DE_PRODUCTOR" msprop:Generator_RowDeletingName="REPO_ESTADO_PROVEE_DE_PRODUCTORRowDeleting" msprop:Generator_RowChangingName="REPO_ESTADO_PROVEE_DE_PRODUCTORRowChanging" msprop:Generator_RowEvHandlerName="REPO_ESTADO_PROVEE_DE_PRODUCTORRowChangeEventHandler" msprop:Generator_RowDeletedName="REPO_ESTADO_PROVEE_DE_PRODUCTORRowDeleted" msprop:Generator_RowClassName="REPO_ESTADO_PROVEE_DE_PRODUCTORRow" msprop:Generator_UserTableName="REPO_ESTADO_PROVEE_DE_PRODUCTOR" msprop:Generator_RowEvArgName="REPO_ESTADO_PROVEE_DE_PRODUCTORRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PROVEEDOR_AGRICOLA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPROVEEDOR_AGRICOLA" msprop:Generator_ColumnPropNameInRow="PROVEEDOR_AGRICOLA" msprop:Generator_ColumnPropNameInTable="PROVEEDOR_AGRICOLAColumn" msprop:Generator_UserColumnName="PROVEEDOR_AGRICOLA" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIP_FINAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDESCRIP_FINAN" msprop:Generator_ColumnPropNameInRow="DESCRIP_FINAN" msprop:Generator_ColumnPropNameInTable="DESCRIP_FINANColumn" msprop:Generator_UserColumnName="DESCRIP_FINAN" type="xs:string" minOccurs="0" />
+              <xs:element name="ORDEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnORDEN" msprop:Generator_ColumnPropNameInRow="ORDEN" msprop:Generator_ColumnPropNameInTable="ORDENColumn" msprop:Generator_UserColumnName="ORDEN" type="xs:int" minOccurs="0" />
+              <xs:element name="SALDO_INICIAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_INICIAL" msprop:Generator_ColumnPropNameInRow="SALDO_INICIAL" msprop:Generator_ColumnPropNameInTable="SALDO_INICIALColumn" msprop:Generator_UserColumnName="SALDO_INICIAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE1" msprop:Generator_ColumnPropNameInRow="CORTE1" msprop:Generator_ColumnPropNameInTable="CORTE1Column" msprop:Generator_UserColumnName="CORTE1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE2" msprop:Generator_ColumnPropNameInRow="CORTE2" msprop:Generator_ColumnPropNameInTable="CORTE2Column" msprop:Generator_UserColumnName="CORTE2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE3" msprop:Generator_ColumnPropNameInRow="CORTE3" msprop:Generator_ColumnPropNameInTable="CORTE3Column" msprop:Generator_UserColumnName="CORTE3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE4" msprop:Generator_ColumnPropNameInRow="CORTE4" msprop:Generator_ColumnPropNameInTable="CORTE4Column" msprop:Generator_UserColumnName="CORTE4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE5" msprop:Generator_ColumnPropNameInRow="CORTE5" msprop:Generator_ColumnPropNameInTable="CORTE5Column" msprop:Generator_UserColumnName="CORTE5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE6" msprop:Generator_ColumnPropNameInRow="CORTE6" msprop:Generator_ColumnPropNameInTable="CORTE6Column" msprop:Generator_UserColumnName="CORTE6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE7" msprop:Generator_ColumnPropNameInRow="CORTE7" msprop:Generator_ColumnPropNameInTable="CORTE7Column" msprop:Generator_UserColumnName="CORTE7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE8" msprop:Generator_ColumnPropNameInRow="CORTE8" msprop:Generator_ColumnPropNameInTable="CORTE8Column" msprop:Generator_UserColumnName="CORTE8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE9" msprop:Generator_ColumnPropNameInRow="CORTE9" msprop:Generator_ColumnPropNameInTable="CORTE9Column" msprop:Generator_UserColumnName="CORTE9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE10" msprop:Generator_ColumnPropNameInRow="CORTE10" msprop:Generator_ColumnPropNameInTable="CORTE10Column" msprop:Generator_UserColumnName="CORTE10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ABONO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnABONO" msprop:Generator_ColumnPropNameInRow="ABONO" msprop:Generator_ColumnPropNameInTable="ABONOColumn" msprop:Generator_UserColumnName="ABONO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SALDO_FINAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_FINAL" msprop:Generator_ColumnPropNameInRow="SALDO_FINAL" msprop:Generator_ColumnPropNameInTable="SALDO_FINALColumn" msprop:Generator_UserColumnName="SALDO_FINAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PRODUCTOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPRODUCTOR" msprop:Generator_ColumnPropNameInRow="PRODUCTOR" msprop:Generator_ColumnPropNameInTable="PRODUCTORColumn" msprop:Generator_UserColumnName="PRODUCTOR" type="xs:string" minOccurs="0" />
+              <xs:element name="CODIPROVEEDOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODIPROVEEDOR" msprop:Generator_ColumnPropNameInRow="CODIPROVEEDOR" msprop:Generator_ColumnPropNameInTable="CODIPROVEEDORColumn" msprop:Generator_UserColumnName="CODIPROVEEDOR" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="REPO_ESTADO_PROVEE_DE_TRANSPORTISTA" msprop:Generator_TableClassName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTADataTable" msprop:Generator_TableVarName="tableREPO_ESTADO_PROVEE_DE_TRANSPORTISTA" msprop:Generator_RowChangedName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTARowChanged" msprop:Generator_TablePropName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTA" msprop:Generator_RowDeletingName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTARowDeleting" msprop:Generator_RowChangingName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTARowChanging" msprop:Generator_RowEvHandlerName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTARowChangeEventHandler" msprop:Generator_RowDeletedName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTARowDeleted" msprop:Generator_RowClassName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTARow" msprop:Generator_UserTableName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTA" msprop:Generator_RowEvArgName="REPO_ESTADO_PROVEE_DE_TRANSPORTISTARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PROVEEDOR_AGRICOLA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPROVEEDOR_AGRICOLA" msprop:Generator_ColumnPropNameInRow="PROVEEDOR_AGRICOLA" msprop:Generator_ColumnPropNameInTable="PROVEEDOR_AGRICOLAColumn" msprop:Generator_UserColumnName="PROVEEDOR_AGRICOLA" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIP_FINAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDESCRIP_FINAN" msprop:Generator_ColumnPropNameInRow="DESCRIP_FINAN" msprop:Generator_ColumnPropNameInTable="DESCRIP_FINANColumn" msprop:Generator_UserColumnName="DESCRIP_FINAN" type="xs:string" minOccurs="0" />
+              <xs:element name="ORDEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnORDEN" msprop:Generator_ColumnPropNameInRow="ORDEN" msprop:Generator_ColumnPropNameInTable="ORDENColumn" msprop:Generator_UserColumnName="ORDEN" type="xs:int" minOccurs="0" />
+              <xs:element name="SALDO_INICIAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_INICIAL" msprop:Generator_ColumnPropNameInRow="SALDO_INICIAL" msprop:Generator_ColumnPropNameInTable="SALDO_INICIALColumn" msprop:Generator_UserColumnName="SALDO_INICIAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE1" msprop:Generator_ColumnPropNameInRow="CORTE1" msprop:Generator_ColumnPropNameInTable="CORTE1Column" msprop:Generator_UserColumnName="CORTE1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE2" msprop:Generator_ColumnPropNameInRow="CORTE2" msprop:Generator_ColumnPropNameInTable="CORTE2Column" msprop:Generator_UserColumnName="CORTE2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE3" msprop:Generator_ColumnPropNameInRow="CORTE3" msprop:Generator_ColumnPropNameInTable="CORTE3Column" msprop:Generator_UserColumnName="CORTE3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE4" msprop:Generator_ColumnPropNameInRow="CORTE4" msprop:Generator_ColumnPropNameInTable="CORTE4Column" msprop:Generator_UserColumnName="CORTE4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE5" msprop:Generator_ColumnPropNameInRow="CORTE5" msprop:Generator_ColumnPropNameInTable="CORTE5Column" msprop:Generator_UserColumnName="CORTE5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE6" msprop:Generator_ColumnPropNameInRow="CORTE6" msprop:Generator_ColumnPropNameInTable="CORTE6Column" msprop:Generator_UserColumnName="CORTE6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE7" msprop:Generator_ColumnPropNameInRow="CORTE7" msprop:Generator_ColumnPropNameInTable="CORTE7Column" msprop:Generator_UserColumnName="CORTE7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE8" msprop:Generator_ColumnPropNameInRow="CORTE8" msprop:Generator_ColumnPropNameInTable="CORTE8Column" msprop:Generator_UserColumnName="CORTE8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE9" msprop:Generator_ColumnPropNameInRow="CORTE9" msprop:Generator_ColumnPropNameInTable="CORTE9Column" msprop:Generator_UserColumnName="CORTE9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE10" msprop:Generator_ColumnPropNameInRow="CORTE10" msprop:Generator_ColumnPropNameInTable="CORTE10Column" msprop:Generator_UserColumnName="CORTE10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ABONO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnABONO" msprop:Generator_ColumnPropNameInRow="ABONO" msprop:Generator_ColumnPropNameInTable="ABONOColumn" msprop:Generator_UserColumnName="ABONO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SALDO_FINAL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_FINAL" msprop:Generator_ColumnPropNameInRow="SALDO_FINAL" msprop:Generator_ColumnPropNameInTable="SALDO_FINALColumn" msprop:Generator_UserColumnName="SALDO_FINAL" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="REPO_ESTADO_CTAFRENTE" msprop:Generator_TableClassName="REPO_ESTADO_CTAFRENTEDataTable" msprop:Generator_TableVarName="tableREPO_ESTADO_CTAFRENTE" msprop:Generator_RowChangedName="REPO_ESTADO_CTAFRENTERowChanged" msprop:Generator_TablePropName="REPO_ESTADO_CTAFRENTE" msprop:Generator_RowDeletingName="REPO_ESTADO_CTAFRENTERowDeleting" msprop:Generator_RowChangingName="REPO_ESTADO_CTAFRENTERowChanging" msprop:Generator_RowEvHandlerName="REPO_ESTADO_CTAFRENTERowChangeEventHandler" msprop:Generator_RowDeletedName="REPO_ESTADO_CTAFRENTERowDeleted" msprop:Generator_RowClassName="REPO_ESTADO_CTAFRENTERow" msprop:Generator_UserTableName="REPO_ESTADO_CTAFRENTE" msprop:Generator_RowEvArgName="REPO_ESTADO_CTAFRENTERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_ZAFRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID_ZAFRA" msprop:Generator_ColumnPropNameInRow="ID_ZAFRA" msprop:Generator_ColumnPropNameInTable="ID_ZAFRAColumn" msprop:Generator_UserColumnName="ID_ZAFRA" type="xs:int" minOccurs="0" />
+              <xs:element name="DESCRIP_FINAN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDESCRIP_FINAN" msprop:Generator_ColumnPropNameInRow="DESCRIP_FINAN" msprop:Generator_ColumnPropNameInTable="DESCRIP_FINANColumn" msprop:Generator_UserColumnName="DESCRIP_FINAN" type="xs:string" minOccurs="0" />
+              <xs:element name="FRENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFRENTE" msprop:Generator_ColumnPropNameInRow="FRENTE" msprop:Generator_ColumnPropNameInTable="FRENTEColumn" msprop:Generator_UserColumnName="FRENTE" type="xs:string" minOccurs="0" />
+              <xs:element name="COD_FRENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOD_FRENTE" msprop:Generator_ColumnPropNameInRow="COD_FRENTE" msprop:Generator_ColumnPropNameInTable="COD_FRENTEColumn" msprop:Generator_UserColumnName="COD_FRENTE" type="xs:string" minOccurs="0" />
+              <xs:element name="ZAFRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnZAFRA" msprop:Generator_ColumnPropNameInRow="ZAFRA" msprop:Generator_ColumnPropNameInTable="ZAFRAColumn" msprop:Generator_UserColumnName="ZAFRA" type="xs:string" minOccurs="0" />
+              <xs:element name="SALDO_INI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_INI" msprop:Generator_ColumnPropNameInRow="SALDO_INI" msprop:Generator_ColumnPropNameInTable="SALDO_INIColumn" msprop:Generator_UserColumnName="SALDO_INI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_1" msprop:Generator_ColumnPropNameInRow="CORTE_1" msprop:Generator_ColumnPropNameInTable="CORTE_1Column" msprop:Generator_UserColumnName="CORTE_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_2" msprop:Generator_ColumnPropNameInRow="CORTE_2" msprop:Generator_ColumnPropNameInTable="CORTE_2Column" msprop:Generator_UserColumnName="CORTE_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_3" msprop:Generator_ColumnPropNameInRow="CORTE_3" msprop:Generator_ColumnPropNameInTable="CORTE_3Column" msprop:Generator_UserColumnName="CORTE_3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_4" msprop:Generator_ColumnPropNameInRow="CORTE_4" msprop:Generator_ColumnPropNameInTable="CORTE_4Column" msprop:Generator_UserColumnName="CORTE_4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_5" msprop:Generator_ColumnPropNameInRow="CORTE_5" msprop:Generator_ColumnPropNameInTable="CORTE_5Column" msprop:Generator_UserColumnName="CORTE_5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_6" msprop:Generator_ColumnPropNameInRow="CORTE_6" msprop:Generator_ColumnPropNameInTable="CORTE_6Column" msprop:Generator_UserColumnName="CORTE_6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_7" msprop:Generator_ColumnPropNameInRow="CORTE_7" msprop:Generator_ColumnPropNameInTable="CORTE_7Column" msprop:Generator_UserColumnName="CORTE_7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_8" msprop:Generator_ColumnPropNameInRow="CORTE_8" msprop:Generator_ColumnPropNameInTable="CORTE_8Column" msprop:Generator_UserColumnName="CORTE_8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_9" msprop:Generator_ColumnPropNameInRow="CORTE_9" msprop:Generator_ColumnPropNameInTable="CORTE_9Column" msprop:Generator_UserColumnName="CORTE_9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CORTE_10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCORTE_10" msprop:Generator_ColumnPropNameInRow="CORTE_10" msprop:Generator_ColumnPropNameInTable="CORTE_10Column" msprop:Generator_UserColumnName="CORTE_10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_1" msprop:Generator_ColumnPropNameInRow="INT_1" msprop:Generator_ColumnPropNameInTable="INT_1Column" msprop:Generator_UserColumnName="INT_1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_2" msprop:Generator_ColumnPropNameInRow="INT_2" msprop:Generator_ColumnPropNameInTable="INT_2Column" msprop:Generator_UserColumnName="INT_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_3" msprop:Generator_ColumnPropNameInRow="INT_3" msprop:Generator_ColumnPropNameInTable="INT_3Column" msprop:Generator_UserColumnName="INT_3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_4" msprop:Generator_ColumnPropNameInRow="INT_4" msprop:Generator_ColumnPropNameInTable="INT_4Column" msprop:Generator_UserColumnName="INT_4" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_5" msprop:Generator_ColumnPropNameInRow="INT_5" msprop:Generator_ColumnPropNameInTable="INT_5Column" msprop:Generator_UserColumnName="INT_5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_6" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_6" msprop:Generator_ColumnPropNameInRow="INT_6" msprop:Generator_ColumnPropNameInTable="INT_6Column" msprop:Generator_UserColumnName="INT_6" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_7" msprop:Generator_ColumnPropNameInRow="INT_7" msprop:Generator_ColumnPropNameInTable="INT_7Column" msprop:Generator_UserColumnName="INT_7" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_8" msprop:Generator_ColumnPropNameInRow="INT_8" msprop:Generator_ColumnPropNameInTable="INT_8Column" msprop:Generator_UserColumnName="INT_8" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_9" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_9" msprop:Generator_ColumnPropNameInRow="INT_9" msprop:Generator_ColumnPropNameInTable="INT_9Column" msprop:Generator_UserColumnName="INT_9" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INT_10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINT_10" msprop:Generator_ColumnPropNameInRow="INT_10" msprop:Generator_ColumnPropNameInTable="INT_10Column" msprop:Generator_UserColumnName="INT_10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SALDO_FIN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDO_FIN" msprop:Generator_ColumnPropNameInRow="SALDO_FIN" msprop:Generator_ColumnPropNameInTable="SALDO_FINColumn" msprop:Generator_UserColumnName="SALDO_FIN" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

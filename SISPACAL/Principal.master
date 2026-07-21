@@ -1,0 +1,266 @@
+﻿    <%@ Master Language="VB" CodeFile="Principal.master.vb" Inherits="Principal" %>
+<%@ Register Assembly="DevExpress.Web.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Src="~/controles/ucEncabezado.ascx" TagName="ucEncabezado" TagPrefix="uc1" %>
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>.:: Ingenio Jiboa ::. Módulo de Gestión Financiera</title> 
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />  
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript">
+            function AsignarError(e) {
+                if (e == '')
+                    Label_Mensaje.SetValue('');
+                else
+                    Label_Mensaje.SetValue('* ' + e);
+            }
+            function AsignarMensaje(mensaje) {                
+                pcMessageBoxBoton.SetVisible(true);                
+                aspxMensajeAlerta.SetText(mensaje);
+                pcMessageBox.Show();
+                pcMessageBox.UpdatePosition();
+            }            
+            function ExportacionCompletada() {
+                pcProcesando.Hide();
+                AsignarMensaje("Carga de información finalizada ");
+            }
+            function Procesando(s, e) {
+                pcProcesando.Show();
+                pcProcesando.UpdatePosition();
+            }
+            function MostrarReportesCondicionalesSolicAgricola(valor) {
+                MostrarSolicAgricolaMadurante(valor[0]);
+                if (valor[1] != '2') {
+                    MostrarAnalisisFinanciero(1, valor[0],'');
+                 }                
+            }
+            function MostrarDoctoIngresoInventario(valor) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=6&iddocto=" + valor, "_blank", "");
+            }
+            function MostrarDoctoSalidaInventario(valor) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=8&iddocto=" + valor, "_blank", "");
+            }
+            function MostrarOrdenAnalisisPreCosecha(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=2&idorden=" + valor, "_blank", "");
+            }
+            function MostrarHojaResultadoPreCosecha(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=5&idorden=" + valor, "_blank", "");
+            }
+            function MostrarSolicAgricolaMadurante(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=3&idsolic=" + valor, "_blank", "");
+            }
+            function MostrarAnalisisFinanciero(num, id, origen) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=" + num + "&id=" + id, "_blank", "");
+            }
+            function MostrarAnalisisFinancieroConsulta(num, id) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=" + num + "&idcfinan=" + id + "&t=0", "_blank", "");
+            }
+            function MostrarProyeccionFinanciera(uid) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=2&uid=" + uid, "_blank", "");
+            }
+            function MostrarAnalisisFinancieroProyectado(uid) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=12&uid=" + uid, "_blank", "");
+            }
+            function MostrarProyeccionFinancieraTrans(uid) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=11&uid=" + uid, "_blank", "");
+            }
+            function MostrarOrdenRoza(id_zafra, usuario, fecha) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=7&z=" + id_zafra + "&u=" + usuario + "&f=" + fecha, "_blank", "")
+            }
+            function MostrarProforma(id_proforma) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=8&p=" + id_proforma, "_blank", "")
+            }
+            function MostrarSolicAplicaciones(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=9&idsolic=" + valor, "_blank", "");
+            }
+            function MostrarSolicitudRequisicion(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=31&idreq=" + valor, "_blank", "");
+            }
+            function MostrarContratoZafra(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=32&con=" + valor, "_blank", "");
+            }
+            function MostrarContratoLegal(valor1, valor2) {
+                window.open("../temp/" + valor1, "_blank", "");
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=41&con=" + valor2, "_blank", "");
+            }
+            function MostrarContratoLegalAnexo(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=41&con=" + valor, "_blank", "");
+            }
+            function MostrarCartaAutorizacionServicios(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=40&con=" + valor, "_blank", "");
+            }
+            function MostrarContratoLegalZafra(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=39&con=" + valor, "_blank", "");
+            }
+            function MostrarContratoTransporte(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=38&con=" + valor, "_blank", "");
+            }
+            function MostrarSolicAnticipo(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=33&idanti=" + valor, "_blank", "");
+            }
+            function MostrarOPI(valor) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=3&idopi=" + valor, "_blank", "");
+            }
+            function MostrarOPI_TRANS(valor) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=9&idopi=" + valor, "_blank", "");
+            }
+            function MostrarOrdenCompraPorSolicitud(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=36&idsolic=" + valor, "_blank", "");
+            }
+            function MostrarOrdenCompraPorOrden(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=37&idorden=" + valor, "_blank", "");
+            }
+            function MostrarSoliRetiroProductosConsignados(valor) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=7&id=" + valor, "_blank", "");
+            }
+            function EditarTransportista(codtransport) {
+                window.open("../Catalogos/wfMantTRANSPORTISTA.aspx?op=2&id=" + codtransport, "_blank", "")
+            }
+            function MostrarSolicTransporte(valor) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=10&id=" + valor, "_blank", "");
+            }
+            function MostrarSolicFrente(valor) {
+                window.open("../Financiero/wfReporteFinancieroModal.aspx?n=13&id=" + valor, "_blank", "");
+            }
+            function MostrarOrdenCombustible(valor) {
+                window.open("../PlanCosecha/wfReportePlanCosechaModal.aspx?n=6&idcombus=" + valor, "_blank", "");
+            }
+    </script>
+    <style type="text/css">  
+       .contenedorLogin
+        { 
+            width: 99%;
+            height:44px;   
+            padding-top: 0px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            font-size: small;                
+	        border-radius: 7px;
+	        border: 1px solid #999999;		    
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+            -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);    
+            box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);          
+            } 
+        .EncabezadoSecciones
+            {
+                font-size: 16px;            
+                color: #3333CC;
+                font-family: Calibri;    
+            }   
+    </style>  
+    <asp:ContentPlaceHolder id="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="margin: 0px 20px 10px 10px; background-color:transparent" onkeydown = "return (event.keyCode!=13)">
+    <form id="form1" runat="server">
+    <dx:ASPxPopupControl ID="pcMessageBox" ClientInstanceName="pcMessageBox" runat="server"
+            Modal="true" ShowOnPageLoad="false" AppearAfter="0" HeaderText="Mensaje" Height="100px"
+            PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Text=""
+            Width="200px" AllowDragging="True" AllowResize="True" CloseAction="CloseButton"
+            PopupAction="None">
+            <ContentStyle HorizontalAlign="Center">
+            </ContentStyle>
+            <ContentCollection>
+                <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+                    <dx:ASPxLabel ID="aspxMensajeAlerta" runat="server" Text="Texto por defecto" ClientInstanceName="aspxMensajeAlerta">
+                    </dx:ASPxLabel>
+                    <br />
+                    <br />
+                    <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Aceptar" AutoPostBack="False" ClientInstanceName="pcMessageBoxBoton" CausesValidation="False"
+                        UseSubmitBehavior="False">
+                        <ClientSideEvents Click="function(s, e) { pcMessageBox.Hide();}" />
+                    </dx:ASPxButton>
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+    </dx:ASPxPopupControl>
+
+    <dx:ASPxPopupControl ID="pcProcesando" ClientInstanceName="pcProcesando" runat="server"
+            Modal="true" ShowOnPageLoad="false" AppearAfter="0" Height="100px"
+            PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Text=""
+            Width="200px" CloseAction="CloseButton"
+            PopupAction="None" ShowHeader="false" CloseAnimationType="Slide" Opacity="80">
+            <ContentStyle HorizontalAlign="Center">
+            </ContentStyle>
+            <ContentCollection>
+                <dx:PopupControlContentControl ID="PopupControlContentControl2" runat="server">                    
+                    <table width="100%">
+                        <tr>
+                            <td>
+                            <dx:ASPxImage runat="server" ID="imgModalExpoEsti" ImageUrl="~/imagenes/pinon.gif" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">
+                                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Font-Names="Arial" Font-Size="Medium" Text="Procesando información. Por favor espere..."></dx:ASPxLabel>
+                            </td>
+                        </tr>
+                    </table>
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+    </dx:ASPxPopupControl>
+
+    <asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release" EnablePartialRendering="true" EnablePageMethods="True" AsyncPostBackTimeout="0" >
+    </asp:ScriptManager> 
+    <div>
+       <div class="contenedorLogin">            
+                <table width="100%">
+                        <tr>
+                            <td width="65px">
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/imagenes/imagenApp.png" AlternateText="" /></div>
+                            </td>
+                            <td align="left">
+                                <dx:ASPxLabel ID="lblTituloApp" runat="server" Font-Bold="true" Font-Size="Large" ForeColor="DarkBlue" Text="ASPxLabel"></dx:ASPxLabel>
+                            </td>
+                            <td>
+                                <div style="float:right">
+                                     <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">                                            
+                                        <AnonymousTemplate>
+                                            [ <a href="~/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar Sesión</a> ]
+                                        </AnonymousTemplate>
+                                        <LoggedInTemplate>          
+                                            <span class="mensaje1">Bienvenido(a):</span><span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>
+                                            [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar Sesión" OnLoggedOut="LoginStatus_LoggedOut" LogoutPageUrl="~/"/> ]
+                                        </LoggedInTemplate>
+                                    </asp:LoginView>  
+                                </div> 
+                            </td>   
+                        </tr>
+                </table> 
+        </div>               
+    </div> 
+    <div style="background: #7795BD url('../imagenes/fase2/fondo_menu_ppal.png') repeat-x; border-right: 1px solid #8BA0BC;" >     
+        <dx:ASPxMenu ID="ASPxMenu1" runat="server" ></dx:ASPxMenu>        
+    </div>
+    <uc1:ucEncabezado id="ucEncabezado1" runat="server"></uc1:ucEncabezado>   
+    <asp:UpdatePanel ID="UpdatePanel20" runat="server" UpdateMode="Always" RenderMode="Block" >
+        <ContentTemplate>                       
+            <asp:LinkButton ID="lnkDummy" runat="server"></asp:LinkButton>            
+            <%--<cc1:ModalPopupExtender ID="modalPopupMasterPage" runat="server" BehaviorID="modalPopup" 
+                    PopupControlID="PanelMasterPage" TargetControlID="lnkDummy"    
+                    BackgroundCssClass="modalBackground" Drag="True" DropShadow="true" >
+            </cc1:ModalPopupExtender>--%>
+            <asp:Panel ID="PanelMasterPage" style="display:none" BackColor="white" runat="server" Width="229px" >
+                <div class="sidebar">
+                    <div class="sidebarheader">
+                        <asp:Label ID="lblTituloPopup" runat="server"></asp:Label>
+                    </div>
+                    <div class="sidebarcontent">
+                        <asp:Label ID="lblMensajePopup" runat="server"></asp:Label>                            
+                    </div>                        
+                    <div class="sidebarbotones">
+                        <asp:Button ID="btnAceptar" runat="server" OnClientClick="return HidePopup()" Text="Aceptar" />                   
+                    </div>
+                </div>
+            </asp:Panel>                            
+        </ContentTemplate>
+    </asp:UpdatePanel>     
+    <asp:ContentPlaceHolder id="contenido" runat="server">        
+    </asp:ContentPlaceHolder>
+    </form>
+</body> 
+</html>

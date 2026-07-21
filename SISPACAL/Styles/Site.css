@@ -1,0 +1,502 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{    
+    font-size: .80em;
+    font-family: Verdana, "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+div.cont1
+{
+    margin: 10px;
+    line-height: 1.6em;
+    text-align:center;  
+    font-weight:bold; 
+    color: Blue; 
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin: 5px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+        
+.page
+{
+    width: 960px;
+    background-color: #fff;
+    margin: 0px auto 0px auto;
+    border: 0px solid #496077;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);    
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: white;
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+div.hideSkiplink
+{
+    background-color:#3a4f63;
+    width:100%;
+}
+
+div.menu
+{   
+    padding:  1px 0px 4px 5px;
+}
+
+
+div.menu ul
+{    
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background: #7795BD url('nav_bg.png') repeat-x;    
+    border: 1px solid #658ABD;
+    color: Black;
+    display: block;
+    line-height: 1.35em;
+    padding: 2px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+/* li de primer nivel si ul */
+div.menu ul li a:hover
+{
+    background: #4682B4;
+    background-color: #4682B4;
+    color: white;
+    text-decoration: none;
+}
+
+/* Al presionar el menú */
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+    color: Black; 
+    font-size: 11px; 
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{ 
+    width: 1030px;
+    margin:  0px auto 2px auto;
+    font-size: small;        
+    background-image: url('bg_div1.png'); 
+    background-repeat: repeat-x; 
+	border-radius: 7px;
+	border: 1px solid #999999;	
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);    
+    box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    height: 102px;     
+ }
+
+
+.ContenedorMenu
+{     
+    width: 100%;
+    margin:  0px auto 3px auto;
+    font-size: small;     
+    font-family: Tahoma;                 
+    top,
+    #F9F9F9 0%,
+    #E8E8E8);
+    background-image: url('bg_div2.png'); 
+    background-repeat: repeat-x; 
+    border-radius: 7px;
+	border: 1px solid #999999;	
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);    
+    box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    height: 25px;
+    padding-left: 8px;         
+}
+
+.ContenedorCampos
+{     
+    padding: 5px;            
+    top,
+    #F9F9F9 0%,
+    #E8E8E8);
+    background-image: url('bg_div2.png'); 
+    background-repeat: repeat; 
+    border-radius: 7px;
+	border: 1px solid #999999;	
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);    
+    box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);    
+          
+}
+.ContenedorCamposOscuro
+{     
+    padding: 5px;            
+    top,
+    #F9F9F9 0%,
+    #006699);
+    background-image: url('bg_div1.png'); 
+    background-repeat: repeat; 
+    border-radius: 7px;
+	border: 1px solid #999999;	
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);    
+    box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);    
+          
+}
+
+.ContenedorBarra
+{   
+    margin: 0px auto 3px auto;
+    font-size: small;     
+    font-family: Tahoma;             
+    background: -webkit-linear-gradient(#AFD4F9, #5F84C7);
+    background: -moz-linear-gradient(#AFD4F9, #5F84C7);
+    background: -o-linear-gradient(#AFD4F9, #5F84C7);
+	border-radius: 7px;
+	border: 1px solid #999999;	
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);    
+    box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    height: 25px;
+    padding-left: 8px;         
+    padding-top:5px; 
+}
+
+.main
+{ 
+    width: 100%;
+    margin: auto auto 5px auto;     
+    font-size: small;        
+    background: white;
+    border-radius: 7px;
+	border: 1px solid #999999;		
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(255,255,255,1);        
+    box-shadow: 0px 1px 2px rgba(000,000,000,0.5), inset 0px 1px 0px rgba(255,255,255,1);
+    min-height: 400px;            
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+    color:White;  
+}
+.mensaje1
+{    
+    color:White;  
+}
+
+div.submitButton
+{
+    text-align: center;   
+    width: 100%;  
+}
+
+.alertaLogin
+{
+    color:Red;
+    font-size:small;
+}
+
+
+.modalBackground
+{
+    background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+
+.modalBackgroundUpdateProgress
+{
+    position: fixed;
+    z-index: 98;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #aaa;
+    filter: alpha(opacity=80);
+    opacity: 0.8; 
+}
+
+.modalPopup {
+	background-color:#ffffdd;
+	border-width:3px;   
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:250px;
+}
+
+.HellowWorldPopu    p
+{
+    min-width:200px;
+    min-height:150px;
+    background:white;
+}
+
+.sidebar
+{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.sidebarheader
+{
+	height: 25px;
+	padding: 10px 0 10px 10px;
+    padding-bottom: 10px;
+	background: url('encabezadoMensaje.png') no-repeat left top;
+	color: White;	
+	font-size: 11px;  
+	font-weight: bold;	
+}
+
+.sidebarcontent
+{		
+	padding: 10px 10px 10px 10px;	
+	font-size: 11px;  
+	font-weight: bold;
+	background-color: White;  
+	text-align:center; 
+	color:Black;  
+}
+
+.sidebarbotones
+{	
+    text-align:center; 
+	padding:10px;	
+}
+
+.cargando
+{
+    border: 1px solid #0066CC; 
+    padding: 10px; 
+    width: 190px; 
+    text-align:center;
+}
+
+.textoCargando
+{   
+	font-weight: normal;
+	font-size: 11px;  
+	color: Black;
+	font-family: Verdana;
+}

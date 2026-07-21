@@ -1,0 +1,3220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{BB95DF47-BC0F-4336-813D-DE1FF9431321}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SISPACAL.RL</RootNamespace>
+    <AssemblyName>SISPACAL_RL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SISPACAL_RL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SISPACAL_RL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.2.Wizard, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.2.UI, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="CrystalDecisions.ReportAppServer" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnexoContratoLegal.designer.vb">
+      <DependentUpon>AnexoContratoLegal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AnexoContratoLegal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\ProductoSolicitado.Designer.vb">
+      <DependentUpon>ProductoSolicitado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\ProductoSolicitado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\ProductoConsignadoEntregado.Designer.vb">
+      <DependentUpon>ProductoConsignadoEntregado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\ProductoConsignadoEntregado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\SolicitudRetiroProductoConsignadoProductor.Designer.vb">
+      <DependentUpon>SolicitudRetiroProductoConsignadoProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\SolicitudRetiroProductoConsignadoProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\DoctoIngresoBodegaPorTransf.designer.vb">
+      <DependentUpon>DoctoIngresoBodegaPorTransf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\DoctoIngresoBodegaPorTransf.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\DoctoSalidaBodega.Designer.vb">
+      <DependentUpon>DoctoSalidaBodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\DoctoSalidaBodega.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\Kardex.designer.vb">
+      <DependentUpon>Kardex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\Kardex.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\SolicitudRetiroDetalle.Designer.vb">
+      <DependentUpon>SolicitudRetiroDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\SolicitudRetiroDetalle.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bodega\SolicitudRetiroProductoConsignado.Designer.vb">
+      <DependentUpon>SolicitudRetiroProductoConsignado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\SolicitudRetiroProductoConsignado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CargaTransporte\SeguimientoAgricolaCargaTransporte.Designer.vb">
+      <DependentUpon>SeguimientoAgricolaCargaTransporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CargaTransporte\SeguimientoAgricolaCargaTransporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\CalculoAzucarPago.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalculoAzucarPago.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\Cheques.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cheques.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ConstanciaRetencionRenta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConstanciaRetencionRenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\CalculoAzucarPagoAnticipo.vb">
+      <DependentUpon>CalculoAzucarPagoAnticipo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\CalculoAzucarFabrica.vb">
+      <DependentUpon>CalculoAzucarFabrica.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\CalculoAzucarPagoValorFinal.vb">
+      <DependentUpon>CalculoAzucarPagoValorFinal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\CalculoAzucarPagoIncentivo.vb">
+      <DependentUpon>CalculoAzucarPagoIncentivo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\ConstanciaRetencionRentaIncentivo.vb">
+      <DependentUpon>ConstanciaRetencionRentaIncentivo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\DatosParaCCF_Cana_Transporte.designer.vb">
+      <DependentUpon>DatosParaCCF_Cana_Transporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catorcena\DatosParaCCF_Cana_Transporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\DetalleProductorCargadoraLotes.designer.vb">
+      <DependentUpon>DetalleProductorCargadoraLotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catorcena\DetalleProductorCargadoraLotes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\EnvioConQuerqueo.Designer.vb">
+      <DependentUpon>EnvioConQuerqueo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catorcena\EnvioConQuerqueo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\LiquidacionContribuyentePlanilla.designer.vb">
+      <DependentUpon>LiquidacionContribuyentePlanilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catorcena\LiquidacionContribuyentePlanilla.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenCargadoPorTransportistaCargadoraVolteo.vb">
+      <DependentUpon>ResumenCargadoPorTransportistaCargadoraVolteo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\EnvioConBarrida.Designer.vb">
+      <DependentUpon>EnvioConBarrida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catorcena\EnvioConBarrida.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenPagoCargadorasZafra.Designer.vb">
+      <DependentUpon>ResumenPagoCargadorasZafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catorcena\ResumenPagoCargadorasZafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenPagoTransportistasZafra.vb">
+      <DependentUpon>ResumenPagoTransportistasZafra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Catorcena\ResumenRevisionFleteClienteLoteTransporte.vb">
+      <DependentUpon>ResumenRevisionFleteClienteLoteTransporte.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\ResumenPagoTransportistasZafraDesctoDiesel.vb">
+      <DependentUpon>ResumenPagoTransportistasZafraDesctoDiesel.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\ResumenCargadoTipoTarifaPorCargadoraCanero.vb">
+      <DependentUpon>ResumenCargadoTipoTarifaPorCargadoraCanero.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Catorcena\DescuentosCanero.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DescuentosCanero.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\DescuentosProveedorRoza.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DescuentosProveedorRoza.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\DescuentosTransportista.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DescuentosTransportista.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\DetalleTransporteCaneroParaTrasnportista.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetalleTransporteCaneroParaTrasnportista.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenPagoCanerosZafra.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenPagoCanerosZafra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ReciboCargadora.Designer.vb">
+      <DependentUpon>ReciboCargadora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catorcena\ReciboCargadora.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoEntregar_A.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoEntregar_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoEntregar_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoEntregar_B.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoEntregar_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoEntregar_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoEntregar_C.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoEntregar_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoEntregar_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTCUS_A.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTCUS_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTCUS_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTCUS_B.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTCUS_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTCUS_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTCUS_C.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTCUS_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTCUS_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_A.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_B.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_C.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoSinContrato_A.Designer.vb">
+      <DependentUpon>AnexoCensoSinContrato_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoSinContrato_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoSinContrato_B.Designer.vb">
+      <DependentUpon>AnexoCensoSinContrato_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoSinContrato_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoSinContrato_C.Designer.vb">
+      <DependentUpon>AnexoCensoSinContrato_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoSinContrato_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_A.Designer.vb">
+      <DependentUpon>CensoDifContratos_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_B.Designer.vb">
+      <DependentUpon>CensoDifContratos_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_C.Designer.vb">
+      <DependentUpon>CensoDifContratos_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoGeneralVariacion_A.Designer.vb">
+      <DependentUpon>CensoGeneralVariacion_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoGeneralVariacion_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoGeneralVariacion_B.Designer.vb">
+      <DependentUpon>CensoGeneralVariacion_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoGeneralVariacion_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoGeneralVariacion_C.Designer.vb">
+      <DependentUpon>CensoGeneralVariacion_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoGeneralVariacion_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_A.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTCUS_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_B.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTCUS_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_C.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTCUS_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_A.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTC_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_B.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTC_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_C.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTC_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTCUS_A.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTCUS_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTCUS_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTCUS_B.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTCUS_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTCUS_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTCUS_C.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTCUS_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTCUS_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_A.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTC_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_B.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTC_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_C.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTC_C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_C.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_D.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTC_D.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_D.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_E.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTC_E.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_E.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_D.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTCUS_D.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_D.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_E.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTCUS_E.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTCUS_E.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_D.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_D.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_D.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_E.Designer.vb">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_E.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\AnexoCensoEntregadoSaldoTC_E.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_D.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTC_D.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_D.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_E.Designer.vb">
+      <DependentUpon>ContratoEjecucionCensoTC_E.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoEjecucionCensoTC_E.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_D.Designer.vb">
+      <DependentUpon>CensoDifContratos_D.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_D.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_A11.Designer.vb">
+      <DependentUpon>ContratoCanaLotesTC_A11.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratoCanaLotesTC_A11.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_E.Designer.vb">
+      <DependentUpon>CensoDifContratos_E.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\CensoDifContratos_E.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratosEstimacionTC_A.Designer.vb">
+      <DependentUpon>ContratosEstimacionTC_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratosEstimacionTC_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratosEstimacionTC_B.Designer.vb">
+      <DependentUpon>ContratosEstimacionTC_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratosEstimacionTC_B.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ContratosEstimacionTC_B2.Designer.vb">
+      <DependentUpon>ContratosEstimacionTC_B2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ContratosEstimacionTC_B2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\TercioEntregaCana.Designer.vb">
+      <DependentUpon>TercioEntregaCana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\TercioEntregaCana.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cheques\ChequeBH.vb">
+      <DependentUpon>ChequeBH.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Cheques\ChequeBAC.vb">
+      <DependentUpon>ChequeBAC.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Cheques\ChequeDAVIVIENDA.vb">
+      <DependentUpon>ChequeDAVIVIENDA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Cheques\ChequeDAVIVIENDA_2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChequeDAVIVIENDA_2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cheques\ChequePROMERICA.vb">
+      <DependentUpon>ChequePROMERICA.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Combustible\OrdenCombustibleCodigoBarra.Designer.vb">
+      <DependentUpon>OrdenCombustibleCodigoBarra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Combustible\OrdenCombustibleCodigoBarra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Combustible\ReciboConsolidadoCombustible.designer.vb">
+      <DependentUpon>ReciboConsolidadoCombustible.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Combustible\ReciboConsolidadoCombustible.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comprobantes\FacturaSujetoExcluido.vb">
+      <DependentUpon>FacturaSujetoExcluido.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ContratoPersonaNatural.Designer.vb">
+      <DependentUpon>ContratoPersonaNatural.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContratoPersonaNatural.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\AnalisisVMTcompleto.Designer.vb">
+      <DependentUpon>AnalisisVMTcompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\AnalisisVMTcompleto.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\AnalisisVMTgeneral.Designer.vb">
+      <DependentUpon>AnalisisVMTgeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\AnalisisVMTgeneral.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\Comparativo2Zafras.Designer.vb">
+      <DependentUpon>Comparativo2Zafras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\Comparativo2Zafras.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\Comparativo2ZafrasGeneral.Designer.vb">
+      <DependentUpon>Comparativo2ZafrasGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\Comparativo2ZafrasGeneral.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\Comparativo2ZafrasLote.Designer.vb">
+      <DependentUpon>Comparativo2ZafrasLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\Comparativo2ZafrasLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\ComparativoRendimientoLotes.Designer.vb">
+      <DependentUpon>ComparativoRendimientoLotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\ComparativoRendimientoLotes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\EntregasAnomalas.Designer.vb">
+      <DependentUpon>EntregasAnomalas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\EntregasAnomalas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\AnalisisPrecosechaPorLote.Designer.vb">
+      <DependentUpon>AnalisisPrecosechaPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\AnalisisPrecosechaPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\InventarioRozaSaldos.Designer.vb">
+      <DependentUpon>InventarioRozaSaldos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\InventarioRozaSaldos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\InventarioRozaDiaria.Designer.vb">
+      <DependentUpon>InventarioRozaDiaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\InventarioRozaDiaria.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\InventarioRozaDiariaProveedor.Designer.vb">
+      <DependentUpon>InventarioRozaDiariaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\InventarioRozaDiariaProveedor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\PlanCosechaDiarioPorLote.Designer.vb">
+      <DependentUpon>PlanCosechaDiarioPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\PlanCosechaDiarioPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\Proforma.Designer.vb">
+      <DependentUpon>Proforma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\Proforma.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosecha\TipoCanaPorDiaZafra.Designer.vb">
+      <DependentUpon>TipoCanaPorDiaZafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cosecha\TipoCanaPorDiaZafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\EnviosVrsAnalisisMuestras.Designer.vb">
+      <DependentUpon>EnviosVrsAnalisisMuestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Diarios\EnviosVrsAnalisisMuestras.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\RendimientoDiarioAcumuladoProveedorLote.Designer.vb">
+      <DependentUpon>RendimientoDiarioAcumuladoProveedorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Diarios\RendimientoDiarioAcumuladoProveedorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\RendimientosTeoricosPond.Designer.vb">
+      <DependentUpon>RendimientosTeoricosPond.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Diarios\RendimientosTeoricosPond.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ContratoSociedadCooperativa.Designer.vb">
+      <DependentUpon>ContratoSociedadCooperativa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContratoSociedadCooperativa.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\CartaAutorizacionServicios.designer.vb">
+      <DependentUpon>CartaAutorizacionServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\CartaAutorizacionServicios.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\CombustibleSaldoPendiente.Designer.vb">
+      <DependentUpon>CombustibleSaldoPendiente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\CombustibleSaldoPendiente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\CombustibleSaldoResumen.Designer.vb">
+      <DependentUpon>CombustibleSaldoResumen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\CombustibleSaldoResumen.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaFrente.designer.vb">
+      <DependentUpon>EstadoCtaFrente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaFrente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProductoConsignadoPendiente.designer.vb">
+      <DependentUpon>ProductoConsignadoPendiente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProductoConsignadoPendiente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\AnalisisFinanciero.Designer.vb">
+      <DependentUpon>AnalisisFinanciero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\AnalisisFinanciero.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen.designer.vb">
+      <DependentUpon>Proyeccion_Resumen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen_RA.designer.vb">
+      <DependentUpon>Proyeccion_Resumen_RA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen_RA.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen_RF.designer.vb">
+      <DependentUpon>Proyeccion_Resumen_RF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen_RF.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen_RPJ.designer.vb">
+      <DependentUpon>Proyeccion_Resumen_RPJ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\Proyecciones\Proyeccion_Resumen_RPJ.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\SaldosInsolutosPorProveeAgricola.Designer.vb">
+      <DependentUpon>SaldosInsolutosPorProveeAgricola.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\SaldosInsolutosPorProveeAgricola.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\SaldosInsolutosPorProveeFinanReal.Designer.vb">
+      <DependentUpon>SaldosInsolutosPorProveeFinanReal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\SaldosInsolutosPorProveeFinanReal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaProveedorAgricolaTransportista.designer.vb">
+      <DependentUpon>EstadoCtaProveedorAgricolaTransportista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaProveedorAgricolaTransportista.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaProveedorAgricolaProductor.designer.vb">
+      <DependentUpon>EstadoCtaProveedorAgricolaProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaProveedorAgricolaProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubAnalisisTC.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraSubAnalisisTC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubAnalisisTC.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubHistoZafras.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraSubHistoZafras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubHistoZafras.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\SaldosInsolutosPorProveeFinan.Designer.vb">
+      <DependentUpon>SaldosInsolutosPorProveeFinan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\SaldosInsolutosPorProveeFinan.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\SaldosZafraProductores02.Designer.vb">
+      <DependentUpon>SaldosZafraProductores02.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\SaldosZafraProductores02.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\SaldosZafraTransportistas.Designer.vb">
+      <DependentUpon>SaldosZafraTransportistas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\SaldosZafraTransportistas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTransSubSaldosActuales.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraTransSubSaldosActuales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTransSubSaldosActuales.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTransSubOrdenTramite.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraTransSubOrdenTramite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTransSubOrdenTramite.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTransSubSaldosInsolutos.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraTransSubSaldosInsolutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTransSubSaldosInsolutos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTrans.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraTrans.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraTrans.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaTransportista.designer.vb">
+      <DependentUpon>EstadoCtaTransportista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaTransportista.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\OrdenIrrevocablePagoTransportista.Designer.vb">
+      <DependentUpon>OrdenIrrevocablePagoTransportista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\OrdenIrrevocablePagoTransportista.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\InteresJiboa.designer.vb">
+      <DependentUpon>InteresJiboa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\InteresJiboa.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaProductor.designer.vb">
+      <DependentUpon>EstadoCtaProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\EstadoCtaProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\InteresProveedorAgricola.designer.vb">
+      <DependentUpon>InteresProveedorAgricola.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\InteresProveedorAgricola.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\InteresProveedorTasas.Designer.vb">
+      <DependentUpon>InteresProveedorTasas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\InteresProveedorTasas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\OrdenSuministroConsignacion.Designer.vb">
+      <DependentUpon>OrdenSuministroConsignacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\OrdenSuministroConsignacion.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\OrdenCompraAgricola.Designer.vb">
+      <DependentUpon>OrdenCompraAgricola.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\OrdenCompraAgricola.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\OrdenIrrevocablePago.Designer.vb">
+      <DependentUpon>OrdenIrrevocablePago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\OrdenIrrevocablePago.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinanciera.Designer.vb">
+      <DependentUpon>ProyeccionFinanciera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinanciera.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubOrdenTramite.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraSubOrdenTramite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubOrdenTramite.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubSaldosActuales.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraSubSaldosActuales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubSaldosActuales.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubSaldosInsolutos.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraSubSaldosInsolutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubSaldosInsolutos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubSaldosMutuos.Designer.vb">
+      <DependentUpon>ProyeccionFinancieraSubSaldosMutuos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\ProyeccionFinancieraSubSaldosMutuos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\SaldosZafraProductores01.Designer.vb">
+      <DependentUpon>SaldosZafraProductores01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\SaldosZafraProductores01.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\AnticipoPlanillaPago.Designer.vb">
+      <DependentUpon>AnticipoPlanillaPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\AnticipoPlanillaPago.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\TractoristasAutoVolteo.Designer.vb">
+      <DependentUpon>TractoristasAutoVolteo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\TractoristasAutoVolteo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Financiero\TractoristasAutoVolteoResumen.designer.vb">
+      <DependentUpon>TractoristasAutoVolteoResumen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Financiero\TractoristasAutoVolteoResumen.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualDetalleFrenteCatorcenalInjiboaRel.Designer.vb">
+      <DependentUpon>RozaManualDetalleFrenteCatorcenalInjiboaRel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualDetalleFrenteCatorcenalInjiboaRel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualDetalleFrenteCatorcenalProductor.Designer.vb">
+      <DependentUpon>RozaManualDetalleFrenteCatorcenalProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualDetalleFrenteCatorcenalProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualResumenFrenteProductor.Designer.vb">
+      <DependentUpon>RozaManualResumenFrenteProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualResumenFrenteProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualDetalleProductorFrente.Designer.vb">
+      <DependentUpon>RozaManualDetalleProductorFrente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrentesRoza\RozaManualDetalleProductorFrente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Frentes\SolicitudInsumoFrentes.designer.vb">
+      <DependentUpon>SolicitudInsumoFrentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frentes\SolicitudInsumoFrentes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InventarioCana\InventarioCanaSegIntegral.Designer.vb">
+      <DependentUpon>InventarioCanaSegIntegral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioCana\InventarioCanaSegIntegral.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InventarioCana\InventarioCanaTransporte.Designer.vb">
+      <DependentUpon>InventarioCanaTransporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioCana\InventarioCanaTransporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InventarioCana\InventarioCana.Designer.vb">
+      <DependentUpon>InventarioCana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioCana\InventarioCana.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InventarioCana\RutaDiariaCosecha.designer.vb">
+      <DependentUpon>RutaDiariaCosecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioCana\RutaDiariaCosecha.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\AplicacionesVuelo.Designer.vb">
+      <DependentUpon>AplicacionesVuelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\AplicacionesVuelo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\AplicacionesVueloAgua.Designer.vb">
+      <DependentUpon>AplicacionesVueloAgua.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\AplicacionesVueloAgua.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudAnticipo02.Designer.vb">
+      <DependentUpon>SolicitudAnticipo02.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudAnticipo02.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudInsumoAgricolaExterno.Designer.vb">
+      <DependentUpon>SolicitudInsumoAgricolaExterno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudInsumoAgricolaExterno.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudAnticipo.Designer.vb">
+      <DependentUpon>SolicitudAnticipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudAnticipo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudInsumoSubRepoLotesCanaSemilla.Designer.vb">
+      <DependentUpon>SolicitudInsumoSubRepoLotesCanaSemilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudInsumoSubRepoLotesCanaSemilla.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudSubReporteProducto.Designer.vb">
+      <DependentUpon>SolicitudSubReporteProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudSubReporteProducto.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudProducto02.Designer.vb">
+      <DependentUpon>SolicitudProducto02.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudProducto02.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudAplicaMadurante.Designer.vb">
+      <DependentUpon>SolicitudAplicaMadurante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudAplicaMadurante.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudMaduranteVuelo.Designer.vb">
+      <DependentUpon>SolicitudMaduranteVuelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudMaduranteVuelo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudSubReporteLotes.Designer.vb">
+      <DependentUpon>SolicitudSubReporteLotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudSubReporteLotes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudSubReporteMadurante.Designer.vb">
+      <DependentUpon>SolicitudSubReporteMadurante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madurantes\SolicitudSubReporteMadurante.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorLote.Designer.vb">
+      <DependentUpon>PlanCATAlzaPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorZona.Designer.vb">
+      <DependentUpon>PlanCATAlzaPorZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorSubZona.Designer.vb">
+      <DependentUpon>PlanCATAlzaPorSubZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorSubZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorCanton.Designer.vb">
+      <DependentUpon>PlanCATAlzaPorCanton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Alza\PlanCATAlzaPorCanton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorSubZona.Designer.vb">
+      <DependentUpon>PlanCATRozaPorSubZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorSubZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorCanton.Designer.vb">
+      <DependentUpon>PlanCATRozaPorCanton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorCanton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorZona.Designer.vb">
+      <DependentUpon>PlanCATRozaPorZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorLote.Designer.vb">
+      <DependentUpon>PlanCATRozaPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Roza\PlanCATRozaPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorCanton.Designer.vb">
+      <DependentUpon>PlanCATTransPorCanton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorCanton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorSubZona.Designer.vb">
+      <DependentUpon>PlanCATTransPorSubZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorSubZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorZona.Designer.vb">
+      <DependentUpon>PlanCATTransPorZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorLote.Designer.vb">
+      <DependentUpon>PlanCATTransPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCAT\Transporte\PlanCATTransPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPrecosechaPorProveedor.Designer.vb">
+      <DependentUpon>ResultadoAnalisisPrecosechaPorProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPrecosechaPorProveedor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaEjecucionPorLote.Designer.vb">
+      <DependentUpon>PlanCosechaEjecucionPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaEjecucionPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaContratosVrsEjecucionPorLote.Designer.vb">
+      <DependentUpon>PlanCosechaContratosVrsEjecucionPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaContratosVrsEjecucionPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\ProgramacionCosechaTransporte.Designer.vb">
+      <DependentUpon>ProgramacionCosechaTransporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\ProgramacionCosechaTransporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\RutaCosecha.Designer.vb">
+      <DependentUpon>RutaCosecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\RutaCosecha.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\HojaAnalisisMuestraCana.Designer.vb">
+      <DependentUpon>HojaAnalisisMuestraCana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\HojaAnalisisMuestraCana.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\OrdenRozaCosecha.Designer.vb">
+      <DependentUpon>OrdenRozaCosecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\OrdenRozaCosecha.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaAjustadoPorLote.Designer.vb">
+      <DependentUpon>PlanCosechaAjustadoPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaAjustadoPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\ProgramacionCosecha.Designer.vb">
+      <DependentUpon>ProgramacionCosecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\ProgramacionCosecha.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorLote.Designer.vb">
+      <DependentUpon>PlanCosechaPorLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorLoteActualizado.Designer.vb">
+      <DependentUpon>PlanCosechaPorLoteActualizado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorLoteActualizado.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisMuestras.Designer.vb">
+      <DependentUpon>ResultadoAnalisisMuestras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisMuestras.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPreCosechaAlmidon.Designer.vb">
+      <DependentUpon>ResultadoAnalisisPreCosechaAlmidon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPreCosechaAlmidon.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\OrdenAnalisisMuestra.Designer.vb">
+      <DependentUpon>OrdenAnalisisMuestra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\OrdenAnalisisMuestra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorCanton.Designer.vb">
+      <DependentUpon>PlanCosechaPorCanton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorCanton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorSubZona.Designer.vb">
+      <DependentUpon>PlanCosechaPorSubZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorSubZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorZona.Designer.vb">
+      <DependentUpon>PlanCosechaPorZona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\PlanCosechaPorZona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Censo\ValidacionContratosTC_A.Designer.vb">
+      <DependentUpon>ValidacionContratosTC_A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Censo\ValidacionContratosTC_A.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cheques\ChequeBHObsoleto.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChequeBHObsoleto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comprobantes\ComprobanteRetencion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComprobanteRetencion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comprobantes\CreditoFiscalServiciosIngenio.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreditoFiscalServiciosIngenio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comprobantes\FacturaContinua.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaContinua.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comprobantes\FacturaLibre.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaLibre.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comprobantes\FacturaServiciosIngenio.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaServiciosIngenio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\InconsistenciaEnviosDiaZafra.vb">
+      <DependentUpon>InconsistenciaEnviosDiaZafra.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Diarios\MovimientoCanaContratada01b.vb">
+      <DependentUpon>MovimientoCanaContratada01b.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Diarios\OrdenCombustibleListaPlaca.vb">
+      <DependentUpon>OrdenCombustibleListaPlaca.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Diarios\EntregaCanaCatorcenalLote1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntregaCanaCatorcenalLote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\MovimientoCanaContratada03.vb">
+      <DependentUpon>MovimientoCanaContratada03.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Diarios\MovimientoCanaContratada01.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovimientoCanaContratada01.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\MovimientoCanaContratada02.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovimientoCanaContratada02.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\OrdenCombustibleLista.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenCombustibleLista.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\OrdenCombustibleListaProducto.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenCombustibleListaProducto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\OrdenCombustibleListaTipoProveedor.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenCombustibleListaTipoProveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\OrdenCombustiblePorProveedor.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenCombustiblePorProveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MaestroLotes\CatalogoLotes.Designer.vb">
+      <DependentUpon>CatalogoLotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MaestroLotes\CatalogoLotes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPreCosecha.Designer.vb">
+      <DependentUpon>ResultadoAnalisisPreCosecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPreCosecha.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPrecosechaTodo.Designer.vb">
+      <DependentUpon>ResultadoAnalisisPrecosechaTodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PlanCosecha\ResultadoAnalisisPrecosechaTodo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanillaVFPAdicional\HojaLiquidacionComplementoVFP_Adicional_CaneroContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionComplementoVFP_Adicional_CaneroContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanillaVFPAdicional\HojaLiquidacionComplementoVFP_Adicional_CaneroNoContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionComplementoVFP_Adicional_CaneroNoContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanillaVFPAdicional\PlanillaComplementoVFP_Adicional_CanerosContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaComplementoVFP_Adicional_CanerosContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanillaVFPAdicional\PlanillaComplementoVFP_Adicional_CanerosNoContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaComplementoVFP_Adicional_CanerosNoContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionFrenteParticular.designer.vb">
+      <DependentUpon>HojaLiquidacionFrenteParticular.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionFrenteParticular.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionIncentivoCaneroNoContribuyente.vb">
+      <DependentUpon>HojaLiquidacionIncentivoCaneroNoContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionIncentivoCaneroContribuyente.vb">
+      <DependentUpon>HojaLiquidacionIncentivoCaneroContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaFrenteJiboa.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaFrenteJiboa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaFrenteParticular.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaFrenteParticular.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaIncentivoProductoresNoContribuyentes.vb">
+      <DependentUpon>PlanillaIncentivoProductoresNoContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaIncentivoProductoresContribuyentes.vb">
+      <DependentUpon>PlanillaIncentivoProductoresContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\ReciboTransporte.designer.vb">
+      <DependentUpon>ReciboTransporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Planilla\ReciboTransporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionAnticipoCaneroNoContribuyente01A.vb">
+      <DependentUpon>HojaLiquidacionAnticipoCaneroNoContribuyente01A.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionAnticipoCaneroContribuyente01A.vb">
+      <DependentUpon>HojaLiquidacionAnticipoCaneroContribuyente01A.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\EstimacionAnticipoFrenteRoza.Designer.vb">
+      <DependentUpon>EstimacionAnticipoFrenteRoza.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Planilla\EstimacionAnticipoFrenteRoza.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PagareAnticipo.Designer.vb">
+      <DependentUpon>PagareAnticipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Planilla\PagareAnticipo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaCompensacionCanerosNoContribuyentes.vb">
+      <DependentUpon>PlanillaCompensacionCanerosNoContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaCompensacionCanerosContribuyentes.vb">
+      <DependentUpon>PlanillaCompensacionCanerosContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionCompensacionCaneroNoContribuyente.vb">
+      <DependentUpon>HojaLiquidacionCompensacionCaneroNoContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionCompensacionCaneroContribuyente.vb">
+      <DependentUpon>HojaLiquidacionCompensacionCaneroContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionComplementoVFPCaneroNoContribuyente.vb">
+      <DependentUpon>HojaLiquidacionComplementoVFPCaneroNoContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionComplementoVFPCaneroContribuyente.vb">
+      <DependentUpon>HojaLiquidacionComplementoVFPCaneroContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaComplementoVFPCanerosNoContribuyentes.vb">
+      <DependentUpon>PlanillaComplementoVFPCanerosNoContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaComplementoVFPCanerosContribuyentes.vb">
+      <DependentUpon>PlanillaComplementoVFPCanerosContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionAnticipoCaneroNoContribuyente.vb">
+      <DependentUpon>HojaLiquidacionAnticipoCaneroNoContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionAnticipoCaneroContribuyente.vb">
+      <DependentUpon>HojaLiquidacionAnticipoCaneroContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaAnticipoCanerosNoContribuyentes.vb">
+      <DependentUpon>PlanillaAnticipoCanerosNoContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaAnticipoCanerosContribuyentes.vb">
+      <DependentUpon>PlanillaAnticipoCanerosContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionCargadoraNoContribuyente.vb">
+      <DependentUpon>HojaLiquidacionCargadoraNoContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionCargadoraContribuyente.vb">
+      <DependentUpon>HojaLiquidacionCargadoraContribuyente.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaCargadorasNoContribuyentes.vb">
+      <DependentUpon>PlanillaCargadorasNoContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\PlanillaCargadorasContribuyentes.vb">
+      <DependentUpon>PlanillaCargadorasContribuyentes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionCaneroContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionCaneroContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionCaneroNoContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionCaneroNoContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionProveedorRozaContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionProveedorRozaContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionProveedorRozaNoContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionProveedorRozaNoContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionTransportistaContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionTransportistaContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\HojaLiquidacionTransportistaNoContribuyente.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaLiquidacionTransportistaNoContribuyente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\InconsistenciaEnvios.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InconsistenciaEnvios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ListadoCheques.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoCheques.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\OperadoresCargadoraCosechadora.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperadoresCargadoraCosechadora.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ProveedorSinCuentaContable.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProveedorSinCuentaContable.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\RendimientosClientesPorAgronomo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RendimientosClientesPorAgronomo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenCargadoPorCaneroCargadora.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenCargadoPorCaneroCargadora.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenCargadoPorCargadoraCanero.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenCargadoPorCargadoraCanero.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenDiarioIngresoMateriaPrima.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenDiarioIngresoMateriaPrima.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenFleteDeTransportista.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenFleteDeTransportista.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenRevisionFleteClienteTransporte.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenRevisionFleteClienteTransporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenRozaPorCanero.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenRozaPorCanero.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Catorcena\ResumenRozaPorProveedorRoza.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenRozaPorProveedorRoza.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\CosechaDiariaPorAgronomo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CosechaDiariaPorAgronomo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\EntregaCanaBascula.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntregaCanaBascula.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\EntregaCanaBascula02.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntregaCanaBascula02.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\EntregaCanaCONSAA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntregaCanaCONSAA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\LaboratorioPagoCalidad01.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratorioPagoCalidad01.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\MuestrasLaboratorio.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MuestrasLaboratorio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\OrdenCombustible.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenCombustible.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\OrdenRoza.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenRoza.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\ProgramacionEntregaCana.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgramacionEntregaCana.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\ReciboCana.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReciboCana.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\RendimientoClientePorAgronomo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RendimientoClientePorAgronomo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\RendimientoTeoricoPonderado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RendimientoTeoricoPonderado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\RendimientoTeoricoPonderadoCatorcena.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RendimientoTeoricoPonderadoCatorcena.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diarios\ResultadoCorteDiarioProveedor.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResultadoCorteDiarioProveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Planilla\PlanillaCanerosContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaCanerosContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaCanerosNoContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaCanerosNoContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaRozaContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaRozaContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaRozaNoContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaRozaNoContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaTransportistasContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaTransportistasContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\PlanillaTransportistasNoContribuyentes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaTransportistasNoContribuyentes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Planilla\ReciboProductor.designer.vb">
+      <DependentUpon>ReciboProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Planilla\ReciboProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Querqueo\LiquidacionFrenteQuerqueo.designer.vb">
+      <DependentUpon>LiquidacionFrenteQuerqueo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Querqueo\LiquidacionFrenteQuerqueo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualDetalleFrenteCatorcenalInjiboaRel.designer.vb">
+      <DependentUpon>QuerqueoManualDetalleFrenteCatorcenalInjiboaRel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualDetalleFrenteCatorcenalInjiboaRel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualDetalleFrenteCatorcenalProductor.designer.vb">
+      <DependentUpon>QuerqueoManualDetalleFrenteCatorcenalProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualDetalleFrenteCatorcenalProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualDetalleProductorFrente.designer.vb">
+      <DependentUpon>QuerqueoManualDetalleProductorFrente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualDetalleProductorFrente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualResumenFrenteProductor.designer.vb">
+      <DependentUpon>QuerqueoManualResumenFrenteProductor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Querqueo\QuerqueoManualResumenFrenteProductor.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepoComprobantes\ComprobanteRetencionContribuyente.Designer.vb">
+      <DependentUpon>ComprobanteRetencionContribuyente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepoComprobantes\ComprobanteRetencionContribuyente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepoComprobantes\ComprobanteRetencionNoContribuyente.Designer.vb">
+      <DependentUpon>ComprobanteRetencionNoContribuyente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepoComprobantes\ComprobanteRetencionNoContribuyente.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepoComprobantes\CCFCana.Designer.vb">
+      <DependentUpon>CCFCana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepoComprobantes\CCFCana.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepoComprobantes\SujetoExcluidoNoContribuyenteTransporte.Designer.vb">
+      <DependentUpon>SujetoExcluidoNoContribuyenteTransporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepoComprobantes\SujetoExcluidoNoContribuyenteTransporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepoComprobantes\SujetoExcluidoNoContribuyenteCana.Designer.vb">
+      <DependentUpon>SujetoExcluidoNoContribuyenteCana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepoComprobantes\SujetoExcluidoNoContribuyenteCana.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepoComprobantes\FacturaCana.Designer.vb">
+      <DependentUpon>FacturaCana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepoComprobantes\FacturaCana.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Requisicion\ControlRequisiciones.Designer.vb">
+      <DependentUpon>ControlRequisiciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requisicion\ControlRequisiciones.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Requisicion\SolicitudParaRequisicion.Designer.vb">
+      <DependentUpon>SolicitudParaRequisicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Requisicion\SolicitudParaRequisicion.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sistagri\FichaTecnicaLote.Designer.vb">
+      <DependentUpon>FichaTecnicaLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sistagri\FichaTecnicaLote.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec019_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec019_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec019_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec018_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec018_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec018_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec017_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec017_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec017_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec010_ZonaFabrica.Designer.vb">
+      <DependentUpon>rptSigestaEjec010_ZonaFabrica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec010_ZonaFabrica.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec016_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec016_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec016_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec015_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec015_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec015_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec009_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec009_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec009_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec008_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec008_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec008_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec007_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec007_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec007_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec002_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec002_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec002_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec001_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec001_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec001_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec012_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec012_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec012_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec014Compa_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec014Compa_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec014Compa_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec014_Zona.Designer.vb">
+      <DependentUpon>rptSigestaEjec014_Zona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec014_Zona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec005_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec005_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec005_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec006_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec006_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec006_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec004_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec004_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec004_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec011_Zona.Designer.vb">
+      <DependentUpon>rptSigestaEjec011_Zona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec011_Zona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec003_Zona.Designer.vb">
+      <DependentUpon>rptSigestaEjec003_Zona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec003_Zona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec003_Zafra.Designer.vb">
+      <DependentUpon>rptSigestaEjec003_Zafra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec003_Zafra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec010_Zona.Designer.vb">
+      <DependentUpon>rptSigestaEjec010_Zona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisionAgricola\rptSigestaEjec010_Zona.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transporte\ContratoTransporte.designer.vb">
+      <DependentUpon>ContratoTransporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transporte\ContratoTransporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transporte\ContratoTransporteLegal.designer.vb">
+      <DependentUpon>ContratoTransporteLegal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transporte\ContratoTransporteLegal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transporte\SolicitudInsumoTransporte.Designer.vb">
+      <DependentUpon>SolicitudInsumoTransporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transporte\SolicitudInsumoTransporte.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AnexoContratoLegal.resx">
+      <DependentUpon>AnexoContratoLegal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\ProductoSolicitado.resx">
+      <DependentUpon>ProductoSolicitado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\ProductoConsignadoEntregado.resx">
+      <DependentUpon>ProductoConsignadoEntregado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\SolicitudRetiroProductoConsignadoProductor.resx">
+      <DependentUpon>SolicitudRetiroProductoConsignadoProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\DoctoIngresoBodegaPorTransf.resx">
+      <DependentUpon>DoctoIngresoBodegaPorTransf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\DoctoSalidaBodega.resx">
+      <DependentUpon>DoctoSalidaBodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\Kardex.resx">
+      <DependentUpon>Kardex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\SolicitudRetiroDetalle.resx">
+      <DependentUpon>SolicitudRetiroDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\SolicitudRetiroProductoConsignado.resx">
+      <DependentUpon>SolicitudRetiroProductoConsignado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargaTransporte\SeguimientoAgricolaCargaTransporte.resx">
+      <DependentUpon>SeguimientoAgricolaCargaTransporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\CalculoAzucarPago.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CalculoAzucarPago.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\Cheques.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cheques.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ConstanciaRetencionRenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ConstanciaRetencionRenta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\CalculoAzucarPagoAnticipo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CalculoAzucarPagoAnticipo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\CalculoAzucarFabrica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CalculoAzucarFabrica.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\CalculoAzucarPagoValorFinal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CalculoAzucarPagoValorFinal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\CalculoAzucarPagoIncentivo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CalculoAzucarPagoIncentivo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ConstanciaRetencionRentaIncentivo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ConstanciaRetencionRentaIncentivo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\DatosParaCCF_Cana_Transporte.resx">
+      <DependentUpon>DatosParaCCF_Cana_Transporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\DetalleProductorCargadoraLotes.resx">
+      <DependentUpon>DetalleProductorCargadoraLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\EnvioConQuerqueo.resx">
+      <DependentUpon>EnvioConQuerqueo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\LiquidacionContribuyentePlanilla.resx">
+      <DependentUpon>LiquidacionContribuyentePlanilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenCargadoPorTransportistaCargadoraVolteo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenCargadoPorTransportistaCargadoraVolteo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\EnvioConBarrida.resx">
+      <DependentUpon>EnvioConBarrida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ReciboCargadora.resx">
+      <DependentUpon>ReciboCargadora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenPagoCargadorasZafra.resx">
+      <DependentUpon>ResumenPagoCargadorasZafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenPagoTransportistasZafra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenPagoTransportistasZafra.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenRevisionFleteClienteLoteTransporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenRevisionFleteClienteLoteTransporte.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenPagoTransportistasZafraDesctoDiesel.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenPagoTransportistasZafraDesctoDiesel.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenCargadoTipoTarifaPorCargadoraCanero.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenCargadoTipoTarifaPorCargadoraCanero.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\DescuentosCanero.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DescuentosCanero.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\DescuentosProveedorRoza.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DescuentosProveedorRoza.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\DescuentosTransportista.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DescuentosTransportista.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\DetalleTransporteCaneroParaTrasnportista.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DetalleTransporteCaneroParaTrasnportista.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenPagoCanerosZafra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenPagoCanerosZafra.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoEntregar_A.resx">
+      <DependentUpon>AnexoCensoEntregadoEntregar_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoEntregar_B.resx">
+      <DependentUpon>AnexoCensoEntregadoEntregar_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoEntregar_C.resx">
+      <DependentUpon>AnexoCensoEntregadoEntregar_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTCUS_A.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTCUS_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTCUS_B.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTCUS_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTCUS_C.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTCUS_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTC_A.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTC_B.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTC_C.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoSinContrato_A.resx">
+      <DependentUpon>AnexoCensoSinContrato_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoSinContrato_B.resx">
+      <DependentUpon>AnexoCensoSinContrato_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoSinContrato_C.resx">
+      <DependentUpon>AnexoCensoSinContrato_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoDifContratos_A.resx">
+      <DependentUpon>CensoDifContratos_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoDifContratos_B.resx">
+      <DependentUpon>CensoDifContratos_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoDifContratos_C.resx">
+      <DependentUpon>CensoDifContratos_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoGeneralVariacion_A.resx">
+      <DependentUpon>CensoGeneralVariacion_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoGeneralVariacion_B.resx">
+      <DependentUpon>CensoGeneralVariacion_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoGeneralVariacion_C.resx">
+      <DependentUpon>CensoGeneralVariacion_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTCUS_A.resx">
+      <DependentUpon>ContratoCanaLotesTCUS_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTCUS_B.resx">
+      <DependentUpon>ContratoCanaLotesTCUS_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTCUS_C.resx">
+      <DependentUpon>ContratoCanaLotesTCUS_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTC_A.resx">
+      <DependentUpon>ContratoCanaLotesTC_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTC_B.resx">
+      <DependentUpon>ContratoCanaLotesTC_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTC_C.resx">
+      <DependentUpon>ContratoCanaLotesTC_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTCUS_A.resx">
+      <DependentUpon>ContratoEjecucionCensoTCUS_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTCUS_B.resx">
+      <DependentUpon>ContratoEjecucionCensoTCUS_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTCUS_C.resx">
+      <DependentUpon>ContratoEjecucionCensoTCUS_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTC_A.resx">
+      <DependentUpon>ContratoEjecucionCensoTC_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTC_B.resx">
+      <DependentUpon>ContratoEjecucionCensoTC_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTC_C.resx">
+      <DependentUpon>ContratoEjecucionCensoTC_C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTC_D.resx">
+      <DependentUpon>ContratoCanaLotesTC_D.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTC_E.resx">
+      <DependentUpon>ContratoCanaLotesTC_E.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTCUS_D.resx">
+      <DependentUpon>ContratoCanaLotesTCUS_D.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTCUS_E.resx">
+      <DependentUpon>ContratoCanaLotesTCUS_E.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTC_D.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_D.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\AnexoCensoEntregadoSaldoTC_E.resx">
+      <DependentUpon>AnexoCensoEntregadoSaldoTC_E.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTC_D.resx">
+      <DependentUpon>ContratoEjecucionCensoTC_D.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoEjecucionCensoTC_E.resx">
+      <DependentUpon>ContratoEjecucionCensoTC_E.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoDifContratos_D.resx">
+      <DependentUpon>CensoDifContratos_D.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratoCanaLotesTC_A11.resx">
+      <DependentUpon>ContratoCanaLotesTC_A11.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\CensoDifContratos_E.resx">
+      <DependentUpon>CensoDifContratos_E.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratosEstimacionTC_A.resx">
+      <DependentUpon>ContratosEstimacionTC_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratosEstimacionTC_B.resx">
+      <DependentUpon>ContratosEstimacionTC_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ContratosEstimacionTC_B2.resx">
+      <DependentUpon>ContratosEstimacionTC_B2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\TercioEntregaCana.resx">
+      <DependentUpon>TercioEntregaCana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\ChequeBH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChequeBH.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\ChequeBAC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChequeBAC.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\ChequeDAVIVIENDA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChequeDAVIVIENDA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\ChequeDAVIVIENDA_2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChequeDAVIVIENDA_2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\ChequePROMERICA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChequePROMERICA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Combustible\OrdenCombustibleCodigoBarra.resx">
+      <DependentUpon>OrdenCombustibleCodigoBarra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Combustible\ReciboConsolidadoCombustible.resx">
+      <DependentUpon>ReciboConsolidadoCombustible.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comprobantes\FacturaSujetoExcluido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FacturaSujetoExcluido.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoPersonaNatural.resx">
+      <DependentUpon>ContratoPersonaNatural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\AnalisisVMTcompleto.resx">
+      <DependentUpon>AnalisisVMTcompleto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\AnalisisVMTgeneral.resx">
+      <DependentUpon>AnalisisVMTgeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\Comparativo2Zafras.resx">
+      <DependentUpon>Comparativo2Zafras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\Comparativo2ZafrasGeneral.resx">
+      <DependentUpon>Comparativo2ZafrasGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\Comparativo2ZafrasLote.resx">
+      <DependentUpon>Comparativo2ZafrasLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\ComparativoRendimientoLotes.resx">
+      <DependentUpon>ComparativoRendimientoLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\EntregasAnomalas.resx">
+      <DependentUpon>EntregasAnomalas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\AnalisisPrecosechaPorLote.resx">
+      <DependentUpon>AnalisisPrecosechaPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\InventarioRozaSaldos.resx">
+      <DependentUpon>InventarioRozaSaldos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\InventarioRozaDiaria.resx">
+      <DependentUpon>InventarioRozaDiaria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\InventarioRozaDiariaProveedor.resx">
+      <DependentUpon>InventarioRozaDiariaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\PlanCosechaDiarioPorLote.resx">
+      <DependentUpon>PlanCosechaDiarioPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\Proforma.resx">
+      <DependentUpon>Proforma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cosecha\TipoCanaPorDiaZafra.resx">
+      <DependentUpon>TipoCanaPorDiaZafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\EnviosVrsAnalisisMuestras.resx">
+      <DependentUpon>EnviosVrsAnalisisMuestras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\RendimientoDiarioAcumuladoProveedorLote.resx">
+      <DependentUpon>RendimientoDiarioAcumuladoProveedorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\RendimientosTeoricosPond.resx">
+      <DependentUpon>RendimientosTeoricosPond.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoSociedadCooperativa.resx">
+      <DependentUpon>ContratoSociedadCooperativa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\CartaAutorizacionServicios.resx">
+      <DependentUpon>CartaAutorizacionServicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\CombustibleSaldoPendiente.resx">
+      <DependentUpon>CombustibleSaldoPendiente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\CombustibleSaldoResumen.resx">
+      <DependentUpon>CombustibleSaldoResumen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\EstadoCtaFrente.resx">
+      <DependentUpon>EstadoCtaFrente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProductoConsignadoPendiente.resx">
+      <DependentUpon>ProductoConsignadoPendiente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\AnalisisFinanciero.resx">
+      <DependentUpon>AnalisisFinanciero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\Proyecciones\Proyeccion_Resumen.resx">
+      <DependentUpon>Proyeccion_Resumen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\Proyecciones\Proyeccion_Resumen_RA.resx">
+      <DependentUpon>Proyeccion_Resumen_RA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\Proyecciones\Proyeccion_Resumen_RF.resx">
+      <DependentUpon>Proyeccion_Resumen_RF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\Proyecciones\Proyeccion_Resumen_RPJ.resx">
+      <DependentUpon>Proyeccion_Resumen_RPJ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\SaldosInsolutosPorProveeAgricola.resx">
+      <DependentUpon>SaldosInsolutosPorProveeAgricola.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\SaldosInsolutosPorProveeFinanReal.resx">
+      <DependentUpon>SaldosInsolutosPorProveeFinanReal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\EstadoCtaProveedorAgricolaTransportista.resx">
+      <DependentUpon>EstadoCtaProveedorAgricolaTransportista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\EstadoCtaProveedorAgricolaProductor.resx">
+      <DependentUpon>EstadoCtaProveedorAgricolaProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraSubAnalisisTC.resx">
+      <DependentUpon>ProyeccionFinancieraSubAnalisisTC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraSubHistoZafras.resx">
+      <DependentUpon>ProyeccionFinancieraSubHistoZafras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\SaldosInsolutosPorProveeFinan.resx">
+      <DependentUpon>SaldosInsolutosPorProveeFinan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\SaldosZafraProductores02.resx">
+      <DependentUpon>SaldosZafraProductores02.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\SaldosZafraTransportistas.resx">
+      <DependentUpon>SaldosZafraTransportistas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraTransSubSaldosActuales.resx">
+      <DependentUpon>ProyeccionFinancieraTransSubSaldosActuales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraTransSubOrdenTramite.resx">
+      <DependentUpon>ProyeccionFinancieraTransSubOrdenTramite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraTransSubSaldosInsolutos.resx">
+      <DependentUpon>ProyeccionFinancieraTransSubSaldosInsolutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraTrans.resx">
+      <DependentUpon>ProyeccionFinancieraTrans.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\EstadoCtaTransportista.resx">
+      <DependentUpon>EstadoCtaTransportista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\OrdenIrrevocablePagoTransportista.resx">
+      <DependentUpon>OrdenIrrevocablePagoTransportista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\InteresJiboa.resx">
+      <DependentUpon>InteresJiboa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\EstadoCtaProductor.resx">
+      <DependentUpon>EstadoCtaProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\InteresProveedorAgricola.resx">
+      <DependentUpon>InteresProveedorAgricola.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\InteresProveedorTasas.resx">
+      <DependentUpon>InteresProveedorTasas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\OrdenSuministroConsignacion.resx">
+      <DependentUpon>OrdenSuministroConsignacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\OrdenCompraAgricola.resx">
+      <DependentUpon>OrdenCompraAgricola.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\OrdenIrrevocablePago.resx">
+      <DependentUpon>OrdenIrrevocablePago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinanciera.resx">
+      <DependentUpon>ProyeccionFinanciera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraSubOrdenTramite.resx">
+      <DependentUpon>ProyeccionFinancieraSubOrdenTramite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraSubSaldosActuales.resx">
+      <DependentUpon>ProyeccionFinancieraSubSaldosActuales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraSubSaldosInsolutos.resx">
+      <DependentUpon>ProyeccionFinancieraSubSaldosInsolutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\ProyeccionFinancieraSubSaldosMutuos.resx">
+      <DependentUpon>ProyeccionFinancieraSubSaldosMutuos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\SaldosZafraProductores01.resx">
+      <DependentUpon>SaldosZafraProductores01.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\AnticipoPlanillaPago.resx">
+      <DependentUpon>AnticipoPlanillaPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\TractoristasAutoVolteo.resx">
+      <DependentUpon>TractoristasAutoVolteo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financiero\TractoristasAutoVolteoResumen.resx">
+      <DependentUpon>TractoristasAutoVolteoResumen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrentesRoza\RozaManualDetalleFrenteCatorcenalInjiboaRel.resx">
+      <DependentUpon>RozaManualDetalleFrenteCatorcenalInjiboaRel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrentesRoza\RozaManualDetalleFrenteCatorcenalProductor.resx">
+      <DependentUpon>RozaManualDetalleFrenteCatorcenalProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrentesRoza\RozaManualResumenFrenteProductor.resx">
+      <DependentUpon>RozaManualResumenFrenteProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrentesRoza\RozaManualDetalleProductorFrente.resx">
+      <DependentUpon>RozaManualDetalleProductorFrente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frentes\SolicitudInsumoFrentes.resx">
+      <DependentUpon>SolicitudInsumoFrentes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioCana\InventarioCanaSegIntegral.resx">
+      <DependentUpon>InventarioCanaSegIntegral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioCana\InventarioCanaTransporte.resx">
+      <DependentUpon>InventarioCanaTransporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioCana\InventarioCana.resx">
+      <DependentUpon>InventarioCana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioCana\RutaDiariaCosecha.resx">
+      <DependentUpon>RutaDiariaCosecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\AplicacionesVuelo.resx">
+      <DependentUpon>AplicacionesVuelo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\AplicacionesVueloAgua.resx">
+      <DependentUpon>AplicacionesVueloAgua.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudAnticipo02.resx">
+      <DependentUpon>SolicitudAnticipo02.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudInsumoAgricolaExterno.resx">
+      <DependentUpon>SolicitudInsumoAgricolaExterno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudAnticipo.resx">
+      <DependentUpon>SolicitudAnticipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudInsumoSubRepoLotesCanaSemilla.resx">
+      <DependentUpon>SolicitudInsumoSubRepoLotesCanaSemilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudSubReporteProducto.resx">
+      <DependentUpon>SolicitudSubReporteProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudProducto02.resx">
+      <DependentUpon>SolicitudProducto02.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudAplicaMadurante.resx">
+      <DependentUpon>SolicitudAplicaMadurante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudMaduranteVuelo.resx">
+      <DependentUpon>SolicitudMaduranteVuelo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudSubReporteLotes.resx">
+      <DependentUpon>SolicitudSubReporteLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madurantes\SolicitudSubReporteMadurante.resx">
+      <DependentUpon>SolicitudSubReporteMadurante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Alza\PlanCATAlzaPorLote.resx">
+      <DependentUpon>PlanCATAlzaPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Alza\PlanCATAlzaPorZona.resx">
+      <DependentUpon>PlanCATAlzaPorZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Alza\PlanCATAlzaPorSubZona.resx">
+      <DependentUpon>PlanCATAlzaPorSubZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Alza\PlanCATAlzaPorCanton.resx">
+      <DependentUpon>PlanCATAlzaPorCanton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Roza\PlanCATRozaPorSubZona.resx">
+      <DependentUpon>PlanCATRozaPorSubZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Roza\PlanCATRozaPorCanton.resx">
+      <DependentUpon>PlanCATRozaPorCanton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Roza\PlanCATRozaPorZona.resx">
+      <DependentUpon>PlanCATRozaPorZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Roza\PlanCATRozaPorLote.resx">
+      <DependentUpon>PlanCATRozaPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Transporte\PlanCATTransPorCanton.resx">
+      <DependentUpon>PlanCATTransPorCanton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Transporte\PlanCATTransPorSubZona.resx">
+      <DependentUpon>PlanCATTransPorSubZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Transporte\PlanCATTransPorZona.resx">
+      <DependentUpon>PlanCATTransPorZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCAT\Transporte\PlanCATTransPorLote.resx">
+      <DependentUpon>PlanCATTransPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\ResultadoAnalisisPrecosechaPorProveedor.resx">
+      <DependentUpon>ResultadoAnalisisPrecosechaPorProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaEjecucionPorLote.resx">
+      <DependentUpon>PlanCosechaEjecucionPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaContratosVrsEjecucionPorLote.resx">
+      <DependentUpon>PlanCosechaContratosVrsEjecucionPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\ProgramacionCosechaTransporte.resx">
+      <DependentUpon>ProgramacionCosechaTransporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\RutaCosecha.resx">
+      <DependentUpon>RutaCosecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\HojaAnalisisMuestraCana.resx">
+      <DependentUpon>HojaAnalisisMuestraCana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\OrdenRozaCosecha.resx">
+      <DependentUpon>OrdenRozaCosecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaAjustadoPorLote.resx">
+      <DependentUpon>PlanCosechaAjustadoPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\ProgramacionCosecha.resx">
+      <DependentUpon>ProgramacionCosecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaPorLote.resx">
+      <DependentUpon>PlanCosechaPorLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaPorLoteActualizado.resx">
+      <DependentUpon>PlanCosechaPorLoteActualizado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\ResultadoAnalisisMuestras.resx">
+      <DependentUpon>ResultadoAnalisisMuestras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\ResultadoAnalisisPreCosechaAlmidon.resx">
+      <DependentUpon>ResultadoAnalisisPreCosechaAlmidon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\OrdenAnalisisMuestra.resx">
+      <DependentUpon>OrdenAnalisisMuestra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaPorCanton.resx">
+      <DependentUpon>PlanCosechaPorCanton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaPorSubZona.resx">
+      <DependentUpon>PlanCosechaPorSubZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\PlanCosechaPorZona.resx">
+      <DependentUpon>PlanCosechaPorZona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Censo\ValidacionContratosTC_A.resx">
+      <DependentUpon>ValidacionContratosTC_A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\ChequeBHObsoleto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ChequeBHObsoleto.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comprobantes\ComprobanteRetencion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ComprobanteRetencion1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comprobantes\CreditoFiscalServiciosIngenio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CreditoFiscalServiciosIngenio.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comprobantes\FacturaContinua.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FacturaContinua.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comprobantes\FacturaLibre.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FacturaLibre.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comprobantes\FacturaServiciosIngenio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FacturaServiciosIngenio.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\InconsistenciaEnviosDiaZafra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InconsistenciaEnviosDiaZafra.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\MovimientoCanaContratada01b.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MovimientoCanaContratada01b.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\OrdenCombustibleListaPlaca.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenCombustibleListaPlaca.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\EntregaCanaCatorcenalLote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EntregaCanaCatorcenalLote1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\MovimientoCanaContratada03.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MovimientoCanaContratada03.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\MovimientoCanaContratada01.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MovimientoCanaContratada01.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\MovimientoCanaContratada02.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MovimientoCanaContratada02.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\OrdenCombustibleLista.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenCombustibleLista.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\OrdenCombustibleListaProducto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenCombustibleListaProducto.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\OrdenCombustibleListaTipoProveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenCombustibleListaTipoProveedor.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\OrdenCombustiblePorProveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenCombustiblePorProveedor.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaestroLotes\CatalogoLotes.resx">
+      <DependentUpon>CatalogoLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="PlanCosecha\ResultadoAnalisisPreCosecha.resx">
+      <DependentUpon>ResultadoAnalisisPreCosecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanCosecha\ResultadoAnalisisPrecosechaTodo.resx">
+      <DependentUpon>ResultadoAnalisisPrecosechaTodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanillaVFPAdicional\HojaLiquidacionComplementoVFP_Adicional_CaneroContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionComplementoVFP_Adicional_CaneroContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanillaVFPAdicional\HojaLiquidacionComplementoVFP_Adicional_CaneroNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionComplementoVFP_Adicional_CaneroNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanillaVFPAdicional\PlanillaComplementoVFP_Adicional_CanerosContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaComplementoVFP_Adicional_CanerosContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanillaVFPAdicional\PlanillaComplementoVFP_Adicional_CanerosNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaComplementoVFP_Adicional_CanerosNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionFrenteParticular.resx">
+      <DependentUpon>HojaLiquidacionFrenteParticular.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionIncentivoCaneroNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionIncentivoCaneroNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionIncentivoCaneroContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionIncentivoCaneroContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaFrenteJiboa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaFrenteJiboa.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaFrenteParticular.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaFrenteParticular.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaIncentivoProductoresNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaIncentivoProductoresNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaIncentivoProductoresContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaIncentivoProductoresContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\ReciboTransporte.resx">
+      <DependentUpon>ReciboTransporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionAnticipoCaneroNoContribuyente01A.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionAnticipoCaneroNoContribuyente01A.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionAnticipoCaneroContribuyente01A.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionAnticipoCaneroContribuyente01A.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\EstimacionAnticipoFrenteRoza.resx">
+      <DependentUpon>EstimacionAnticipoFrenteRoza.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PagareAnticipo.resx">
+      <DependentUpon>PagareAnticipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaCompensacionCanerosNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaCompensacionCanerosNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaCompensacionCanerosContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaCompensacionCanerosContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionCompensacionCaneroNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionCompensacionCaneroNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionCompensacionCaneroContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionCompensacionCaneroContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionComplementoVFPCaneroNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionComplementoVFPCaneroNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionComplementoVFPCaneroContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionComplementoVFPCaneroContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaComplementoVFPCanerosNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaComplementoVFPCanerosNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaComplementoVFPCanerosContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaComplementoVFPCanerosContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionAnticipoCaneroNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionAnticipoCaneroNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionAnticipoCaneroContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionAnticipoCaneroContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaAnticipoCanerosNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaAnticipoCanerosNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaAnticipoCanerosContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaAnticipoCanerosContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionCargadoraNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionCargadoraNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionCargadoraContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionCargadoraContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaCargadorasNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaCargadorasNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaCargadorasContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaCargadorasContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionCaneroContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionCaneroContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionCaneroNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionCaneroNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionProveedorRozaContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionProveedorRozaContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionProveedorRozaNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionProveedorRozaNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionTransportistaContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionTransportistaContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\HojaLiquidacionTransportistaNoContribuyente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaLiquidacionTransportistaNoContribuyente.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\InconsistenciaEnvios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InconsistenciaEnvios.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ListadoCheques.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoCheques.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\OperadoresCargadoraCosechadora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OperadoresCargadoraCosechadora.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ProveedorSinCuentaContable.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProveedorSinCuentaContable.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\RendimientosClientesPorAgronomo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RendimientosClientesPorAgronomo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenCargadoPorCaneroCargadora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenCargadoPorCaneroCargadora.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenCargadoPorCargadoraCanero.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenCargadoPorCargadoraCanero.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenDiarioIngresoMateriaPrima.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenDiarioIngresoMateriaPrima.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenFleteDeTransportista.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenFleteDeTransportista.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenRevisionFleteClienteTransporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenRevisionFleteClienteTransporte.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenRozaPorCanero.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenRozaPorCanero.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catorcena\ResumenRozaPorProveedorRoza.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenRozaPorProveedorRoza.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\CosechaDiariaPorAgronomo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CosechaDiariaPorAgronomo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\EntregaCanaBascula.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EntregaCanaBascula.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\EntregaCanaBascula02.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EntregaCanaBascula02.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\EntregaCanaCONSAA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EntregaCanaCONSAA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\LaboratorioPagoCalidad01.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaboratorioPagoCalidad01.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\MuestrasLaboratorio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MuestrasLaboratorio.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\OrdenCombustible.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenCombustible.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\OrdenRoza.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenRoza.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\ProgramacionEntregaCana.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProgramacionEntregaCana.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\ReciboCana.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReciboCana.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\RendimientoClientePorAgronomo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RendimientoClientePorAgronomo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\RendimientoTeoricoPonderado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RendimientoTeoricoPonderado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\RendimientoTeoricoPonderadoCatorcena.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RendimientoTeoricoPonderadoCatorcena.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diarios\ResultadoCorteDiarioProveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResultadoCorteDiarioProveedor.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaCanerosContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaCanerosContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaCanerosNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaCanerosNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaRozaContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaRozaContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaRozaNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaRozaNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaTransportistasContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaTransportistasContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\PlanillaTransportistasNoContribuyentes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanillaTransportistasNoContribuyentes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planilla\ReciboProductor.resx">
+      <DependentUpon>ReciboProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Querqueo\LiquidacionFrenteQuerqueo.resx">
+      <DependentUpon>LiquidacionFrenteQuerqueo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Querqueo\QuerqueoManualDetalleFrenteCatorcenalInjiboaRel.resx">
+      <DependentUpon>QuerqueoManualDetalleFrenteCatorcenalInjiboaRel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Querqueo\QuerqueoManualDetalleFrenteCatorcenalProductor.resx">
+      <DependentUpon>QuerqueoManualDetalleFrenteCatorcenalProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Querqueo\QuerqueoManualDetalleProductorFrente.resx">
+      <DependentUpon>QuerqueoManualDetalleProductorFrente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Querqueo\QuerqueoManualResumenFrenteProductor.resx">
+      <DependentUpon>QuerqueoManualResumenFrenteProductor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepoComprobantes\ComprobanteRetencionContribuyente.resx">
+      <DependentUpon>ComprobanteRetencionContribuyente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepoComprobantes\ComprobanteRetencionNoContribuyente.resx">
+      <DependentUpon>ComprobanteRetencionNoContribuyente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepoComprobantes\CCFCana.resx">
+      <DependentUpon>CCFCana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepoComprobantes\SujetoExcluidoNoContribuyenteTransporte.resx">
+      <DependentUpon>SujetoExcluidoNoContribuyenteTransporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepoComprobantes\SujetoExcluidoNoContribuyenteCana.resx">
+      <DependentUpon>SujetoExcluidoNoContribuyenteCana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepoComprobantes\FacturaCana.resx">
+      <DependentUpon>FacturaCana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requisicion\ControlRequisiciones.resx">
+      <DependentUpon>ControlRequisiciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requisicion\SolicitudParaRequisicion.resx">
+      <DependentUpon>SolicitudParaRequisicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistagri\FichaTecnicaLote.resx">
+      <DependentUpon>FichaTecnicaLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec019_Zafra.resx">
+      <DependentUpon>rptSigestaEjec019_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec018_Zafra.resx">
+      <DependentUpon>rptSigestaEjec018_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec017_Zafra.resx">
+      <DependentUpon>rptSigestaEjec017_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec010_ZonaFabrica.resx">
+      <DependentUpon>rptSigestaEjec010_ZonaFabrica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec016_Zafra.resx">
+      <DependentUpon>rptSigestaEjec016_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec015_Zafra.resx">
+      <DependentUpon>rptSigestaEjec015_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec009_Zafra.resx">
+      <DependentUpon>rptSigestaEjec009_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec008_Zafra.resx">
+      <DependentUpon>rptSigestaEjec008_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec007_Zafra.resx">
+      <DependentUpon>rptSigestaEjec007_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec002_Zafra.resx">
+      <DependentUpon>rptSigestaEjec002_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec001_Zafra.resx">
+      <DependentUpon>rptSigestaEjec001_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec012_Zafra.resx">
+      <DependentUpon>rptSigestaEjec012_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec014Compa_Zafra.resx">
+      <DependentUpon>rptSigestaEjec014Compa_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec014_Zona.resx">
+      <DependentUpon>rptSigestaEjec014_Zona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec005_Zafra.resx">
+      <DependentUpon>rptSigestaEjec005_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec006_Zafra.resx">
+      <DependentUpon>rptSigestaEjec006_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec004_Zafra.resx">
+      <DependentUpon>rptSigestaEjec004_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec011_Zona.resx">
+      <DependentUpon>rptSigestaEjec011_Zona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec003_Zona.resx">
+      <DependentUpon>rptSigestaEjec003_Zona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec003_Zafra.resx">
+      <DependentUpon>rptSigestaEjec003_Zafra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisionAgricola\rptSigestaEjec010_Zona.resx">
+      <DependentUpon>rptSigestaEjec010_Zona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transporte\ContratoTransporte.resx">
+      <DependentUpon>ContratoTransporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transporte\ContratoTransporteLegal.resx">
+      <DependentUpon>ContratoTransporteLegal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transporte\SolicitudInsumoTransporte.resx">
+      <DependentUpon>SolicitudInsumoTransporte.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SISPACAL_BL\SISPACAL_BL.vbproj">
+      <Project>{BCF1CEF8-83B8-4010-9405-A3EA043B8E9C}</Project>
+      <Name>SISPACAL_BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SISPACAL_DL\SISPACAL_DL.vbproj">
+      <Project>{42A91AA2-475A-4BBA-8A0A-B7F4CB17796F}</Project>
+      <Name>SISPACAL_DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SISPACAL_EL\SISPACAL_EL.vbproj">
+      <Project>{810B5DF9-6F33-43C4-9ED8-29C0786BE11E}</Project>
+      <Name>SISPACAL_EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

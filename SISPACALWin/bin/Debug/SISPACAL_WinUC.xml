@@ -1,0 +1,317 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SISPACAL_WinUC
+</name>
+</assembly>
+<members>
+<member name="T:SISPACAL.WinUC.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SISPACAL.WinUC.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SISPACAL.WinUC.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:SISPACAL.WinUC.cbxBANCOS">
+ -----------------------------------------------------------------------------
+ Project	 : SISPACAL_WinUC
+ Class	 : WinUC.ddlBANCOS
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase del Control de Usuario Personalizado de una Lista Desplegable Windows
+ de la tabla BANCOS
+ </summary>
+ <remarks>
+ Generado con GenApp V1.9.8.0, Carías y Asociados, (info@cariasyasociados.com)
+ </remarks>
+ <history>
+ 	[GenApp]	04/01/2014	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxBANCOS.Recuperar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla Padre.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	04/01/2014	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:SISPACAL.WinUC.cbxRANGO_COMPENSACION">
+ -----------------------------------------------------------------------------
+ Project	 : SISPACAL_WinUC
+ Class	 : WinUC.ddlRANGO_COMPENSACION
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase del Control de Usuario Personalizado de una Lista Desplegable Windows
+ de la tabla RANGO_COMPENSACION
+ </summary>
+ <remarks>
+ Generado con GenApp V1.9.7.0, Carías y Asociados, (info@cariasyasociados.com)
+ </remarks>
+ <history>
+ 	[GenApp]	13/01/2015	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxRANGO_COMPENSACION.Recuperar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla Padre.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	13/01/2015	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxRANGO_COMPENSACION.RecuperarPorZAFRA(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla ZAFRA .
+ </summary>
+ <param name="ID_ZAFRA"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	13/01/2015	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxRANGO_COMPENSACION.RecuperarPorCATORCENA_ZAFRA(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla CATORCENA_ZAFRA .
+ </summary>
+ <param name="ID_CATORCENA"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	13/01/2015	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:SISPACAL.WinUC.cbxZAFRA">
+ -----------------------------------------------------------------------------
+ Project	 : SISPACAL_WinUC
+ Class	 : WinUC.ddlZAFRA
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase del Control de Usuario Personalizado de una Lista Desplegable Windows
+ de la tabla ZAFRA
+ </summary>
+ <remarks>
+ Generado con GenApp V1.9.8.0, Carías y Asociados, (info@cariasyasociados.com)
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxZAFRA.Recuperar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla Padre.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:SISPACAL.WinUC.cbxCATORCENA_ZAFRA">
+ -----------------------------------------------------------------------------
+ Project	 : SISPACAL_WinUC
+ Class	 : WinUC.ddlCATORCENA_ZAFRA
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase del Control de Usuario Personalizado de una Lista Desplegable Windows
+ de la tabla CATORCENA_ZAFRA
+ </summary>
+ <remarks>
+ Generado con GenApp V1.9.8.0, Carías y Asociados, (info@cariasyasociados.com)
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxCATORCENA_ZAFRA.Recuperar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla Padre.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxCATORCENA_ZAFRA.RecuperarPorZAFRA(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla ZAFRA .
+ </summary>
+ <param name="ID_ZAFRA"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxCATORCENA_ZAFRA.RecuperarUltimaCatorcenaCerradaZafra(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla ZAFRA .
+ </summary>
+ <param name="ID_ZAFRA"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:SISPACAL.WinUC.cbxTIPO_PLANILLA">
+ -----------------------------------------------------------------------------
+ Project	 : SISPACAL_WinUC
+ Class	 : WinUC.ddlTIPO_PLANILLA
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase del Control de Usuario Personalizado de una Lista Desplegable Windows
+ de la tabla TIPO_PLANILLA
+ </summary>
+ <remarks>
+ Generado con GenApp V1.9.8.0, Carías y Asociados, (info@cariasyasociados.com)
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxTIPO_PLANILLA.Recuperar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla Padre.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:SISPACAL.WinUC.cbxTIPO_PAGO">
+ -----------------------------------------------------------------------------
+ Project	 : SISPACAL_WinUC
+ Class	 : WinUC.ddlTIPO_PLANILLA
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase del Control de Usuario Personalizado de una Lista Desplegable Windows
+ de la tabla TIPO_PLANILLA
+ </summary>
+ <remarks>
+ Generado con GenApp V1.9.8.0, Carías y Asociados, (info@cariasyasociados.com)
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxTIPO_PAGO.Recuperar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla Padre.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:SISPACAL.WinUC.cbxCOMPROB_NUMERACION">
+ -----------------------------------------------------------------------------
+ Project	 : SISPACAL_WinUC
+ Class	 : WinUC.ddlCATORCENA_ZAFRA
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase del Control de Usuario Personalizado de una Lista Desplegable Windows
+ de la tabla CATORCENA_ZAFRA
+ </summary>
+ <remarks>
+ Generado con GenApp V1.9.8.0, Carías y Asociados, (info@cariasyasociados.com)
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxCOMPROB_NUMERACION.Recuperar">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla Padre.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:SISPACAL.WinUC.cbxCOMPROB_NUMERACION.RecuperarPorTIPO_DOCUMENTO(System.Int32)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Función que Popula el ComboBox filtrada por los parámetros de la Tabla ZAFRA .
+ </summary>
+ <param name="ID_TIPO_COMPROB"></param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[GenApp]	20/12/2013	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:SISPACAL.WinUC.Column">
+ -----------------------------------------------------------------------------
+ Project	 : GeneraApp
+ Class	 : Columna
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ Clase que representa una Columna de una Tabla
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[ecarias]	15/11/2006	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+</members>
+</doc>

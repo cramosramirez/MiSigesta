@@ -1,0 +1,14 @@
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\SISPACAL_DL.dll.config
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\SISPACAL_DL.dll
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\SISPACAL_DL.pdb
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\SISPACAL_DL.xml
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\SISPACAL_EL.dll
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\SISPACAL_EL.pdb
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\bin\Debug\SISPACAL_EL.xml
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\obj\Debug\SISPACAL_DL.vbproj.AssemblyReference.cache
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\obj\Debug\SISPACAL_DL.vbproj.CoreCompileInputs.cache
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\obj\Debug\SISPACAL_DL.vbproj.CopyComplete
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\obj\Debug\SISPACAL_DL.dll
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\obj\Debug\SISPACAL_DL.xml
+C:\Sistemas\SIGESTA-1\SISPACAL_DL\obj\Debug\SISPACAL_DL.pdb

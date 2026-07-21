@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EEE6B7C-964F-4564-BB1C-42E3E404558D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SISPACAL.WebUC</RootNamespace>
+    <AssemblyName>SISPACAL_WebUC</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SISPACAL_WebUC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SISPACAL_WebUC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="SISPACAL.BL" />
+    <Import Include="SISPACAL.EL" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.ComponentModel" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ddlAGRONOMO.vb" />
+    <Compile Include="ddlAJUSTE_POL.vb" />
+    <Compile Include="ddlANALISIS.vb" />
+    <Compile Include="ddlAPLICACION_DESCTO.vb" />
+    <Compile Include="ddlBANCOS.vb" />
+    <Compile Include="ddlBASCULA.vb" />
+    <Compile Include="ddlBase.vb" />
+    <Compile Include="ddlBITACORA_USUARIO.vb" />
+    <Compile Include="ddlCARGADOR.Partial.vb" />
+    <Compile Include="ddlCARGADOR.vb" />
+    <Compile Include="ddlCARGADORA.vb" />
+    <Compile Include="ddlCARGADORA_ASIGNADA.vb" />
+    <Compile Include="ddlCATEGORIA_PROD.vb" />
+    <Compile Include="ddlCATORCENA_ZAFRA.Partial.vb" />
+    <Compile Include="ddlCATORCENA_ZAFRA.vb" />
+    <Compile Include="ddlCENSO.vb" />
+    <Compile Include="ddlCENSO_LOTES.vb" />
+    <Compile Include="ddlCHEQUERA_PLANILLA.vb" />
+    <Compile Include="ddlCHEQUE_PARTIDA.vb" />
+    <Compile Include="ddlCHEQUE_PLANILLA.vb" />
+    <Compile Include="ddlCONTRATO.vb" />
+    <Compile Include="ddlCONTRATO_CTAS.vb" />
+    <Compile Include="ddlCONTRATO_CTAS_MOVTOS.vb" />
+    <Compile Include="ddlCONTRATO_CTAS_PROVI.vb" />
+    <Compile Include="ddlCONTRATO_FINAN.vb" />
+    <Compile Include="ddlCONTROL_ENTREGA_LOTE.vb" />
+    <Compile Include="ddlCONTROL_QUEMA.vb" />
+    <Compile Include="ddlCONTROL_ROZA.vb" />
+    <Compile Include="ddlCUENTA_BANCARIA.vb" />
+    <Compile Include="ddlCUENTA_FINAN.vb" />
+    <Compile Include="ddlCUENTA_PROVEEDOR.vb" />
+    <Compile Include="ddlDATOS_LABORATORIO.vb" />
+    <Compile Include="ddlDESCUENTOS_PLANILLA.vb" />
+    <Compile Include="ddlDESCUENTOS_PLANILLA_OC.vb" />
+    <Compile Include="ddlDIA_ZAFRA.Partial.vb" />
+    <Compile Include="ddlDIA_ZAFRA.vb" />
+    <Compile Include="ddlDISTRIBUCION_DESCTO.vb" />
+    <Compile Include="ddlENVIO.vb" />
+    <Compile Include="ddlEQUIPO_MEDICION.vb" />
+    <Compile Include="ddlGRUPO_DESCUENTOS.vb" />
+    <Compile Include="ddlLABFAB_CATEGORIA.vb" />
+    <Compile Include="ddlLABFAB_INFORME.vb" />
+    <Compile Include="ddlLABFAB_INFOVAR.vb" />
+    <Compile Include="ddlLABFAB_INFOVARSXDIA.vb" />
+    <Compile Include="ddlLABFAB_TIPOVAR.vb" />
+    <Compile Include="ddlLECTURA_POR_PERFIL.vb" />
+    <Compile Include="ddlLOTES.vb" />
+    <Compile Include="ddlLOTES_COSECHA.vb" />
+    <Compile Include="ddlMAESTRO_LOTES.vb" />
+    <Compile Include="ddlMOTIVO_VARIACION.vb" />
+    <Compile Include="ddlMOTORISTA.vb" />
+    <Compile Include="ddlMOTORISTA_VEHICULO.vb" />
+    <Compile Include="ddlORDEN_COMBUSTIBLE.vb" />
+    <Compile Include="ddlORDEN_COMBUSTIBLE_AUTORIZACION.vb" />
+    <Compile Include="ddlORDEN_COMBUSTIBLE_FAC_ANUL.vb" />
+    <Compile Include="ddlORDEN_COMBUSTIBLE_NUMERACION.vb" />
+    <Compile Include="ddlORDEN_COMBUSTIBLE_PROD.vb" />
+    <Compile Include="ddlORDEN_ROZA_DETA.vb" />
+    <Compile Include="ddlORDEN_ROZA_ENCA.vb" />
+    <Compile Include="ddlPERIODOREQ.vb" />
+    <Compile Include="ddlPLANILLA.vb" />
+    <Compile Include="ddlPLAN_CATORCENA.vb" />
+    <Compile Include="ddlPLAN_COSECHA.vb" />
+    <Compile Include="ddlPLAN_ENTREGA_CANA.vb" />
+    <Compile Include="ddlPLAN_SEMANAL.Partial.vb" />
+    <Compile Include="ddlPLAN_SEMANAL.vb" />
+    <Compile Include="ddlPRODUCTO.vb" />
+    <Compile Include="ddlPRODUCTO_COMBUSTIBLE.Partial.vb" />
+    <Compile Include="ddlPRODUCTO_COMBUSTIBLE.vb" />
+    <Compile Include="ddlPROFORMA.vb" />
+    <Compile Include="ddlPROVEEDOR.vb" />
+    <Compile Include="ddlPROVEEDOR_AGRICOLA.vb" />
+    <Compile Include="ddlPROVEEDOR_CARGA.vb" />
+    <Compile Include="ddlPROVEEDOR_COMBUSTIBLE.vb" />
+    <Compile Include="ddlPROVEEDOR_ROZA.Partial.vb" />
+    <Compile Include="ddlPROVEEDOR_ROZA.vb" />
+    <Compile Include="ddlRANGO_COMPENSACION.vb" />
+    <Compile Include="ddlRECIBO_CANA_ANULADO.vb" />
+    <Compile Include="ddlRECIBO_CANA_NUMERACION.vb" />
+    <Compile Include="ddlREQDETA.vb" />
+    <Compile Include="ddlREQENCA.vb" />
+    <Compile Include="ddlSECCION.vb" />
+    <Compile Include="ddlSOLICITANTE.vb" />
+    <Compile Include="ddlSOLIC_AGRICOLA.vb" />
+    <Compile Include="ddlSOLIC_AGRICOLA_LOTE.vb" />
+    <Compile Include="ddlSOLIC_AGRICOLA_PRODUCTO.vb" />
+    <Compile Include="ddlSOLIC_AGRICOLA_VUELO.vb" />
+    <Compile Include="ddlSUPERVISOR.vb" />
+    <Compile Include="ddlTARIFA.vb" />
+    <Compile Include="ddlTARIFA_ROZA.vb" />
+    <Compile Include="ddlTARIFA_VUELO.vb" />
+    <Compile Include="ddlTIPOS_GENERALES.vb" />
+    <Compile Include="ddlTIPO_CANA.vb" />
+    <Compile Include="ddlTIPO_CARGADORA.vb" />
+    <Compile Include="ddlTIPO_DESCUENTO.vb" />
+    <Compile Include="ddlTIPO_LECTURA.vb" />
+    <Compile Include="ddlTIPO_PLANILLA.vb" />
+    <Compile Include="ddlTIPO_PROVEEDOR.vb" />
+    <Compile Include="ddlTIPO_TRANSPORTE.vb" />
+    <Compile Include="ddlTRANSPORTE.vb" />
+    <Compile Include="ddlTRANSPORTISTA.vb" />
+    <Compile Include="ddlUBICACION.vb" />
+    <Compile Include="ddlUNIDAD_MEDIDA.vb" />
+    <Compile Include="ddlUSUARIO.vb" />
+    <Compile Include="ddlPERFIL.vb" />
+    <Compile Include="ddlOPCION_PERFIL.vb" />
+    <Compile Include="ddlOPCION.vb" />
+    <Compile Include="ddlVARIEDAD.vb" />
+    <Compile Include="ddlZAFGAS.vb" />
+    <Compile Include="ddlZAFRA.Partial.vb" />
+    <Compile Include="ddlZAFRA.vb" />
+    <Compile Include="ddlZONAS.vb" />
+    <Compile Include="lbAGRONOMO.vb" />
+    <Compile Include="lbAJUSTE_POL.vb" />
+    <Compile Include="lbANALISIS.vb" />
+    <Compile Include="lbAPLICACION_DESCTO.vb" />
+    <Compile Include="lbBANCOS.vb" />
+    <Compile Include="lbBASCULA.vb" />
+    <Compile Include="lbBase.vb" />
+    <Compile Include="lbBITACORA_USUARIO.vb" />
+    <Compile Include="lbCARGADOR.vb" />
+    <Compile Include="lbCARGADORA.vb" />
+    <Compile Include="lbCARGADORA_ASIGNADA.vb" />
+    <Compile Include="lbCATORCENA_ZAFRA.vb" />
+    <Compile Include="lbCHEQUERA_PLANILLA.vb" />
+    <Compile Include="lbCHEQUE_PARTIDA.vb" />
+    <Compile Include="lbCHEQUE_PLANILLA.vb" />
+    <Compile Include="lbCONTRATO.vb" />
+    <Compile Include="lbCONTROL_ENTREGA_LOTE.vb" />
+    <Compile Include="lbCONTROL_ROZA.vb" />
+    <Compile Include="lbCUENTA_BANCARIA.vb" />
+    <Compile Include="lbCUENTA_PROVEEDOR.vb" />
+    <Compile Include="lbDATOS_LABORATORIO.vb" />
+    <Compile Include="lbDESCUENTOS_PLANILLA.vb" />
+    <Compile Include="lbDESCUENTOS_PLANILLA_OC.vb" />
+    <Compile Include="lbDIA_ZAFRA.vb" />
+    <Compile Include="lbDISTRIBUCION_DESCTO.vb" />
+    <Compile Include="lbENVIO.vb" />
+    <Compile Include="lbEQUIPO_MEDICION.vb" />
+    <Compile Include="lbGRUPO_DESCUENTOS.vb" />
+    <Compile Include="lbLABFAB_CATEGORIA.vb" />
+    <Compile Include="lbLABFAB_INFORME.vb" />
+    <Compile Include="lbLABFAB_INFOVAR.vb" />
+    <Compile Include="lbLABFAB_INFOVARSXDIA.vb" />
+    <Compile Include="lbLABFAB_TIPOVAR.vb" />
+    <Compile Include="lbLECTURA_POR_PERFIL.vb" />
+    <Compile Include="lbLOTES.vb" />
+    <Compile Include="lbMOTORISTA.vb" />
+    <Compile Include="lbMOTORISTA_VEHICULO.vb" />
+    <Compile Include="lbORDEN_COMBUSTIBLE.vb" />
+    <Compile Include="lbORDEN_COMBUSTIBLE_AUTORIZACION.vb" />
+    <Compile Include="lbORDEN_COMBUSTIBLE_FAC_ANUL.vb" />
+    <Compile Include="lbORDEN_COMBUSTIBLE_NUMERACION.vb" />
+    <Compile Include="lbORDEN_COMBUSTIBLE_PROD.vb" />
+    <Compile Include="lbORDEN_ROZA_DETA.vb" />
+    <Compile Include="lbORDEN_ROZA_ENCA.vb" />
+    <Compile Include="lbPLANILLA.vb" />
+    <Compile Include="lbPLAN_CATORCENA.vb" />
+    <Compile Include="lbPLAN_COSECHA.vb" />
+    <Compile Include="lbPLAN_ENTREGA_CANA.vb" />
+    <Compile Include="lbPLAN_SEMANAL.vb" />
+    <Compile Include="lbPRODUCTO_COMBUSTIBLE.vb" />
+    <Compile Include="lbPROFORMA.vb" />
+    <Compile Include="lbPROVEEDOR.vb" />
+    <Compile Include="lbPROVEEDOR_CARGA.vb" />
+    <Compile Include="lbPROVEEDOR_COMBUSTIBLE.vb" />
+    <Compile Include="lbPROVEEDOR_ROZA.vb" />
+    <Compile Include="lbRANGO_COMPENSACION.vb" />
+    <Compile Include="lbRECIBO_CANA_ANULADO.vb" />
+    <Compile Include="lbRECIBO_CANA_NUMERACION.vb" />
+    <Compile Include="lbSUPERVISOR.vb" />
+    <Compile Include="lbTARIFA.vb" />
+    <Compile Include="lbTARIFA_ROZA.vb" />
+    <Compile Include="lbTIPO_CANA.vb" />
+    <Compile Include="lbTIPO_CARGADORA.vb" />
+    <Compile Include="lbTIPO_DESCUENTO.vb" />
+    <Compile Include="lbTIPO_LECTURA.vb" />
+    <Compile Include="lbTIPO_PLANILLA.vb" />
+    <Compile Include="lbTIPO_PROVEEDOR.vb" />
+    <Compile Include="lbTIPO_TRANSPORTE.vb" />
+    <Compile Include="lbTRANSPORTE.vb" />
+    <Compile Include="lbTRANSPORTISTA.vb" />
+    <Compile Include="lbUBICACION.vb" />
+    <Compile Include="lbUSUARIO.vb" />
+    <Compile Include="lbPERFIL.vb" />
+    <Compile Include="lbOPCION_PERFIL.vb" />
+    <Compile Include="lbOPCION.vb" />
+    <Compile Include="lbVARIEDAD.vb" />
+    <Compile Include="lbZAFGAS.vb" />
+    <Compile Include="lbZAFRA.vb" />
+    <Compile Include="lbZONAS.vb" />
+    <Compile Include="lsbLOTES.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SISPACAL_BL\SISPACAL_BL.vbproj">
+      <Project>{BCF1CEF8-83B8-4010-9405-A3EA043B8E9C}</Project>
+      <Name>SISPACAL_BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SISPACAL_EL\SISPACAL_EL.vbproj">
+      <Project>{810B5DF9-6F33-43C4-9ED8-29C0786BE11E}</Project>
+      <Name>SISPACAL_EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ddlTIPO_PROVEEDOR.Partial.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42A91AA2-475A-4BBA-8A0A-B7F4CB17796F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SISPACAL.DL</RootNamespace>
+    <AssemblyName>SISPACAL_DL</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SISPACAL_DL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SISPACAL_DL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3be8f9b49837ebfd">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="SISPACAL.EL" />
+    <Import Include="Microsoft.ApplicationBlocks.Data" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Data.SqlClient" />
+    <Import Include="System.Text" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bodega\dbBODEGA.vb" />
+    <Compile Include="Bodega\dbDOCUMENTO_ENTRADA_DETA.Partial.vb" />
+    <Compile Include="Bodega\dbDOCUMENTO_ENTRADA_DETA.vb" />
+    <Compile Include="Bodega\dbDOCUMENTO_ENTRADA_ENCA.Partial.vb" />
+    <Compile Include="Bodega\dbDOCUMENTO_ENTRADA_ENCA.vb" />
+    <Compile Include="Bodega\dbDOCUMENTO_SALIDA_DETA.vb" />
+    <Compile Include="Bodega\dbDOCUMENTO_SALIDA_ENCA.Partial.vb" />
+    <Compile Include="Bodega\dbDOCUMENTO_SALIDA_ENCA.vb" />
+    <Compile Include="Bodega\dbKARDEX.Partial.vb" />
+    <Compile Include="Bodega\dbKARDEX.vb" />
+    <Compile Include="Bodega\dbSALBODE_DETA.Partial.vb" />
+    <Compile Include="Bodega\dbSALBODE_DETA.vb" />
+    <Compile Include="Bodega\dbSALBODE_ENCA.Partial.vb" />
+    <Compile Include="Bodega\dbSALBODE_ENCA.vb" />
+    <Compile Include="Bodega\dbTIPO_COMPROB.Partial.vb" />
+    <Compile Include="Bodega\dbTIPO_COMPROB.vb" />
+    <Compile Include="Bodega\dbTIPO_MOVTO.Partial.vb" />
+    <Compile Include="Bodega\dbTIPO_MOVTO.vb" />
+    <Compile Include="Bodega\dbUNIDAD_ORG.vb" />
+    <Compile Include="dbACUKARDE.vb" />
+    <Compile Include="dbAGRONOMO.Partial.vb" />
+    <Compile Include="dbAGRONOMO.vb" />
+    <Compile Include="dbAJUSTE_POL.vb" />
+    <Compile Include="dbANALISIS.Partial.vb" />
+    <Compile Include="dbANALISIS.vb" />
+    <Compile Include="dbANALISIS_PRECOSECHA.Partial.vb" />
+    <Compile Include="dbANALISIS_PRECOSECHA.vb" />
+    <Compile Include="dbANTICIPO_CANA.vb" />
+    <Compile Include="dbAPLICACION_DESCTO.vb" />
+    <Compile Include="dbAsignarEntidades.vb" />
+    <Compile Include="dbBANCOS.Partial.vb" />
+    <Compile Include="dbBANCOS.vb" />
+    <Compile Include="dbBASCULA.Partial.vb" />
+    <Compile Include="dbBASCULA.vb" />
+    <Compile Include="dbBase.vb" />
+    <Compile Include="dbBASE_PROVEEDORES_MH.Partial.vb" />
+    <Compile Include="dbBASE_PROVEEDORES_MH.vb" />
+    <Compile Include="dbBITACORA_USUARIO.vb" />
+    <Compile Include="dbBRIX_SACAROSA.vb" />
+    <Compile Include="dbCANTON.Partial.vb" />
+    <Compile Include="dbCANTON.vb" />
+    <Compile Include="dbCARGADOR.Partial.vb" />
+    <Compile Include="dbCARGADOR.vb" />
+    <Compile Include="dbCARGADORA.Partial.vb" />
+    <Compile Include="dbCARGADORA.vb" />
+    <Compile Include="dbCARGADORA_ASIGNADA.Partial.vb" />
+    <Compile Include="dbCARGADORA_ASIGNADA.vb" />
+    <Compile Include="dbCATEGORIA_PROD.vb" />
+    <Compile Include="dbCATORCENA_ZAFRA.Partial.vb" />
+    <Compile Include="dbCATORCENA_ZAFRA.vb" />
+    <Compile Include="dbCENSO.Partial.vb" />
+    <Compile Include="dbCENSO.vb" />
+    <Compile Include="dbCENSO_LOTES.Partial.vb" />
+    <Compile Include="dbCENSO_LOTES.vb" />
+    <Compile Include="dbCHEQUERA_PLANILLA.vb" />
+    <Compile Include="dbCHEQUE_PARTIDA.vb" />
+    <Compile Include="dbCHEQUE_PLANILLA.Partial.vb" />
+    <Compile Include="dbCHEQUE_PLANILLA.vb" />
+    <Compile Include="dbCICLO.vb" />
+    <Compile Include="dbCICLO_PERIODO.Partial.vb" />
+    <Compile Include="dbCICLO_PERIODO.vb" />
+    <Compile Include="dbCOMPORTAMIENTO_CANA.vb" />
+    <Compile Include="dbCOMPROB_ENCA.Partial.vb" />
+    <Compile Include="dbCOMPROB_ENCA.vb" />
+    <Compile Include="dbCOMPROB_NUMERACION.vb" />
+    <Compile Include="dbCONDICION_SIEMBRA.vb" />
+    <Compile Include="dbCONTRATO.Partial.vb" />
+    <Compile Include="dbCONTRATO.vb" />
+    <Compile Include="dbCONTRATO_LG.Partial.vb" />
+    <Compile Include="dbCONTRATO_LG.vb" />
+    <Compile Include="dbCONTRATO_TRANS.Partial.vb" />
+    <Compile Include="dbCONTRATO_TRANS.vb" />
+    <Compile Include="dbCONTRATO_TRANS_VEHI.Partial.vb" />
+    <Compile Include="dbCONTRATO_TRANS_VEHI.vb" />
+    <Compile Include="dbCONTRATO_ZAFRAS.Partial.vb" />
+    <Compile Include="dbCONTRATO_ZAFRAS_LG.vb" />
+    <Compile Include="dbCREFISCAL_PROVEEDOR.Partial.vb" />
+    <Compile Include="dbCREFISCAL_PROVEEDOR.vb" />
+    <Compile Include="dbENVIO_COSECHA_BANDA.vb" />
+    <Compile Include="dbENVIO_FACT.vb" />
+    <Compile Include="dbENVIO_MONI_QQ.Partial.vb" />
+    <Compile Include="dbENVIO_MONI_QQ.vb" />
+    <Compile Include="dbENVIO_ROZA_PS.vb" />
+    <Compile Include="dbENVIO_SEDIMENTO.vb" />
+    <Compile Include="dbESTICANA.Partial.vb" />
+    <Compile Include="dbESTICANA.vb" />
+    <Compile Include="dbESTICANA_XLS_DETA.vb" />
+    <Compile Include="dbESTICANA_XLS_ENCA.vb" />
+    <Compile Include="dbFILTRO_ORDEN_ROZA.Partial.vb" />
+    <Compile Include="dbFILTRO_ORDEN_ROZA.vb" />
+    <Compile Include="dbIntermedia.vb" />
+    <Compile Include="dbLOTES_COSECHA_GESTION.Partial.vb" />
+    <Compile Include="dbLOTES_COSECHA_GESTION.vb" />
+    <Compile Include="dbLOTES_LG.Partial.vb" />
+    <Compile Include="dbLOTES_LG.vb" />
+    <Compile Include="dbLOTES_TRASPASO.vb" />
+    <Compile Include="dbLOTE_CARGADORA.vb" />
+    <Compile Include="dbMONITOR_CAL.Partial.vb" />
+    <Compile Include="dbMONITOR_CAL.vb" />
+    <Compile Include="dbNOTACARGO_PARTIDA.vb" />
+    <Compile Include="dbNOTACARGO_PLANILLA.vb" />
+    <Compile Include="dbNumero_a_Letras.vb" />
+    <Compile Include="dbOPCION_PERFIL.Partial.vb" />
+    <Compile Include="dbOrdenSIGASI.vb" />
+    <Compile Include="dbPAGO_CTA_BANCO.Partial.vb" />
+    <Compile Include="dbPAGO_CTA_BANCO.vb" />
+    <Compile Include="dbPERFIL.Partial.vb" />
+    <Compile Include="dbPERSONAL_FCAT.Partial.vb" />
+    <Compile Include="dbPERSONAL_FCAT.vb" />
+    <Compile Include="dbPLANILLA_BASE.Partial.vb" />
+    <Compile Include="dbPLANILLA_BASE.vb" />
+    <Compile Include="dbPRODUCTO.Partial.vb" />
+    <Compile Include="dbPRODUCTO_TIPO_TRANS.Partial.vb" />
+    <Compile Include="dbPRODUCTO_TIPO_TRANS.vb" />
+    <Compile Include="dbPROVEEDOR_AGRICOLA.Partial.vb" />
+    <Compile Include="dbPROVEEDOR_CARGA.Partial.vb" />
+    <Compile Include="dbPROVEEDOR_CODIGOREL.vb" />
+    <Compile Include="dbPROVEEDOR_QUERQUEO.Partial.vb" />
+    <Compile Include="dbPROVEEDOR_QUERQUEO.vb" />
+    <Compile Include="dbPROVEEDOR_ROZA.Partial.vb" />
+    <Compile Include="dbRANGO_COMPENSACION.vb" />
+    <Compile Include="dbSOLIC_AGRICOLA_ESTADO.vb" />
+    <Compile Include="dbSOLIC_ANTICIPO.Partial.vb" />
+    <Compile Include="dbSOLIC_ANTICIPO.vb" />
+    <Compile Include="dbSOLIC_ANTICIPO_CONTRATOS.Partial.vb" />
+    <Compile Include="dbSOLIC_ANTICIPO_CONTRATOS.vb" />
+    <Compile Include="dbSOLIC_ANTICIPO_ZAFRA.Partial.vb" />
+    <Compile Include="dbSOLIC_ANTICIPO_ZAFRA.vb" />
+    <Compile Include="dbSOLIC_APLICACION_LOTE.Partial.vb" />
+    <Compile Include="dbSOLIC_APLICACION_LOTE.vb" />
+    <Compile Include="dbSOLIC_APLICACION_PRODUCTO.Partial.vb" />
+    <Compile Include="dbSOLIC_APLICACION_PRODUCTO.vb" />
+    <Compile Include="dbSOLIC_APLICACION_VUELO.Partial.vb" />
+    <Compile Include="dbSOLIC_APLICACION_VUELO.vb" />
+    <Compile Include="dbSOLIC_APLICA_LOTE.Partial.vb" />
+    <Compile Include="dbSOLIC_APLICA_LOTE.vb" />
+    <Compile Include="dbSOLIC_APLICA_VUELO.vb" />
+    <Compile Include="dbTIPO_PERSONA.vb" />
+    <Compile Include="dbUtilidades.vb" />
+    <Compile Include="dbZONA_CARGADORA.Partial.vb" />
+    <Compile Include="dbZONA_CARGADORA.vb" />
+    <Compile Include="DS_COMPROBANTES.vb">
+      <DependentUpon>DS_COMPROBANTES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SIFAG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_SIFAG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SIFAG.vb">
+      <DependentUpon>DS_SIFAG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SIGESTA1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_SIGESTA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SISTAGRI.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_SISTAGRI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_TRANSPORTE.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_TRANSPORTE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Finaciero\dbCCF_DETA.vb" />
+    <Compile Include="Finaciero\dbCCF_DETA_SALBODE.Partial.vb" />
+    <Compile Include="Finaciero\dbCCF_DETA_SALBODE.vb" />
+    <Compile Include="Finaciero\dbCCF_ENCA.Partial.vb" />
+    <Compile Include="Finaciero\dbCCF_ENCA.vb" />
+    <Compile Include="Finaciero\dbCONTRATO_CTAS.vb" />
+    <Compile Include="Finaciero\dbCONTRATO_CTAS_MOVTOS.vb" />
+    <Compile Include="Finaciero\dbCONTRATO_CTAS_PROVI.Partial.vb" />
+    <Compile Include="Finaciero\dbCONTRATO_CTAS_PROVI.vb" />
+    <Compile Include="Finaciero\dbCONTRATO_FINAN.Partial.vb" />
+    <Compile Include="Finaciero\dbCONTRATO_FINAN.vb" />
+    <Compile Include="dbCONTRATO_ZAFRAS.vb" />
+    <Compile Include="dbCUENTA_BANCARIA.vb" />
+    <Compile Include="Finaciero\dbCREDITO_ENCA.Partial.vb" />
+    <Compile Include="Finaciero\dbCREDITO_ENCA.vb" />
+    <Compile Include="Finaciero\dbCREDITO_MOV.Partial.vb" />
+    <Compile Include="Finaciero\dbCREDITO_MOV.vb" />
+    <Compile Include="Finaciero\dbCUENTA_FINAN.Partial.vb" />
+    <Compile Include="Finaciero\dbCUENTA_FINAN.vb" />
+    <Compile Include="dbCUENTA_PROVEEDOR.Partial.vb" />
+    <Compile Include="dbCUENTA_PROVEEDOR.vb" />
+    <Compile Include="dbDATOS_LABORATORIO.vb" />
+    <Compile Include="dbDEPARTAMENTO.vb" />
+    <Compile Include="dbDESCUENTOS_PLANILLA.Partial.vb" />
+    <Compile Include="dbDESCUENTOS_PLANILLA.vb" />
+    <Compile Include="dbDESCUENTOS_PLANILLA_OC.vb" />
+    <Compile Include="dbDIA_ZAFRA.Partial.vb" />
+    <Compile Include="dbDIA_ZAFRA.vb" />
+    <Compile Include="dbDISTRIBUCION_DESCTO.vb" />
+    <Compile Include="dbENVIO.Partial.vb" />
+    <Compile Include="dbENVIO.vb" />
+    <Compile Include="dbEQUIPO_MEDICION.vb" />
+    <Compile Include="dbFechaHora.vb" />
+    <Compile Include="dbFILTRO_CANTON.Partial.vb" />
+    <Compile Include="dbFILTRO_CANTON.vb" />
+    <Compile Include="dbGRUPO_DESCUENTOS.vb" />
+    <Compile Include="dbLECTURA_POR_PERFIL.vb" />
+    <Compile Include="dbLOTES.Partial.vb" />
+    <Compile Include="dbLOTES.vb" />
+    <Compile Include="dbLOTES_COSECHA.Partial.vb" />
+    <Compile Include="dbLOTES_COSECHA.vb" />
+    <Compile Include="dbMAESTRO_LOTES.Partial.vb" />
+    <Compile Include="dbMAESTRO_LOTES.vb" />
+    <Compile Include="dbMapa.vb" />
+    <Compile Include="dbMOTIVO_VARIACION.vb" />
+    <Compile Include="dbMOTORISTA.Partial.vb" />
+    <Compile Include="dbMOTORISTA.vb" />
+    <Compile Include="dbMOTORISTA_VEHICULO.Partial.vb" />
+    <Compile Include="dbMOTORISTA_VEHICULO.vb" />
+    <Compile Include="dbMUNICIPIO.vb" />
+    <Compile Include="dbNIVEL_HUMEDAD.vb" />
+    <Compile Include="dbOPCION.Partial.vb" />
+    <Compile Include="dbORDEN_COMBUSTIBLE.Partial.vb" />
+    <Compile Include="dbORDEN_COMBUSTIBLE.vb" />
+    <Compile Include="dbORDEN_COMBUSTIBLE_AUTORIZACION.vb" />
+    <Compile Include="dbORDEN_COMBUSTIBLE_FAC_ANUL.vb" />
+    <Compile Include="dbORDEN_COMBUSTIBLE_NUMERACION.vb" />
+    <Compile Include="dbORDEN_COMBUSTIBLE_PROD.Partial.vb" />
+    <Compile Include="dbORDEN_COMBUSTIBLE_PROD.vb" />
+    <Compile Include="dbORDEN_ROZA_DETA.vb" />
+    <Compile Include="dbORDEN_ROZA_ENCA.Partial.vb" />
+    <Compile Include="dbORDEN_ROZA_ENCA.vb" />
+    <Compile Include="dbPARAM_PRECOSECHA.vb" />
+    <Compile Include="dbPLANILLA.Partial.vb" />
+    <Compile Include="dbPLANILLA.vb" />
+    <Compile Include="dbPLAN_CATORCENA.vb" />
+    <Compile Include="dbPLAN_ENTREGA_CANA.Partial.vb" />
+    <Compile Include="dbPLAN_ENTREGA_CANA.vb" />
+    <Compile Include="dbPLAN_SEMANAL.vb" />
+    <Compile Include="dbPRODUCTO.vb" />
+    <Compile Include="dbPRODUCTO_COMBUSTIBLE.Partial.vb" />
+    <Compile Include="dbPRODUCTO_COMBUSTIBLE.vb" />
+    <Compile Include="dbPROVEEDOR.Partial.vb" />
+    <Compile Include="dbPROVEEDOR.vb" />
+    <Compile Include="dbPROVEEDOR_AGRICOLA.vb" />
+    <Compile Include="dbPROVEEDOR_CARGA.vb" />
+    <Compile Include="dbPROVEEDOR_COMBUSTIBLE.vb" />
+    <Compile Include="dbPROVEEDOR_ROZA.vb" />
+    <Compile Include="dbRECIBO_CANA_ANULADO.vb" />
+    <Compile Include="dbRECIBO_CANA_NUMERACION.Partial.vb" />
+    <Compile Include="dbRECIBO_CANA_NUMERACION.vb" />
+    <Compile Include="dbSOLIC_AGRICOLA.Partial.vb" />
+    <Compile Include="dbSOLIC_AGRICOLA.vb" />
+    <Compile Include="dbSOLIC_AGRICOLA_LOTE.Partial.vb" />
+    <Compile Include="dbSOLIC_AGRICOLA_LOTE.vb" />
+    <Compile Include="dbSOLIC_AGRICOLA_PRODUCTO.vb" />
+    <Compile Include="dbSOLIC_AGRICOLA_VUELO.vb" />
+    <Compile Include="dbSUB_ZONAS.Partial.vb" />
+    <Compile Include="dbSUB_ZONAS.vb" />
+    <Compile Include="dbSUPERVISOR.vb" />
+    <Compile Include="dbTARIFA.vb" />
+    <Compile Include="dbTARIFA_ROZA.vb" />
+    <Compile Include="dbTARIFA_VUELO.vb" />
+    <Compile Include="dbTIPOS_GENERALES.Partial.vb" />
+    <Compile Include="dbTIPOS_GENERALES.vb" />
+    <Compile Include="dbTIPO_CANA.vb" />
+    <Compile Include="dbTIPO_CARGADORA.vb" />
+    <Compile Include="dbTIPO_DESCUENTO.Partial.vb" />
+    <Compile Include="dbTIPO_DESCUENTO.vb" />
+    <Compile Include="dbTIPO_LECTURA.vb" />
+    <Compile Include="dbTIPO_PLANILLA.vb" />
+    <Compile Include="dbTIPO_PLANILLA_DESCTO.Partial.vb" />
+    <Compile Include="dbTIPO_PLANILLA_DESCTO.vb" />
+    <Compile Include="dbTIPO_PROVEEDOR.vb" />
+    <Compile Include="dbTIPO_SUELO.vb" />
+    <Compile Include="dbTIPO_TEXTURA.vb" />
+    <Compile Include="dbTIPO_TRANSPORTE.vb" />
+    <Compile Include="dbTRANSPORTE.Partial.vb" />
+    <Compile Include="dbTRANSPORTE.vb" />
+    <Compile Include="dbTRANSPORTISTA.Partial.vb" />
+    <Compile Include="dbTRANSPORTISTA.vb" />
+    <Compile Include="dbUBICACION.vb" />
+    <Compile Include="dbUNIDAD_MEDIDA.vb" />
+    <Compile Include="dbUSUARIO.Partial.vb" />
+    <Compile Include="dbUSUARIO.vb" />
+    <Compile Include="dbPERFIL.vb" />
+    <Compile Include="dbOPCION_PERFIL.vb" />
+    <Compile Include="dbOPCION.vb" />
+    <Compile Include="dbVARIEDAD.Partial.vb" />
+    <Compile Include="dbVARIEDAD.vb" />
+    <Compile Include="dbZAFGAS.vb" />
+    <Compile Include="dbZAFRA.Partial.vb" />
+    <Compile Include="dbZAFRA.vb" />
+    <Compile Include="dbZONAS.vb" />
+    <Compile Include="DS_CATORCENA.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_CATORCENA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_CATORCENA.vb">
+      <DependentUpon>DS_CATORCENA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_COMPROBANTES1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_COMPROBANTES.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_DS1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DS1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_DS1.vb">
+      <DependentUpon>DS_DS1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SIGESTA.vb">
+      <DependentUpon>DS_SIGESTA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SIGESTA_MAPA.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_SIGESTA_MAPA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SIGESTA_MAPA.vb">
+      <DependentUpon>DS_SIGESTA_MAPA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Finaciero\dbFACTURA_SERVICIOS_DETA.vb" />
+    <Compile Include="Finaciero\dbFACTURA_SERVICIOS_ENCA.vb" />
+    <Compile Include="Finaciero\dbMEMBRE_GREMIAL.Partial.vb" />
+    <Compile Include="Finaciero\dbMEMBRE_GREMIAL.vb" />
+    <Compile Include="Finaciero\dbORDEN_COMPRA_AGRI.Partial.vb" />
+    <Compile Include="Finaciero\dbORDEN_COMPRA_AGRI.vb" />
+    <Compile Include="Finaciero\dbORDEN_DETA_AGRI.Partial.vb" />
+    <Compile Include="Finaciero\dbORDEN_DETA_AGRI.vb" />
+    <Compile Include="Finaciero\dbPLANILLA_COMPROB.Partial.vb" />
+    <Compile Include="Finaciero\dbPLANILLA_COMPROB.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_PRODU_COLU.Partial.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_PRODU_COLU.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_PRODU_DATOS.Partial.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_PRODU_DATOS.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_TRANS_COLU.Partial.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_TRANS_COLU.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_TRANS_DATOS.Partial.vb" />
+    <Compile Include="Finaciero\dbPLANTILLA_TRANS_DATOS.vb" />
+    <Compile Include="Finaciero\dbPRE_ANALISIS_DETA.Partial.vb" />
+    <Compile Include="Finaciero\dbPRE_ANALISIS_DETA.vb" />
+    <Compile Include="Finaciero\dbPRE_ANALISIS_ENCA.Partial.vb" />
+    <Compile Include="Finaciero\dbPRE_ANALISIS_ENCA.vb" />
+    <Compile Include="Finaciero\dbREMESA_DETA_PRODU.Partial.vb" />
+    <Compile Include="Finaciero\dbREMESA_DETA_PRODU.vb" />
+    <Compile Include="Finaciero\dbREMESA_ENCA_PRODU.vb" />
+    <Compile Include="Finaciero\dbSOLIC_ANTICIPO_LIQFINAN.vb" />
+    <Compile Include="Finaciero\dbSOLIC_ANTICIPO_LOTE.Partial.vb" />
+    <Compile Include="Finaciero\dbSOLIC_ANTICIPO_LOTE.vb" />
+    <Compile Include="Finaciero\dbSOLIC_OIP_LOTE.Partial.vb" />
+    <Compile Include="Finaciero\dbSOLIC_OIP_LOTE.vb" />
+    <Compile Include="Finaciero\dbSOLIC_OPI.Partial.vb" />
+    <Compile Include="Finaciero\dbSOLIC_OPI.vb" />
+    <Compile Include="Finaciero\dbSOLIC_OPI_CONTRATOS.Partial.vb" />
+    <Compile Include="Finaciero\dbSOLIC_OPI_CONTRATOS.vb" />
+    <Compile Include="Frentes\dbCCF_DETA_FRENTE.vb" />
+    <Compile Include="Frentes\dbCCF_ENCA_FRENTE.vb" />
+    <Compile Include="Frentes\dbCREDITO_ENCA_FRENTE.vb" />
+    <Compile Include="Frentes\dbCREDITO_MOV_FRENTE.vb" />
+    <Compile Include="Frentes\dbSOLIC_ANTICIPO_FRENTE.vb" />
+    <Compile Include="Frentes\dbSOLIC_ANTICIPO_FRENTE_ZAFRA.vb" />
+    <Compile Include="Frentes\dbSOLIC_DETA_FRENTE.vb" />
+    <Compile Include="Frentes\dbSOLIC_ENCA_FRENTE.vb" />
+    <Compile Include="LabFab\dbLABFAB_ANALISIS.Partial.vb" />
+    <Compile Include="LabFab\dbLABFAB_ANALISIS.vb" />
+    <Compile Include="LabFab\dbLABFAB_ANALISISXDIA.Partial.vb" />
+    <Compile Include="LabFab\dbLABFAB_ANALISISXDIA.vb" />
+    <Compile Include="LabFab\dbLABFAB_CATEGORIA.vb" />
+    <Compile Include="LabFab\dbLABFAB_DIAZAFRA.vb" />
+    <Compile Include="LabFab\dbLABFAB_ETAPA.vb" />
+    <Compile Include="LabFab\dbLABFAB_INFORME.vb" />
+    <Compile Include="LabFab\dbLABFAB_INFOVAR.vb" />
+    <Compile Include="LabFab\dbLABFAB_INFOVARSXDIA.vb" />
+    <Compile Include="LabFab\dbLABFAB_MUESTRA.vb" />
+    <Compile Include="LabFab\dbLABFAB_TIPOVAR.vb" />
+    <Compile Include="LabFab\dbLABFAB_VAR.vb" />
+    <Compile Include="LabFab\dbLABFAB_VARSXANALISIS.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Proforma\dbCAPACIDAD_TIPO_TRANS.Partial.vb" />
+    <Compile Include="Proforma\dbCAPACIDAD_TIPO_TRANS.vb" />
+    <Compile Include="Proforma\dbCONTROL_ENTREGA_LOTE.vb" />
+    <Compile Include="Proforma\dbCONTROL_QUEMA.Partial.vb" />
+    <Compile Include="Proforma\dbCONTROL_QUEMA.vb" />
+    <Compile Include="Proforma\dbCONTROL_QUEMA_SALDO.Partial.vb" />
+    <Compile Include="Proforma\dbCONTROL_QUEMA_SALDO.vb" />
+    <Compile Include="Proforma\dbCONTROL_ROZA.Partial.vb" />
+    <Compile Include="Proforma\dbCONTROL_ROZA.vb" />
+    <Compile Include="Proforma\dbCONTROL_ROZA_SALDO.Partial.vb" />
+    <Compile Include="Proforma\dbCONTROL_ROZA_SALDO.vb" />
+    <Compile Include="Proforma\dbPLAN_COSECHA.Partial.vb" />
+    <Compile Include="Proforma\dbPLAN_COSECHA.vb" />
+    <Compile Include="Proforma\dbPLAN_COSECHA_DIARIO.Partial.vb" />
+    <Compile Include="Proforma\dbPLAN_COSECHA_DIARIO.vb" />
+    <Compile Include="Proforma\dbPROFORMA.Partial.vb" />
+    <Compile Include="Proforma\dbPROFORMA.vb" />
+    <Compile Include="Proforma\dbSOLIC_QUEMANOPROG.Partial.vb" />
+    <Compile Include="Proforma\dbSOLIC_QUEMANOPROG.vb" />
+    <Compile Include="ProyFinan\dbPROYFIN_ING.Partial.vb" />
+    <Compile Include="ProyFinan\dbPROYFIN_ING.vb" />
+    <Compile Include="ProyFinan\dbPROYFIN_ING_LOTE.vb" />
+    <Compile Include="Requisicion\dbPERIODOREQ.Partial.vb" />
+    <Compile Include="Requisicion\dbPERIODOREQ.vb" />
+    <Compile Include="Requisicion\dbREQENCA.Partial.vb" />
+    <Compile Include="Requisicion\dbREQDETA.vb" />
+    <Compile Include="Requisicion\dbREQENCA.vb" />
+    <Compile Include="Requisicion\dbREQETAPA.vb" />
+    <Compile Include="Requisicion\dbSECCION.Partial.vb" />
+    <Compile Include="Requisicion\dbSECCION.vb" />
+    <Compile Include="Requisicion\dbSOLICITANTE.vb" />
+    <Compile Include="SubLotes\dbESTRATO.vb" />
+    <Compile Include="SubLotes\dbRIESGO_PIEDRA.vb" />
+    <Compile Include="SubLotes\dbSUBLOTES.vb" />
+    <Compile Include="SubLotes\dbTIPOSUELO.vb" />
+    <Compile Include="SubLotes\dbTIPO_SIEMBRA.vb" />
+    <Compile Include="SubLotes\dbTIPO_TRANS_VMT.vb" />
+    <Compile Include="SubLotes\dbTOPOGRAFIA.vb" />
+    <Compile Include="SubLotes\dbUSO_MADURANTE.vb" />
+    <Compile Include="Transporte\dbCCF_DETA_TRANS.vb" />
+    <Compile Include="Transporte\dbCCF_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\dbCREDITO_ENCA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\dbCREDITO_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\dbCREDITO_MOV_TRANS.Partial.vb" />
+    <Compile Include="Transporte\dbCREDITO_MOV_TRANS.vb" />
+    <Compile Include="Transporte\dbESTADO_SOLIC.vb" />
+    <Compile Include="Transporte\dbPRE_ANALISIS_DETA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\dbPRE_ANALISIS_DETA_TRANS.vb" />
+    <Compile Include="Transporte\dbPRE_ANALISIS_DOCTO_TRANS.vb" />
+    <Compile Include="Transporte\dbPRE_ANALISIS_ENCA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\dbPRE_ANALISIS_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\dbREMESA_DETA_TRANS.vb" />
+    <Compile Include="Transporte\dbREMESA_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\dbSOLIC_ENCA_TRANS.Partial.vb" />
+    <Compile Include="Transporte\dbSOLIC_ENCA_TRANS.vb" />
+    <Compile Include="Transporte\dbSOLIC_OIP_TRANS.Partial.vb" />
+    <Compile Include="Transporte\dbSOLIC_OIP_TRANS.vb" />
+    <Compile Include="Transporte\dbSOLIC_PROD_TRANS.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SISPACAL_EL\SISPACAL_EL.vbproj">
+      <Project>{810B5DF9-6F33-43C4-9ED8-29C0786BE11E}</Project>
+      <Name>SISPACAL_EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DS_CATORCENA.xsc">
+      <DependentUpon>DS_CATORCENA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_CATORCENA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_CATORCENA.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_CATORCENA.xss">
+      <DependentUpon>DS_CATORCENA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_COMPROBANTES.xsc">
+      <DependentUpon>DS_COMPROBANTES.xsd</DependentUpon>
+    </None>
+    <None Include="DS_COMPROBANTES.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_COMPROBANTES1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_COMPROBANTES.xss">
+      <DependentUpon>DS_COMPROBANTES.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DS1.xsc">
+      <DependentUpon>DS_DS1.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DS1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DS1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_DS1.xss">
+      <DependentUpon>DS_DS1.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SIFAG.xsc">
+      <DependentUpon>DS_SIFAG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SIFAG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_SIFAG.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_SIFAG.xss">
+      <DependentUpon>DS_SIFAG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SIGESTA.xsc">
+      <DependentUpon>DS_SIGESTA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SIGESTA.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DS_SIGESTA1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_SIGESTA.xss">
+      <DependentUpon>DS_SIGESTA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SIGESTA_MAPA.xsc">
+      <DependentUpon>DS_SIGESTA_MAPA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SIGESTA_MAPA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_SIGESTA_MAPA.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_SIGESTA_MAPA.xss">
+      <DependentUpon>DS_SIGESTA_MAPA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SISTAGRI.xsc">
+      <DependentUpon>DS_SISTAGRI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_SISTAGRI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_SISTAGRI.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_SISTAGRI.xss">
+      <DependentUpon>DS_SISTAGRI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_TRANSPORTE.xsc">
+      <DependentUpon>DS_TRANSPORTE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_TRANSPORTE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_TRANSPORTE.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_TRANSPORTE.xss">
+      <DependentUpon>DS_TRANSPORTE.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

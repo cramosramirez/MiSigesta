@@ -1,0 +1,366 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ucMantESTICANA.ascx.vb" Inherits="controles_ucMantESTICANA" %>
+<%@ Register TagPrefix="uc1" TagName="ucBarraNavegacion" Src="~/controles/ucBarraNavegacion.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="ucListaESTICANA" Src="~/controlesProforma/ucListaESTICANA.ascx" %>
+<%@ Register assembly="DevExpress.Web.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+
+
+ 
+<TABLE id="TableMant" cellSpacing="0" cellPadding="0" width="100%" border="0">
+    <TBODY>
+	        <TR>
+			    <TD><uc1:ucBarraNavegacion id="ucBarraNavegacion1" runat="server"></uc1:ucBarraNavegacion></TD>
+        </TR>
+		    <TR>
+		        <TD align="center" class="EncabezadoSecciones"><asp:Label id="lblTitulo" style="Z-INDEX: 101" runat="server">ESTICAÑA ACTUAL</asp:Label></TD>
+		    </TR>
+		    <TR>
+			    <TD>
+                    <dx:ASPxFormLayout ID="ucCriteriosLotesCosecha" runat="server" SettingsItemCaptions-Location="Left" 
+                        Name="glCriterios">
+                            <Items>
+                                <dx:LayoutGroup Caption="Criterios de búsqueda" ColCount="4" 
+                                    GroupBoxDecoration="HeadingLine">
+                                    <Items>
+                                        <dx:LayoutItem Caption="Zafra:">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxComboBox ID="cbxZAFRA" runat="server" HorizontalAlign="Right" DropDownStyle="DropDownList" DataSourceID="odsZafra" ValueField="ID_ZAFRA" TextField="NOMBRE_ZAFRA" ValueType="System.Int32" Width="100px">
+                                                    </dx:ASPxComboBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Zona:" ColSpan="3" >
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxComboBox ID="cbxZONA" ClientInstanceName="cbxZONA" HorizontalAlign="Right" runat="server" DataSourceID="odsZona" TextField="DESCRIP_ZONA" ValueField="ZONA" Width="100px" >                            
+                                                    </dx:ASPxComboBox>         
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>                                        
+                                        <dx:LayoutItem Caption="Cod. Provee:">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxSpinEdit ID="speCODIPROVEE" runat="server" HorizontalAlign="Right" Width="100px">
+                                                    </dx:ASPxSpinEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Cod. Socio:">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxSpinEdit ID="speCODISOCIO" runat="server" HorizontalAlign="Right" Width="100px">
+                                                    </dx:ASPxSpinEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Nombre Proveedor:">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxTextBox ID="txtNOMBRE_PROVEEDOR" runat="server" Width="280px">
+                                                    </dx:ASPxTextBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Nombre Lote:">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                                                    <dx:ASPxTextBox ID="txtNOMBLOTE" runat="server" Width="280px">
+                                                    </dx:ASPxTextBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="N° Contrato:">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
+                                                    <dx:ASPxSpinEdit ID="speNO_CONTRATO" runat="server" HorizontalAlign="Right" Width="100px">
+                                                    </dx:ASPxSpinEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Técnico:" ColSpan="2">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                                                <dx:ASPxComboBox ID="cbxAGRONOMO" ClientInstanceName="cbxAGRONOMO" Width="100%" DropDownStyle="DropDownList" runat="server" DataSourceID="odsAgronomo" 
+                                                    ValueField="CODIAGRON" TextField="APELLIDO_AGRONOMO" ValueType="System.String" TextFormatString="{0} {1} {2}" IncrementalFilteringMode="Contains">
+                                                        <Columns>
+                                                        <dx:ListBoxColumn Caption="Codigo" FieldName="CODIAGRON" Width="80px" />
+                                                        <dx:ListBoxColumn Caption="Apellidos" FieldName="APELLIDO_AGRONOMO" Width="120px" />
+                                                        <dx:ListBoxColumn Caption="Nombres" FieldName="NOMBRE_AGRONOMO" Width="120px" />                                                            
+                                                        </Columns>
+                                                </dx:ASPxComboBox>
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem> 
+                                    </Items>
+                                </dx:LayoutGroup>
+                            </Items>
+                        </dx:ASPxFormLayout>
+                </TD>
+		    </TR>
+	        <TR>
+            <TD>
+                <uc1:ucListaESTICANA id="ucListaESTICANA1" TamanoPagina="100" PermitirEditar="false" PermitirEditarInline2="true" VerZONA="true" VerAREA_CONTRATADA="true" VerTONEL_CONTRATADA="true" VerFAB_CATORCENA="false" PermitirEliminar="false" runat="server"></uc1:ucListaESTICANA>          
+            </TD>
+            </TR>
+    </TBODY>
+</TABLE>
+
+
+<dx:ASPxPopupControl ID="pcEsticana" runat="server" CloseAction="CloseButton" Modal="True" Width="900px" HeaderStyle-Font-Bold="true" 
+        PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ClientInstanceName="pcEsticana"
+        HeaderText="Modificación de Esticaña" AllowDragging="True" PopupAnimationType="None" EnableViewState="True">        
+<HeaderStyle Font-Bold="True"></HeaderStyle>
+        <ContentCollection>
+            <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+                <dx:ASPxPanel ID="Panel1" runat="server" DefaultButton="btnCancelar">
+                    <PanelCollection>
+                        <dx:PanelContent ID="PanelContent1" runat="server">  
+                        <dx:ASPxLabel ID="lblpcError" runat="server" Font-Bold="true" ForeColor="Red" /><br />                                              
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" SettingsItemCaptions-Location="Left" Name="glCriterios">
+                                        <Items>
+                                            <dx:LayoutGroup ShowCaption="False" ColCount="4" GroupBoxDecoration="Box">
+                                                <Items>
+                                                    <dx:LayoutItem Caption="Cod. Provee:">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speCODIPROVEEpop" runat="server" HorizontalAlign="Right" Width="100px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>                                                                   
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="Cod. Socio:">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer5" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speCODISOCIOpop" runat="server" HorizontalAlign="Right" 
+                                                                    Width="180px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="Nombre Proveedor:" ColSpan="2">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer6" runat="server">
+                                                                <dx:ASPxTextBox ID="txtNOMBRE_PROVEEDORpop" runat="server" Width="400px">                                                                    
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+
+                                                    <dx:LayoutItem Caption="Cod. Lote:">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer7" runat="server">
+                                                                <dx:ASPxTextBox ID="txtCODILOTEpop" HorizontalAlign="Right" runat="server" Width="100px">
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="Lote" ColSpan="3">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer8" runat="server">
+                                                                <dx:ASPxTextBox ID="txtNOMBLOTEpop" runat="server" Width="100%">
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+
+                                                    <dx:LayoutItem  ShowCaption="false">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer17" runat="server">
+                                                                <dx:ASPxCheckBox ID="chkFIN_LOTEpop" AutoPostBack="true" Text="Lote Cerrado" runat="server">
+                                                                </dx:ASPxCheckBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="Fecha/Hora Cierre">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer18" runat="server">
+                                                                <dx:ASPxDateEdit ID="dteFECHA_CIERRE" ClientInstanceName="dteFECHA_HORA_QUEMA" 
+                                                                    runat="server" HorizontalAlign="Right" 
+                                                                DisplayFormatString="dd/MM/yyyy hh:mm tt" EditFormat="Custom" UseMaskBehavior="True" 
+                                                                EditFormatString="dd/MM/yyyy hh:mm tt" Width="180px">
+                                                                <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                <TimeSectionProperties Visible="true">
+                                                                    <TimeEditProperties EditFormatString="hh:mm tt" />
+                                                                </TimeSectionProperties>
+                                                                </dx:ASPxDateEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="Horas de gracia de entrega">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer19" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speHORAS_GRACIA_ENTREGA" runat="server"  AllowNull="false"  HorizontalAlign="Right" Width="120px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>                                                    
+
+                                                    <dx:LayoutItem ShowCaption="false" ColSpan="4">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer12" runat="server">
+                                                                <dx:ASPxTextBox ID="txtTitulopop" Enabled="false" runat="server" Text="PLAN DE COSECHA" HorizontalAlign="Center" BackColor="LightBlue" Width="100%">
+                                                                    <DisabledStyle ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>                                                    
+                                                    <dx:LayoutItem Caption="MZ">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer9" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speMZ_COSECHApop" AutoPostBack="true" DisplayFormatString="#0.00" runat="server" AllowNull="false"  HorizontalAlign="Right" Width="100px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>                                                                    
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="TC/MZ">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer10" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speTC_MZ_COSECHApop" runat="server" AllowNull="false" 
+                                                                    DisplayFormatString="#0.00" HorizontalAlign="Right" Width="180px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="TC">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer11" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speTC_COSECHApop" AutoPostBack="true" runat="server" DisplayFormatString="#0.00" AllowNull="false" HorizontalAlign="Right" Width="120px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>                                                                 
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                    <dx:LayoutItem Caption="TC Semilla">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer13" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speTC_SEMILLApop" AutoPostBack="true" runat="server" DisplayFormatString="#0.00" AllowNull="false" HorizontalAlign="Right" Width="120px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>                                                    
+                                                    <dx:LayoutItem Caption="TC Entregada">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer14" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speTC_ENTREGADApop" AllowNull="false" runat="server" DisplayFormatString="#0.00" HorizontalAlign="Right" Width="120px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                    <dx:LayoutItem Caption="TC Variacion">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer15" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speTC_VARIACIONpop" AllowNull="false" runat="server" DisplayFormatString="#0.00" HorizontalAlign="Right" Width="120px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                    <dx:LayoutItem Caption="Saldo TC a Entregar">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer16" runat="server">
+                                                                <dx:ASPxSpinEdit ID="speTC_ENTREGARpop" runat="server" AllowNull="false" DisplayFormatString="#0.00" HorizontalAlign="Right" Width="120px">
+                                                                    <SpinButtons ShowIncrementButtons="False"></SpinButtons>
+                                                                    <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                </dx:ASPxSpinEdit>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:EmptyLayoutItem></dx:EmptyLayoutItem>
+                                                 </Items>
+                                            </dx:LayoutGroup>
+                                        </Items> 
+                                        <SettingsItemCaptions Location="Left"></SettingsItemCaptions>
+                                    </dx:ASPxFormLayout>
+                                </td>                                
+                            </tr>
+                             
+                        </table>
+                        <hr />
+                        <table width="100%">                            
+                            <tr>
+                                <td style="padding-right:7px; text-align:right">
+                                    <dx:ASPxButton ID="btnAceptar" runat="server" AutoPostBack="true" Text="Aceptar">                                        
+                                    </dx:ASPxButton>    
+                                </td>
+                                <td style="padding-left:7px">  
+                                    <dx:ASPxButton ID="btnCancelar" runat="server" Text="Cancelar">
+                                        <ClientSideEvents Click="function(s,e){pcEsticana.Hide()}" /> 
+                                    </dx:ASPxButton> 
+                                </td>
+                            </tr>                            
+                        </table>                        
+                        </dx:PanelContent>
+                    </PanelCollection>
+                </dx:ASPxPanel>
+            </dx:PopupControlContentControl>
+        </ContentCollection>
+</dx:ASPxPopupControl>
+
+
+<asp:ObjectDataSource ID="odsZafra" runat="server" 
+    OldValuesParameterFormatString="original_{0}" SelectMethod="ObtenerLista" 
+    TypeName="SISPACAL.BL.cZAFRA">  
+    <SelectParameters>
+        <asp:Parameter DefaultValue="False" Name="recuperarHijas" Type="Boolean" />
+        <asp:Parameter DefaultValue="NOMBRE_ZAFRA" Name="asColumnaOrden" Type="String" />
+        <asp:Parameter DefaultValue="DESC" Name="asTipoOrden" Type="String" />
+    </SelectParameters>
+</asp:ObjectDataSource>
+<asp:ObjectDataSource ID="odsZona" runat="server" 
+    OldValuesParameterFormatString="original_{0}" SelectMethod="ObtenerLista" 
+    TypeName="SISPACAL.BL.cZONAS">
+    <SelectParameters>
+        <asp:Parameter DefaultValue="false" Name="recuperarHijas" Type="Boolean" />
+        <asp:Parameter DefaultValue="ZONA" Name="asColumnaOrden" Type="String" />
+        <asp:Parameter DefaultValue="ASC" Name="asTipoOrden" Type="String" />
+    </SelectParameters>
+</asp:ObjectDataSource>
+<asp:ObjectDataSource ID="odsAgronomo" runat="server" 
+    OldValuesParameterFormatString="original_{0}" SelectMethod="RecuperarLista" 
+    TypeName="SISPACAL.BL.cAGRONOMO">
+    <SelectParameters>
+        <asp:Parameter DefaultValue="false" Name="AgregarTodos" Type="Boolean" />
+        <asp:Parameter DefaultValue="true" Name="AgregarVacio" Type="Boolean" />
+        <asp:Parameter DefaultValue="APELLIDO_AGRONOMO" Name="asColumnaOrden" Type="String" />
+        <asp:Parameter DefaultValue="ASC" Name="asTipoOrden" Type="String" />        
+    </SelectParameters>
+</asp:ObjectDataSource>

@@ -1,0 +1,377 @@
+.dxRichEdit_AlignBottomCenter_Office2010Blue,
+.dxRichEdit_AlignBottomLeft_Office2010Blue,
+.dxRichEdit_AlignBottomRight_Office2010Blue,
+.dxRichEdit_AlignMiddleCenter_Office2010Blue,
+.dxRichEdit_AlignMiddleLeft_Office2010Blue,
+.dxRichEdit_AlignMiddleRight_Office2010Blue,
+.dxRichEdit_AlignTopCenter_Office2010Blue,
+.dxRichEdit_AlignTopLeft_Office2010Blue,
+.dxRichEdit_AlignTopRight_Office2010Blue,
+.dxRichEdit_Bookmark_Office2010Blue,
+.dxRichEdit_Copy_Office2010Blue,
+.dxRichEdit_Cut_Office2010Blue,
+.dxRichEdit_Delete_Hyperlink_Office2010Blue,
+.dxRichEdit_FirstLineIdentDragHandle_Office2010Blue,
+.dxRichEdit_FloatingObjectBringForward_Office2010Blue,
+.dxRichEdit_FloatingObjectBringInFrontOfText_Office2010Blue,
+.dxRichEdit_FloatingObjectBringToFront_Office2010Blue,
+.dxRichEdit_FloatingObjectBringToFrontOfText_Office2010Blue,
+.dxRichEdit_FloatingObjectLayoutOptions_Office2010Blue,
+.dxRichEdit_FloatingObjectSendBackward_Office2010Blue,
+.dxRichEdit_FloatingObjectSendBehindText_Office2010Blue,
+.dxRichEdit_FloatingObjectSendToBack_Office2010Blue,
+.dxRichEdit_Font_Office2010Blue,
+.dxRichEdit_Hyperlink_Office2010Blue,
+.dxRichEdit_IndentDecrease_Office2010Blue,
+.dxRichEdit_IndentIncrease_Office2010Blue,
+.dxRichEdit_InsertTableCells_Office2010Blue,
+.dxRichEdit_InsertTableColumnsToTheLeft_Office2010Blue,
+.dxRichEdit_InsertTableColumnsToTheRight_Office2010Blue,
+.dxRichEdit_InsertTableRowsAbove_Office2010Blue,
+.dxRichEdit_InsertTableRowsBelow_Office2010Blue,
+.dxRichEdit_LeftColumns_Office2010Blue,
+.dxRichEdit_LeftIdentDragHandle_Office2010Blue,
+.dxRichEdit_ListBullets_Office2010Blue,
+.dxRichEdit_MergeTableCells_Office2010Blue,
+.dxRichEdit_OneColumn_Office2010Blue,
+.dxRichEdit_Paragraph_Office2010Blue,
+.dxRichEdit_Paste_Office2010Blue,
+.dxRichEdit_RightColumns_Office2010Blue,
+.dxRichEdit_RightIdentDragHandle_Office2010Blue,
+.dxRichEdit_SelectAll_Office2010Blue,
+.dxRichEdit_TableAutoFitContents_Office2010Blue,
+.dxRichEdit_TableAutoFitWindow_Office2010Blue,
+.dxRichEdit_TableFixedColumnWidth_Office2010Blue,
+.dxRichEdit_TableProperties_Office2010Blue,
+.dxRichEdit_TextWrapBehind_Office2010Blue,
+.dxRichEdit_TextWrapInFrontOfText_Office2010Blue,
+.dxRichEdit_TextWrapSquare_Office2010Blue,
+.dxRichEdit_TextWrapThrough_Office2010Blue,
+.dxRichEdit_TextWrapTight_Office2010Blue,
+.dxRichEdit_TextWrapTopAndBottom_Office2010Blue,
+.dxRichEdit_ThreeColumns_Office2010Blue,
+.dxRichEdit_TwoColumns_Office2010Blue
+{
+    background-image: url('sprite.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.dxRichEdit_AlignBottomCenter_Office2010Blue
+{
+    background-position: -17px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignBottomLeft_Office2010Blue
+{
+    background-position: 0px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignBottomRight_Office2010Blue
+{
+    background-position: -34px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignMiddleCenter_Office2010Blue
+{
+    background-position: -136px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignMiddleLeft_Office2010Blue
+{
+    background-position: -102px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignMiddleRight_Office2010Blue
+{
+    background-position: -136px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignTopCenter_Office2010Blue
+{
+    background-position: -34px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignTopLeft_Office2010Blue
+{
+    background-position: -170px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_AlignTopRight_Office2010Blue
+{
+    background-position: -119px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_Bookmark_Office2010Blue
+{
+    background-position: -153px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_Copy_Office2010Blue
+{
+    background-position: 0px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_Cut_Office2010Blue
+{
+    background-position: -51px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_Delete_Hyperlink_Office2010Blue
+{
+    background-position: -68px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FirstLineIdentDragHandle_Office2010Blue
+{
+    background-position: -182px 0px;
+    width: 9px;
+    height: 8px;
+}
+.dxRichEdit_FloatingObjectBringForward_Office2010Blue
+{
+    background-position: -153px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FloatingObjectBringInFrontOfText_Office2010Blue
+{
+    background-position: -85px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FloatingObjectBringToFront_Office2010Blue
+{
+    background-position: -136px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FloatingObjectBringToFrontOfText_Office2010Blue
+{
+    background-position: -85px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FloatingObjectLayoutOptions_Office2010Blue
+{
+    background-position: -68px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FloatingObjectSendBackward_Office2010Blue
+{
+    background-position: -119px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FloatingObjectSendBehindText_Office2010Blue
+{
+    background-position: -51px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_FloatingObjectSendToBack_Office2010Blue
+{
+    background-position: -153px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_Font_Office2010Blue
+{
+    background-position: -34px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_Hyperlink_Office2010Blue
+{
+    background-position: -17px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_IndentDecrease_Office2010Blue
+{
+    background-position: -17px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_IndentIncrease_Office2010Blue
+{
+    background-position: 0px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_InsertTableCells_Office2010Blue
+{
+    background-position: -170px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_InsertTableColumnsToTheLeft_Office2010Blue
+{
+    background-position: -170px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_InsertTableColumnsToTheRight_Office2010Blue
+{
+    background-position: -170px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_InsertTableRowsAbove_Office2010Blue
+{
+    background-position: -136px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_InsertTableRowsBelow_Office2010Blue
+{
+    background-position: -85px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_LeftColumns_Office2010Blue
+{
+    background-position: -132px 0px;
+    width: 32px;
+    height: 32px;
+}
+.dxRichEdit_LeftIdentDragHandle_Office2010Blue
+{
+    background-position: -183px -24px;
+    width: 9px;
+    height: 8px;
+}
+.dxRichEdit_ListBullets_Office2010Blue
+{
+    background-position: -102px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_MergeTableCells_Office2010Blue
+{
+    background-position: -102px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_OneColumn_Office2010Blue
+{
+    background-position: 0px 0px;
+    width: 32px;
+    height: 32px;
+}
+.dxRichEdit_Paragraph_Office2010Blue
+{
+    background-position: 0px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_Paste_Office2010Blue
+{
+    background-position: -119px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_RightColumns_Office2010Blue
+{
+    background-position: -99px 0px;
+    width: 32px;
+    height: 32px;
+}
+.dxRichEdit_RightIdentDragHandle_Office2010Blue
+{
+    background-position: -173px -24px;
+    width: 9px;
+    height: 8px;
+}
+.dxRichEdit_SelectAll_Office2010Blue
+{
+    background-position: -17px -33px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TableAutoFitContents_Office2010Blue
+{
+    background-position: -68px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TableAutoFitWindow_Office2010Blue
+{
+    background-position: -165px 0px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TableFixedColumnWidth_Office2010Blue
+{
+    background-position: -153px -84px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TableProperties_Office2010Blue
+{
+    background-position: -85px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TextWrapBehind_Office2010Blue
+{
+    background-position: -68px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TextWrapInFrontOfText_Office2010Blue
+{
+    background-position: -102px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TextWrapSquare_Office2010Blue
+{
+    background-position: -34px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TextWrapThrough_Office2010Blue
+{
+    background-position: -119px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TextWrapTight_Office2010Blue
+{
+    background-position: -51px -67px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_TextWrapTopAndBottom_Office2010Blue
+{
+    background-position: -51px -50px;
+    width: 16px;
+    height: 16px;
+}
+.dxRichEdit_ThreeColumns_Office2010Blue
+{
+    background-position: -33px 0px;
+    width: 32px;
+    height: 32px;
+}
+.dxRichEdit_TwoColumns_Office2010Blue
+{
+    background-position: -66px 0px;
+    width: 32px;
+    height: 32px;
+}
+
